@@ -87,14 +87,26 @@ function Start-VM {
 					)]
 		[Alias("z")]
 		[String]
-		$zone
+		$zone,
+		
+		[Parameter(Mandatory=$FALSE, 
+			HelpMessage="Enter the path to the environment file.")]
+		[Alias("p")]
+		[String]
+		$env_file_path = ".\Environment_Files",
+		
+		[Parameter(Mandatory=$FALSE, 
+			HelpMessage="Enter the environment file name.")]
+		[Alias("e")]
+		[String]
+		$env_file = "env_file"
 	)
 	
 	gcloud compute --project "leaderless-zookeeper" instances create-with-container "zook$('{0:d3}' -f $number)" `
 	--container-image "docker.io/zookeeper:3.6.2" --zone $zone --machine-type "n1-standard-8" `
 	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
 	--scopes=default --tags "http-server" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
-	--boot-disk-type "pd-standard" --boot-disk-device-name "zook$('{0:d3}' -f $number)"
+	--boot-disk-type "pd-standard" --boot-disk-device-name "zook$('{0:d3}' -f $number)" --container-env=ZOO_MY_ID=$number --container-env-file="$($env_file_path)\$env_file"
 }
 
 
@@ -102,6 +114,32 @@ function Update-VM {
 	Param (
 		[Parameter(Mandatory=$TRUE, 
 			HelpMessage="Enter an integer to identify the vm.")] 
+		[Alias("n")]
+		[int]
+		$number,
+		
+		[Parameter(Mandatory=$FALSE, 
+			HelpMessage="Enter the path to the environment file.")]
+		[Alias("p")]
+		[String]
+		$env_file_path = ".\Environment_Files",
+		
+		[Parameter(Mandatory=$FALSE, 
+			HelpMessage="Enter the environment file name.")]
+		[Alias("e")]
+		[String]
+		$env_file = "env_file"
+	)
+	
+	gcloud compute --project "leaderless-zookeeper" instances update-container "zook$('{0:d3}' -f $number)" `
+	--container-env=ZOO_MY_ID=$number --container-env-file="$($env_file_path)\$env_file"
+}
+
+
+function Update-VM {
+	Param (
+		[Parameter(Mandatory=$TRUE, 
+			HelpMessage="Enter a number of machines.")] 
 		[Alias("n")]
 		[int]
 		$number,
