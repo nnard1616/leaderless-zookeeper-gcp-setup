@@ -1,0 +1,5 @@
+ZOO_TICK_TIME=2000
+ZOO_INIT_LIMIT=60
+ZOO_SYNC_LIMIT=60
+ZOO_CFG_EXTRA=electionPortBindRetry=0
+ZOO_SERVERS=server.1=zook001.us-west1-a.c.leaderless-zookeeper.internal:2888:3888 server.2=zook002.europe-west4-a.c.leaderless-zookeeper.internal:2888:3888 server.3=zook003.asia-east1-b.c.leaderless-zookeeper.internal:2888:3888

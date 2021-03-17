@@ -87,14 +87,11 @@ function Start-VM {
 					)]
 		[Alias("z")]
 		[String]
-		$zone,
+		$zone
 		
-		[Parameter(Mandatory=$FALSE, 
-			HelpMessage="Enter the path to the environment file.")]
-		[Alias("p")]
-		[String]
-		$env_file_path = ".\Environment_Files\env_file3"
 	)
+	
+	$env_file_path = ".\Environment_Files\env_file"
 	
 	gcloud compute --project "leaderless-zookeeper" instances create-with-container "zook$('{0:d3}' -f $number)" `
 	--container-image "docker.io/zookeeper:3.6.2" --zone $zone --machine-type "n1-standard-8" `
@@ -110,19 +107,53 @@ function Update-VM {
 			HelpMessage="Enter an integer to identify the vm.")] 
 		[Alias("n")]
 		[int]
-		$number,
-		
-		[Parameter(Mandatory=$FALSE, 
-			HelpMessage="Enter the path to the environment file.")]
-		[Alias("p")]
-		[String]
-		$env_file_path = ".\Environment_Files\env_file3"
+		$number
 	)
+	
+	$env_file_path = ".\Environment_Files\env_file"
 	
 	gcloud compute --project "leaderless-zookeeper" instances update-container "zook$('{0:d3}' -f $number)" `
 	--container-env=ZOO_MY_ID=$number  --container-env-file=$env_file_path
 }
 
+function prep-env {
+	Param (
+		[Parameter(Mandatory=$TRUE, 
+			HelpMessage="Enter an integer to identify how many machines will be in the cluster.")] 
+		[Alias("n")]
+		[int]
+		$number,
+		
+		[Parameter(Mandatory=$TRUE, 
+			HelpMessage="Enter a Zones File path")]
+		[Alias("z")]
+		[String[]]
+		$zones_file_path
+	)
+	
+	[string[]]$zones = Get-Content -Path $zones_file_path
+	
+	if ($number -ne $zones.length) {
+		echo "ERROR: make sure the chosen number of machines and the number of zones match"
+		return
+	}
+	
+	$env_file_template_path = ".\Environment_Files\env_file$number"
+	$env_file_path = ".\Environment_Files\env_file"
+	
+	cp -Force $env_file_template_path $env_file_path
+	
+	
+	
+	1..$number | ForEach-Object {
+		$oldText = "zook$('{0:d3}' -f $_)" 
+		$newText = $oldText + ".$($zones[$_-1]).c.leaderless-zookeeper.internal"
+		sed -i "s/$oldText/$newText/g" $env_file_path
+	}
+	
+	
+
+}
 
 function start-many {
 	Param (
@@ -130,27 +161,32 @@ function start-many {
 			HelpMessage="Enter a number of machines to create.")] 
 		[Alias("n")]
 		[int]
-		$number = 3,
-		
-		[Parameter(Mandatory=$FALSE, 
-			HelpMessage="Enter the path to the zones file.")]
-		[Alias("p")]
-		[String]
-		$env_file_path = ".\Zones_Files\zones_file3"
+		$number = 3
 	)
+	$zones_file_path = ".\Zones_Files\zones_file$number"
 	
-	[string[]]$zonesArray = Get-Content -Path $env_file_path
+	$nums = 0..$($number-1)
+	[string[]]$zones = Get-Content -Path $zones_file_path
 	
+	prep-env $number $zones_file_path
 	
-	
-	
-	for ($i = 1 ; $i -lt $number; $i++) {
-	
-		$scriptBlock = {
-		
-		}
-		
+	$scriptBlock = { 
+		param($n, $s, $z)
+		Write-Host $n $s $z
+		Start-VM $n $s $z
 	}
 	
+	1..$number | ForEach-Object {
+		Start-Job -ScriptBlock $scriptBlock -ArgumentList  $_, $number, $zones[$($_-1)]
+	}
+	
+	get-job
+	
+	While (Get-Job -State "Running")
+	{
+	  Start-Sleep 5
+	}
+	
+	Get-Job | % { Receive-Job $_.Id; Remove-Job $_.Id }
 	
 }

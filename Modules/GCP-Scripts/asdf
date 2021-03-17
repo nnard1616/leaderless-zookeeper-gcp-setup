@@ -1,0 +1,43 @@
+function start-many {
+	Param (
+		[Parameter(Mandatory=$FALSE, 
+			HelpMessage="Enter a number of machines to create.")] 
+		[Alias("n")]
+		[int]
+		$number = 3,
+		
+		[Parameter(Mandatory=$FALSE, 
+			HelpMessage="Enter the path to the zones file.")]
+		[Alias("p")]
+		[String]
+		$env_file_path = ".\Zones_Files\zones_file3"
+	)
+	
+	$nums = 0..$($number-1)
+	[string[]]$zones = Get-Content -Path $env_file_path
+	
+	$params = @()
+	
+	# zip the number array and zone array into a single array
+	foreach ($num in $nums) {
+		$params += "$($zones[$num]) $('{0:d3}' -f $num)"
+	}
+	
+	echo $params 
+	
+	$scriptBlock = { 
+		start-one($args)
+	}
+	
+	Start-Job -ScriptBlock $scriptBlock -ArgumentList $params
+	
+	get-job
+	
+	While (Get-Job -State "Running")
+	{
+	  Start-Sleep 5
+	}
+	
+	Get-Job | Receive-Job
+	
+}
