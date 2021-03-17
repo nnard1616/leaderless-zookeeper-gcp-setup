@@ -100,7 +100,7 @@ function Start-VM {
 	--container-image "docker.io/zookeeper:3.6.2" --zone $zone --machine-type "n1-standard-8" `
 	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
 	--scopes=default --tags "http-server" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
-	--boot-disk-type "pd-standard" --boot-disk-device-name "zook$('{0:d3}' -f $number)" --container-env=ZOO_MY_ID=$number --container-env-file="$($env_file_path)\$env_file"
+	--boot-disk-type "pd-standard" --boot-disk-device-name "zook$('{0:d3}' -f $number)" --container-env=ZOO_MY_ID=$number --container-env-file="$env_file_path"
 }
 
 
@@ -120,7 +120,7 @@ function Update-VM {
 	)
 	
 	gcloud compute --project "leaderless-zookeeper" instances update-container "zook$('{0:d3}' -f $number)" `
-	--container-env=ZOO_MY_ID=$number --container-env-file="$($env_file_path)\$env_file"
+	--container-env=ZOO_MY_ID=$number  --container-env-file="$env_file_path"
 }
 
 
