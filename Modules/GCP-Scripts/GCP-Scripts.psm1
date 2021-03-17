@@ -93,14 +93,14 @@ function Start-VM {
 			HelpMessage="Enter the path to the environment file.")]
 		[Alias("p")]
 		[String]
-		$env_file_path = ".\Environment_Files\env_file"
+		$env_file_path = ".\Environment_Files\env_file3"
 	)
 	
 	gcloud compute --project "leaderless-zookeeper" instances create-with-container "zook$('{0:d3}' -f $number)" `
 	--container-image "docker.io/zookeeper:3.6.2" --zone $zone --machine-type "n1-standard-8" `
 	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
 	--scopes=default --tags "http-server" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
-	--boot-disk-type "pd-standard" --boot-disk-device-name "zook$('{0:d3}' -f $number)" --container-env=ZOO_MY_ID=$number --container-env-file="$env_file_path"
+	--boot-disk-type "pd-standard" --boot-disk-device-name "zook$('{0:d3}' -f $number)" --container-env=ZOO_MY_ID=$number --container-env-file=$env_file_path
 }
 
 
@@ -116,28 +116,41 @@ function Update-VM {
 			HelpMessage="Enter the path to the environment file.")]
 		[Alias("p")]
 		[String]
-		$env_file_path = ".\Environment_Files\env_file"
+		$env_file_path = ".\Environment_Files\env_file3"
 	)
 	
 	gcloud compute --project "leaderless-zookeeper" instances update-container "zook$('{0:d3}' -f $number)" `
-	--container-env=ZOO_MY_ID=$number  --container-env-file="$env_file_path"
+	--container-env=ZOO_MY_ID=$number  --container-env-file=$env_file_path
 }
 
 
 function start-many {
 	Param (
-		[Parameter(Mandatory=$TRUE, 
+		[Parameter(Mandatory=$FALSE, 
 			HelpMessage="Enter a number of machines to create.")] 
 		[Alias("n")]
 		[int]
-		$number,
+		$number = 3,
 		
 		[Parameter(Mandatory=$FALSE, 
-			HelpMessage="Enter the path to the environment file.")]
+			HelpMessage="Enter the path to the zones file.")]
 		[Alias("p")]
 		[String]
-		$env_file_path = ".\Environment_Files\env_file"
+		$env_file_path = ".\Zones_Files\zones_file3"
 	)
+	
+	[string[]]$zonesArray = Get-Content -Path $env_file_path
+	
+	
+	
+	
+	for ($i = 1 ; $i -lt $number; $i++) {
+	
+		$scriptBlock = {
+		
+		}
+		
+	}
 	
 	
 }
