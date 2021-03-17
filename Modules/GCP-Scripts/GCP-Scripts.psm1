@@ -93,13 +93,7 @@ function Start-VM {
 			HelpMessage="Enter the path to the environment file.")]
 		[Alias("p")]
 		[String]
-		$env_file_path = ".\Environment_Files",
-		
-		[Parameter(Mandatory=$FALSE, 
-			HelpMessage="Enter the environment file name.")]
-		[Alias("e")]
-		[String]
-		$env_file = "env_file"
+		$env_file_path = ".\Environment_Files\env_file"
 	)
 	
 	gcloud compute --project "leaderless-zookeeper" instances create-with-container "zook$('{0:d3}' -f $number)" `
@@ -122,13 +116,7 @@ function Update-VM {
 			HelpMessage="Enter the path to the environment file.")]
 		[Alias("p")]
 		[String]
-		$env_file_path = ".\Environment_Files",
-		
-		[Parameter(Mandatory=$FALSE, 
-			HelpMessage="Enter the environment file name.")]
-		[Alias("e")]
-		[String]
-		$env_file = "env_file"
+		$env_file_path = ".\Environment_Files\env_file"
 	)
 	
 	gcloud compute --project "leaderless-zookeeper" instances update-container "zook$('{0:d3}' -f $number)" `
@@ -136,10 +124,10 @@ function Update-VM {
 }
 
 
-function Update-VM {
+function start-many {
 	Param (
 		[Parameter(Mandatory=$TRUE, 
-			HelpMessage="Enter a number of machines.")] 
+			HelpMessage="Enter a number of machines to create.")] 
 		[Alias("n")]
 		[int]
 		$number,
@@ -148,15 +136,8 @@ function Update-VM {
 			HelpMessage="Enter the path to the environment file.")]
 		[Alias("p")]
 		[String]
-		$env_file_path = ".\Environment_Files",
-		
-		[Parameter(Mandatory=$FALSE, 
-			HelpMessage="Enter the environment file name.")]
-		[Alias("e")]
-		[String]
-		$env_file = "env_file"
+		$env_file_path = ".\Environment_Files\env_file"
 	)
 	
-	gcloud compute --project "leaderless-zookeeper" instances update-container "zook$('{0:d3}' -f $number)" `
-	--container-env=ZOO_MY_ID=$number --container-env-file="$($env_file_path)\$env_file"
+	
 }
