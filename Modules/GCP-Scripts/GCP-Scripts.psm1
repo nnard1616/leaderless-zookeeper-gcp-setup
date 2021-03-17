@@ -127,7 +127,7 @@ function prep-env {
 		[Parameter(Mandatory=$TRUE, 
 			HelpMessage="Enter a Zones File path")]
 		[Alias("z")]
-		[String[]]
+		[String]
 		$zones_file_path
 	)
 	
@@ -171,13 +171,13 @@ function start-many {
 	prep-env $number $zones_file_path
 	
 	$scriptBlock = { 
-		param($n, $s, $z)
-		Write-Host $n $s $z
-		Start-VM $n $s $z
+		param($n, $z)
+		Write-Host $n $z
+		Start-VM $n $z
 	}
 	
 	1..$number | ForEach-Object {
-		Start-Job -ScriptBlock $scriptBlock -ArgumentList  $_, $number, $zones[$($_-1)]
+		Start-Job -ScriptBlock $scriptBlock -ArgumentList  $_, $zones[$($_-1)]
 	}
 	
 	get-job
