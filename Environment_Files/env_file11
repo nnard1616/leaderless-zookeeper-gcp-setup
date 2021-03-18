@@ -2,4 +2,4 @@ ZOO_TICK_TIME=2000
 ZOO_INIT_LIMIT=60
 ZOO_SYNC_LIMIT=60
 ZOO_CFG_EXTRA=electionPortBindRetry=0
-ZOO_SERVERS=server.1=zook001:2888:3888 server.2=zook002:2888:3888 server.3=zook003:2888:3888 server.4=zook004:2888:3888 server.5=zook005:2888:3888 server.6=zook006:2888:3888 server.7=zook007:2888:3888 server.8=zook008:2888:3888 server.9=zook009:2888:3888 server.10=zook010:2888:3888 server.11=zook011:2888:3888
+ZOO_SERVERS=server.1=zook001:2888:3888;2181 server.2=zook002:2888:3888;2181 server.3=zook003:2888:3888;2181 server.4=zook004:2888:3888;2181 server.5=zook005:2888:3888;2181 server.6=zook006:2888:3888;2181 server.7=zook007:2888:3888;2181 server.8=zook008:2888:3888;2181 server.9=zook009:2888:3888;2181 server.10=zook010:2888:3888;2181 server.11=zook011:2888:3888;2181
