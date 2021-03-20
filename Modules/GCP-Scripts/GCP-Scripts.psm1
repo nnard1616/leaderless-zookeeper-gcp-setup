@@ -1,7 +1,7 @@
 
 
 
-function Start-VM {
+function Start-Server {
 	Param (
 		[Parameter(Mandatory=$TRUE, 
 			HelpMessage="Enter an integer to identify the vm.")] 
@@ -173,7 +173,7 @@ function start-many {
 	$scriptBlock = { 
 		param($n, $z)
 		Write-Host $n $z
-		Start-VM $n $z
+		Start-Server $n $z
 	}
 	
 	1..$number | ForEach-Object {
