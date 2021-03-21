@@ -399,7 +399,7 @@ function YCSB-Load-Local {
 		[String]
 		$workload = "workloadb"
 	)
-	.\YCSB\YCSB-master\bin\ycsb.bat load zookeeper -s -P ".\YCSB\YCSB-master\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$record_count" > loadOutput.txt
+	.\YCSB\YCSB-master\bin\ycsb.bat load zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$record_count" > loadOutput.txt
 }
 
 function YCSB-Run-Local {
@@ -416,5 +416,5 @@ function YCSB-Run-Local {
 		[String]
 		$workload = "workloadb"
 	)
-	.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\YCSB-master\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$record_count" > runOutput.txt
+	.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$record_count" > runOutput.txt
 }
