@@ -385,3 +385,19 @@ function Add-Server {
 
 }
 
+function YCSB-Load-Local {
+	Param (
+		[Parameter(Mandatory=$TRUE, HelpMessage="Enter target host:port")]
+		[String]
+		$target_host,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter record count")]
+		[int]
+		$record_count = 100,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Workload")]
+		[String]
+		$workload = "workloadb"
+	)
+	.\YCSB\YCSB-master\bin\ycsb.bat load zookeeper -s -P ".\YCSB\YCSB-master\workloads\$workload" -p zookeeper.connectString="$target_host/benchmark" -p recordcount="$record_count"
+}
