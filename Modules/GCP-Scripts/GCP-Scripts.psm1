@@ -399,5 +399,5 @@ function YCSB-Load-Local {
 		[String]
 		$workload = "workloadb"
 	)
-	.\YCSB\YCSB-master\bin\ycsb.bat load zookeeper -s -P ".\YCSB\YCSB-master\workloads\$workload" -p zookeeper.connectString="$target_host/benchmark" -p recordcount="$record_count"
+	.\YCSB\YCSB-master\bin\ycsb.bat load zookeeper -s -P ".\YCSB\YCSB-master\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$record_count"
 }
