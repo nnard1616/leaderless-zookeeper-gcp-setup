@@ -96,8 +96,9 @@ function Start-Server {
 	gcloud compute --project "leaderless-zookeeper" instances create-with-container "zook$('{0:d3}' -f $number)" `
 	--container-image "docker.io/zookeeper:3.6.2" --zone $zone --machine-type "n1-standard-2" `
 	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
-	--scopes=default --tags "http-server" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
-	--boot-disk-type "pd-standard" --boot-disk-device-name "zook$('{0:d3}' -f $number)" --container-env=ZOO_MY_ID=$number --container-env-file=$env_file_path
+	--scopes=default --tags "zook-server" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
+	--boot-disk-type "pd-standard" --boot-disk-device-name "zook$('{0:d3}' -f $number)" --container-env=ZOO_MY_ID=$number `
+	--container-env-file=$env_file_path
 }
 
 function Update-VM {
@@ -106,13 +107,54 @@ function Update-VM {
 			HelpMessage="Enter an integer to identify the vm.")]
 		[Alias("n")]
 		[int]
-		$number
+		$number,
+		
+		[Parameter(Mandatory=$TRUE,
+			HelpMessage="Enter zone to identify the vm.")]
+		[Alias("z")]
+		[string]
+		$zone
 	)
 
 	$env_file_path = ".\Environment_Files\env_file"
 
 	gcloud compute --project "leaderless-zookeeper" instances update-container "zook$('{0:d3}' -f $number)" `
-	--container-env=ZOO_MY_ID=$number  --container-env-file=$env_file_path
+	--container-env=ZOO_MY_ID=$number  --container-env-file=$env_file_path --zone=$zone
+}
+
+function Update-Servers {
+	
+	$existing_server_count = $(gcloud compute instances list --filter="tags:zook-server" | measure-object -line).Lines - 1
+	
+	$zones_file_path = ".\Zones_Files\zones_file$existing_server_count"
+	
+	[string[]]$zones = Get-Content -Path $zones_file_path
+	
+	if ($existing_server_count -ne $zones.length) {
+		echo "ERROR: Update-Servers: there is an unexpected number of active servers."
+		return
+	}
+	
+	
+	$scriptBlock = {
+		param($n, $z)
+		Write-Host $n $z
+		Update-VM $n $z
+	}
+
+	1..$existing_server_count | ForEach-Object {
+		Start-Job -ScriptBlock $scriptBlock -ArgumentList  $_, $zones[$($_-1)]
+	}
+
+
+	get-job
+
+	While (Get-Job -State "Running")
+	{
+	  Start-Sleep 5
+	}
+
+	Get-Job | % { Receive-Job $_.Id; Remove-Job $_.Id }
 }
 
 function prep-env {
@@ -163,8 +205,7 @@ function start-many {
 		$number = 3
 	)
 	$zones_file_path = ".\Zones_Files\zones_file$number"
-
-	$nums = 0..$($number-1)
+	
 	[string[]]$zones = Get-Content -Path $zones_file_path
 
 	prep-env $number $zones_file_path
@@ -293,6 +334,54 @@ function Start-Client {
 	gcloud compute --project "leaderless-zookeeper" instances create-with-container "zook-client$('{0:d3}' -f $number)" `
 	--container-image "docker.io/zookeeper:3.6.2" --zone $zone --machine-type "n1-standard-2" `
 	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
-	--scopes=default --tags "http-server" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
+	--scopes=default --tags "zook-client" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
 	--boot-disk-type "pd-standard" --boot-disk-device-name "zook-client$('{0:d3}' -f $number)"
 }
+
+function Add-Server {
+	Param (
+		[Parameter(Mandatory=$FALSE,
+			HelpMessage="Enter a number of machines to create.")]
+		[Alias("n")]
+		[int]
+		$number = 1
+	)
+	
+	$existing_server_count = $(gcloud compute instances list --filter="tags:zook-server" | measure-object -line).Lines - 1
+	
+	if ($existing_server_count -lt 3) {
+		echo "ERROR: make sure there's at least 3 servers already running"
+		return
+	}
+	
+	$new_cluster_size = $existing_server_count + $number
+	
+	$zones_file_path = ".\Zones_Files\zones_file$new_cluster_size"
+	
+	[string[]]$zones = Get-Content -Path $zones_file_path
+
+	prep-env $new_cluster_size $zones_file_path
+	
+	Update-Servers
+
+	$scriptBlock = {
+		param($n, $z)
+		Write-Host $n $z
+		Start-Server $n $z
+	}
+
+	($existing_server_count + 1)..$new_cluster_size | ForEach-Object {
+		Start-Job -ScriptBlock $scriptBlock -ArgumentList  $_, $zones[$($_-1)]
+	}
+
+	get-job
+
+	While (Get-Job -State "Running")
+	{
+	  Start-Sleep 5
+	}
+
+	Get-Job | % { Receive-Job $_.Id; Remove-Job $_.Id }
+
+}
+
