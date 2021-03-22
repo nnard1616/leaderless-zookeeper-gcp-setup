@@ -346,7 +346,7 @@ function Add-Server {
 		[int]
 		$number = 1
 	)
-	
+
 	$existing_server_count = $(gcloud compute instances list --filter="tags:zook-server" | measure-object -line).Lines - 1
 	
 	if ($existing_server_count -lt 3) {
@@ -393,13 +393,20 @@ function YCSB-Load-Local {
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter record count")]
 		[int]
-		$record_count = 100,
+		$recordcount = 100,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter opeation count")]
+		[String]
+		$operationcount = 100,
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Workload")]
 		[String]
-		$workload = "workloadb"
+		$workload = "workload_80_20"
 	)
-	.\YCSB\YCSB-master\bin\ycsb.bat load zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$record_count" > loadOutput.txt
+
+	$existing_server_count = $(gcloud compute instances list --filter="tags:zook-server" | measure-object -line).Lines - 1
+
+	.\YCSB\YCSB-master\bin\ycsb.bat load zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > .\YCSB\outputs\load-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
 }
 
 function YCSB-Run-Local {
@@ -410,11 +417,18 @@ function YCSB-Run-Local {
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter record count")]
 		[int]
-		$record_count = 100,
+		$recordcount = 100,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter opeation count")]
+		[String]
+		$operationcount = 100,
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Workload")]
 		[String]
-		$workload = "workloadb"
+		$workload = "workload_80_20"
 	)
-	.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$record_count" > runOutput.txt
+
+	$existing_server_count = $(gcloud compute instances list --filter="tags:zook-server" | measure-object -line).Lines - 1
+
+	.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > .\YCSB\outputs\run-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
 }
