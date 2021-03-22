@@ -237,10 +237,51 @@ function Delete-VM {
 			HelpMessage="Enter the name of vm to delete, as it appears on GCP.")]
 		[Alias("n")]
 		[String]
-		$name
+		$name,
+		
+		[Parameter(Mandatory=$TRUE,
+			HelpMessage="Enter zone to identify the vm.")]
+		[Alias("z")]
+		[string]
+		$zone
 	)
 
-	gcloud compute instances delete $name
+	gcloud compute instances delete $name --zone=$zone
+}
+
+function Delete-Servers {
+	
+	$existing_server_count = $(gcloud compute instances list --filter="tags:zook-server" | measure-object -line).Lines - 1
+	
+	$zones_file_path = ".\Zones_Files\zones_file$existing_server_count"
+	
+	[string[]]$zones = Get-Content -Path $zones_file_path
+	
+	if ($existing_server_count -ne $zones.length) {
+		echo "ERROR: Delete-Servers: there is an unexpected number of active servers."
+		return
+	}
+	
+	
+	$scriptBlock = {
+		param($n, $z)
+		Write-Host $n $z
+		Delete-VM $n $z
+	}
+
+	for ($n = 1; $n -le $existing_server_count; $n++) {
+		Start-Job -ScriptBlock $scriptBlock -ArgumentList  "zook$('{0:d3}' -f $n)", $zones[$($n-1)]
+	}
+
+
+	get-job
+
+	While (Get-Job -State "Running")
+	{
+	  Start-Sleep 5
+	}
+
+	Get-Job | % { Receive-Job $_.Id; Remove-Job $_.Id }
 }
 
 function Start-Client {
@@ -396,7 +437,7 @@ function YCSB-Load-Local {
 		$recordcount = 100,
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter opeation count")]
-		[String]
+		[int]
 		$operationcount = 100,
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Workload")]
@@ -420,7 +461,7 @@ function YCSB-Run-Local {
 		$recordcount = 100,
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter opeation count")]
-		[String]
+		[int]
 		$operationcount = 100,
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Workload")]
@@ -431,4 +472,55 @@ function YCSB-Run-Local {
 	$existing_server_count = $(gcloud compute instances list --filter="tags:zook-server" | measure-object -line).Lines - 1
 
 	.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > .\YCSB\outputs\run-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+}
+
+# Assumes no vms are up 
+function YCSB-Test-All {
+
+	Param (
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter record count")]
+		[int]
+		$recordcount = 100,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter opeation count")]
+		[int]
+		$operationcount = 100
+	)
+
+	# Iterate from n = 3 to 13
+	for ($n = 3; $n -le 13; $n++) {
+		echo "Starting ensemble of $n..."
+	
+		# Startup the cluster of size n
+		start-many $n
+		
+		# YCSB-Load-Local 
+		$running_machines = gcloud compute instances list --format="table(name,EXTERNAL_IP,status)" --filter="tags:zook-server" --sort-by="name"
+		$host_ip = $running_machines[1] | cut -d " " -f 3
+		
+		echo "Host ip: $host_ip"
+		echo $running_machines
+		
+		echo "Waiting for 60 seconds..."
+		Start-Sleep 60
+		
+		YCSB-Load-Local $host_ip $recordcount $operationcount
+		
+		$workloads = (ls .\YCSB\workloads\*).Name
+		
+		# Iterate over all workloads 
+		foreach ($w in $workloads) {
+		
+			# YCSB-Run-Local 
+			YCSB-Run-Local $host_ip $recordcount $operationcount $w
+			
+		}
+		
+		echo "Deleting ensemble of $n..."
+		
+		# Delete VMs
+		Delete-Servers
+		echo "Waiting for 60 seconds..."
+		Start-Sleep 60
+	}
 }

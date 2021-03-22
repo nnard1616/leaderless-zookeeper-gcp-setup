@@ -4,7 +4,7 @@ workload=site.ycsb.workloads.CoreWorkload
 
 readallfields=true
 
-readproportion=0.100
+readproportion=1
 updateproportion=0
 scanproportion=0
 insertproportion=0
