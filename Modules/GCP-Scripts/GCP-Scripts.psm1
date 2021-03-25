@@ -246,22 +246,14 @@ function Delete-VM {
 		$zone
 	)
 
-	gcloud compute instances delete $name --zone=$zone
+	gcloud compute instances delete $name --zone=$zone --quiet
 }
 
 function Delete-Servers {
-	
-	$existing_server_count = $(gcloud compute instances list --filter="tags:zook-server" | measure-object -line).Lines - 1
-	
-	$zones_file_path = ".\Zones_Files\zones_file$existing_server_count"
-	
-	[string[]]$zones = Get-Content -Path $zones_file_path
-	
-	if ($existing_server_count -ne $zones.length) {
-		echo "ERROR: Delete-Servers: there is an unexpected number of active servers."
-		return
-	}
-	
+
+	$vms = Create-VMTable
+
+	$existing_server_count = $vms.count
 	
 	$scriptBlock = {
 		param($n, $z)
@@ -270,9 +262,8 @@ function Delete-Servers {
 	}
 
 	for ($n = 1; $n -le $existing_server_count; $n++) {
-		Start-Job -ScriptBlock $scriptBlock -ArgumentList  "zook$('{0:d3}' -f $n)", $zones[$($n-1)]
+		Start-Job -ScriptBlock $scriptBlock -ArgumentList  $vms[$n].NAME, $vms[$n].ZONE
 	}
-
 
 	get-job
 
@@ -474,6 +465,8 @@ function YCSB-Run-Local {
 	.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > .\YCSB\outputs\run-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
 }
 
+
+
 # Assumes no vms are up 
 function YCSB-Test-All {
 
@@ -488,15 +481,15 @@ function YCSB-Test-All {
 	)
 
 	# Iterate from n = 3 to 13
-	for ($n = 3; $n -le 13; $n++) {
+	for ($n = 3; $n -le 12; $n++) {
 		echo "Starting ensemble of $n..."
 	
 		# Startup the cluster of size n
 		start-many $n
 		
-		# YCSB-Load-Local 
-		$running_machines = gcloud compute instances list --format="table(name,EXTERNAL_IP,status)" --filter="tags:zook-server" --sort-by="name"
-		$host_ip = $running_machines[1] | cut -d " " -f 3
+		# YCSB-Load-Local
+		$vms = Create-VMTable
+		$host_ip = $vms[1].EXTERNAL_IP
 		
 		echo "Host ip: $host_ip"
 		echo $running_machines
@@ -523,4 +516,33 @@ function YCSB-Test-All {
 		echo "Waiting for 60 seconds..."
 		Start-Sleep 60
 	}
+}
+
+
+function Create-VMTable {
+
+	$table = gcloud compute instances list --sort-by="name" --filter="tags:zook-server" `
+		--format="table(NAME,ZONE,MACHINE_TYPE,INTERNAL_IP,EXTERNAL_IP,STATUS)"
+
+	$headers = $($table[0] | tr -s ' ').split()
+
+	$hash = @{}
+
+	for ($i = 1; $i -lt $table.length; $i++) {
+		$row = $($table[$i] | tr -s ' ' ).split()
+		$rowmap = @{
+					$headers[0] = $row[0];
+					$headers[1] = $row[1];
+					$headers[2] = $row[2];
+					$headers[3] = $row[3];
+					$headers[4] = $row[4];
+					$headers[5] = $row[5]
+		}
+
+		$hash[$i] = $rowmap
+	}
+
+	return $hash
+
+
 }
