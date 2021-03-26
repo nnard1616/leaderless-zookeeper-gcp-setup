@@ -425,11 +425,11 @@ function YCSB-Load-Local {
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter record count")]
 		[int]
-		$recordcount = 100,
+		$recordcount = 1000,
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter opeation count")]
 		[int]
-		$operationcount = 100,
+		$operationcount = 1000,
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Workload")]
 		[String]
@@ -449,11 +449,11 @@ function YCSB-Run-Local {
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter record count")]
 		[int]
-		$recordcount = 100,
+		$recordcount = 1000,
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter opeation count")]
 		[int]
-		$operationcount = 100,
+		$operationcount = 1000,
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Workload")]
 		[String]
@@ -465,19 +465,48 @@ function YCSB-Run-Local {
 	.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > .\YCSB\outputs\run-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
 }
 
+function YCSB-Run-Local-Cluster {
+	Param (
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter record count")]
+		[int]
+		$recordcount = 1000,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter opeation count")]
+		[int]
+		$operationcount = 1000,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Workload")]
+		[String]
+		$workload = "workload_80_20"
+	)
+
+	$vms = Create-VMTable
+
+	# empty array
+	$ipsArray = @()
+
+	1..$vms.count | foreach-object {$ipsArray = $ipsArray + ($vms[$_].EXTERNAL_IP + ":2181" )}
+
+	$connectString = $ipsArray -Join ","
+
+	$existing_server_count = $vms.count
+
+	.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$connectString" -p recordcount="$recordcount" > .\YCSB\outputs\run-cluster-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+}
+
 
 
 # Assumes no vms are up 
-function YCSB-Test-All {
+function YCSB-Test-All-Single-Connection {
 
 	Param (
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter record count")]
 		[int]
-		$recordcount = 100,
+		$recordcount = 1000,
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter opeation count")]
 		[int]
-		$operationcount = 100
+		$operationcount = 1000
 	)
 
 	# Iterate from n = 3 to 13
@@ -511,6 +540,58 @@ function YCSB-Test-All {
 		
 		echo "Deleting ensemble of $n..."
 		
+		# Delete VMs
+		Delete-Servers
+		echo "Waiting for 60 seconds..."
+		Start-Sleep 60
+	}
+}
+
+
+# Assumes no vms are up
+function YCSB-Test-All-Cluster {
+
+	Param (
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter record count")]
+		[int]
+		$recordcount = 1000,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter opeation count")]
+		[int]
+		$operationcount = 1000
+	)
+
+	# Iterate from n = 3 to 13
+	for ($n = 3; $n -le 12; $n++) {
+		echo "Starting ensemble of $n..."
+
+		# Startup the cluster of size n
+		start-many $n
+
+		# YCSB-Load-Local
+		$vms = Create-VMTable
+		$host_ip = $vms[1].EXTERNAL_IP
+
+		echo "Host ip: $host_ip"
+		echo $running_machines
+
+		echo "Waiting for 60 seconds..."
+		Start-Sleep 60
+
+		YCSB-Load-Local $host_ip $recordcount $operationcount
+
+		$workloads = (ls .\YCSB\workloads\*).Name
+
+		# Iterate over all workloads
+		foreach ($w in $workloads) {
+
+			# YCSB-Run-Local
+			YCSB-Run-Local-Cluster $recordcount $operationcount $w
+
+		}
+
+		echo "Deleting ensemble of $n..."
+
 		# Delete VMs
 		Delete-Servers
 		echo "Waiting for 60 seconds..."
