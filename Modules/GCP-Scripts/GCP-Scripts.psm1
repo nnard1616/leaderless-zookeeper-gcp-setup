@@ -108,7 +108,7 @@ function Update-VM {
 		[Alias("n")]
 		[int]
 		$number,
-		
+
 		[Parameter(Mandatory=$TRUE,
 			HelpMessage="Enter zone to identify the vm.")]
 		[Alias("z")]
@@ -123,19 +123,19 @@ function Update-VM {
 }
 
 function Update-Servers {
-	
+
 	$existing_server_count = $(gcloud compute instances list --filter="tags:zook-server" | measure-object -line).Lines - 1
-	
+
 	$zones_file_path = ".\Zones_Files\zones_file$existing_server_count"
-	
+
 	[string[]]$zones = Get-Content -Path $zones_file_path
-	
+
 	if ($existing_server_count -ne $zones.length) {
 		echo "ERROR: Update-Servers: there is an unexpected number of active servers."
 		return
 	}
-	
-	
+
+
 	$scriptBlock = {
 		param($n, $z)
 		Write-Host $n $z
@@ -205,7 +205,7 @@ function start-many {
 		$number = 3
 	)
 	$zones_file_path = ".\Zones_Files\zones_file$number"
-	
+
 	[string[]]$zones = Get-Content -Path $zones_file_path
 
 	prep-env $number $zones_file_path
@@ -238,7 +238,7 @@ function Delete-VM {
 		[Alias("n")]
 		[String]
 		$name,
-		
+
 		[Parameter(Mandatory=$TRUE,
 			HelpMessage="Enter zone to identify the vm.")]
 		[Alias("z")]
@@ -254,7 +254,7 @@ function Delete-Servers {
 	$vms = Create-VMTable
 
 	$existing_server_count = $vms.count
-	
+
 	$scriptBlock = {
 		param($n, $z)
 		Write-Host $n $z
@@ -380,20 +380,20 @@ function Add-Server {
 	)
 
 	$existing_server_count = $(gcloud compute instances list --filter="tags:zook-server" | measure-object -line).Lines - 1
-	
+
 	if ($existing_server_count -lt 3) {
 		echo "ERROR: make sure there's at least 3 servers already running"
 		return
 	}
-	
+
 	$new_cluster_size = $existing_server_count + $number
-	
+
 	$zones_file_path = ".\Zones_Files\zones_file$new_cluster_size"
-	
+
 	[string[]]$zones = Get-Content -Path $zones_file_path
 
 	prep-env $new_cluster_size $zones_file_path
-	
+
 	Update-Servers
 
 	$scriptBlock = {
@@ -496,7 +496,7 @@ function YCSB-Run-Local-Cluster {
 
 
 
-# Assumes no vms are up 
+# Assumes no vms are up
 function YCSB-Test-All-Single-Connection {
 
 	Param (
@@ -512,34 +512,34 @@ function YCSB-Test-All-Single-Connection {
 	# Iterate from n = 3 to 13
 	for ($n = 3; $n -le 12; $n++) {
 		echo "Starting ensemble of $n..."
-	
+
 		# Startup the cluster of size n
 		start-many $n
-		
+
 		# YCSB-Load-Local
 		$vms = Create-VMTable
 		$host_ip = $vms[1].EXTERNAL_IP
-		
+
 		echo "Host ip: $host_ip"
 		echo $running_machines
-		
+
 		echo "Waiting for 60 seconds..."
 		Start-Sleep 60
-		
+
 		YCSB-Load-Local $host_ip $recordcount $operationcount
-		
+
 		$workloads = (ls .\YCSB\workloads\*).Name
-		
-		# Iterate over all workloads 
+
+		# Iterate over all workloads
 		foreach ($w in $workloads) {
-		
-			# YCSB-Run-Local 
+
+			# YCSB-Run-Local
 			YCSB-Run-Local $host_ip $recordcount $operationcount $w
-			
+
 		}
-		
+
 		echo "Deleting ensemble of $n..."
-		
+
 		# Delete VMs
 		Delete-Servers
 		echo "Waiting for 60 seconds..."
@@ -626,4 +626,29 @@ function Create-VMTable {
 	return $hash
 
 
+}
+
+function Smoketest-Run-Cluster {
+	Param (
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode count")]
+		[int]
+		$znodecount = 100,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode size")]
+		[int]
+		$znodesize = 100,
+	)
+
+	$vms = Create-VMTable
+
+	# empty array
+	$ipsArray = @()
+
+	1..$vms.count | foreach-object {$ipsArray = $ipsArray + ($vms[$_].EXTERNAL_IP + ":2181" )}
+
+	$connectString = $ipsArray -Join ","
+
+	$existing_server_count = $vms.count
+
+	.\zk-latencies.py --servers "$connectString" --znode_count=$znodecount --znode_size=$znodesize --synchronous > "zk-latency-output.txt"
 }
