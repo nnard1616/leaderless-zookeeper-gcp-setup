@@ -241,11 +241,11 @@ function start-many {
 	$OS = $PSVersionTable.OS | cut -d ' ' -f1
 	$zones_file_path = ""
 	if ($OS -eq 'Microsoft') {
-		$zones_file_path = ".\Zones_Files\zones_file$existing_server_count"
+		$zones_file_path = ".\Zones_Files\zones_file$number"
 	}
 
 	if ($OS -eq 'Linux') {
-		$zones_file_path = "./Zones_Files/zones_file$existing_server_count"
+		$zones_file_path = "./Zones_Files/zones_file$number"
 	}
 
 	[string[]]$zones = Get-Content -Path $zones_file_path
