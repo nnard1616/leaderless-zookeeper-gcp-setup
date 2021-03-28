@@ -678,6 +678,7 @@ function Create-VMTable {
 
 }
 
+#run on linux
 function Smoketest-Run-Cluster {
 	Param (
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode count")]
@@ -700,7 +701,7 @@ function Smoketest-Run-Cluster {
 
 	$existing_server_count = $vms.count
 
-	python ..\zk-smoketest\zk-latencies.py --servers "$connectString" --znode_count=$znodecount --znode_size=$znodesize --synchronous > "zk-latency-output-$existing_server_count.txt"
+	python ../zk-smoketest/zk-latencies.py --servers "$connectString" --znode_count=$znodecount --znode_size=$znodesize --synchronous > "zk-latency-output-$existing_server_count.txt"
 }
 
 
