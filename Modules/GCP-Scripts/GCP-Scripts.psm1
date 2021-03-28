@@ -636,7 +636,7 @@ function Smoketest-Run-Cluster {
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode size")]
 		[int]
-		$znodesize = 100,
+		$znodesize = 100
 	)
 
 	$vms = Create-VMTable
@@ -650,5 +650,39 @@ function Smoketest-Run-Cluster {
 
 	$existing_server_count = $vms.count
 
-	.\zk-latencies.py --servers "$connectString" --znode_count=$znodecount --znode_size=$znodesize --synchronous > "zk-latency-output.txt"
+	python ..\zk-smoketest\zk-latencies.py --servers "$connectString" --znode_count=$znodecount --znode_size=$znodesize --synchronous > "zk-latency-output-$existing_server_count.txt"
+}
+
+
+function Smoketest-All {
+
+	Param (
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode count")]
+		[int]
+		$znodecount = 100,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode size")]
+		[int]
+		$znodesize = 100
+	)
+
+	# Iterate from n = 3 to 13
+	for ($n = 3; $n -le 12; $n++) {
+		echo "Starting ensemble of $n..."
+
+		# Startup the cluster of size n
+		start-many $n
+
+		echo "Waiting for 60 seconds..."
+		Start-Sleep 60
+
+		Smoketest-Run-Cluster $znodecount $znodesize
+
+		echo "Deleting ensemble of $n..."
+
+		# Delete VMs
+		Delete-Servers
+		echo "Waiting for 60 seconds..."
+		Start-Sleep 60
+	}
 }
