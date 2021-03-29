@@ -752,7 +752,7 @@ function Smoketest-All {
 	)
 
 	# Iterate from n = 3 to 13
-	for ($n = 3; $n -le 12; $n++) {
+	for ($n = 6; $n -le 12; $n++) {
 		echo "Starting ensemble of $n..."
 
 		# Startup the cluster of size n
