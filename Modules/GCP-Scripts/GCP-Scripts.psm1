@@ -91,7 +91,15 @@ function Start-Server {
 
 	)
 
-	$env_file_path = ".\Environment_Files\env_file"
+	$OS = $PSVersionTable.OS | cut -d ' ' -f1
+	$env_file_path = ""
+	if ($OS -eq 'Microsoft') {
+		$env_file_path = ".\Environment_Files\env_file"
+	}
+
+	if ($OS -eq 'Linux') {
+		$env_file_path = "./Environment_Files/env_file"
+	}
 
 	gcloud compute --project "leaderless-zookeeper" instances create-with-container "zook$('{0:d3}' -f $number)" `
 	--container-image "docker.io/zookeeper:3.6.2" --zone $zone --machine-type "n1-standard-2" `
@@ -116,7 +124,15 @@ function Update-VM {
 		$zone
 	)
 
-	$env_file_path = ".\Environment_Files\env_file"
+	$OS = $PSVersionTable.OS | cut -d ' ' -f1
+	$env_file_path = ""
+	if ($OS -eq 'Microsoft') {
+		$env_file_path = ".\Environment_Files\env_file"
+	}
+
+	if ($OS -eq 'Linux') {
+		$env_file_path = "./Environment_Files/env_file"
+	}
 
 	gcloud compute --project "leaderless-zookeeper" instances update-container "zook$('{0:d3}' -f $number)" `
 	--container-env=ZOO_MY_ID=$number  --container-env-file=$env_file_path --zone=$zone
@@ -126,7 +142,15 @@ function Update-Servers {
 
 	$existing_server_count = $(gcloud compute instances list --filter="tags:zook-server" | measure-object -line).Lines - 1
 
-	$zones_file_path = ".\Zones_Files\zones_file$existing_server_count"
+	$OS = $PSVersionTable.OS | cut -d ' ' -f1
+	$zones_file_path = ""
+	if ($OS -eq 'Microsoft') {
+		$zones_file_path = ".\Zones_Files\zones_file$existing_server_count"
+	}
+
+	if ($OS -eq 'Linux') {
+		$zones_file_path = "./Zones_Files/zones_file$existing_server_count"
+	}
 
 	[string[]]$zones = Get-Content -Path $zones_file_path
 
@@ -179,10 +203,20 @@ function prep-env {
 		return
 	}
 
-	$env_file_template_path = ".\Environment_Files\env_file$number"
-	$env_file_path = ".\Environment_Files\env_file"
+	$OS = $PSVersionTable.OS | cut -d ' ' -f1
+	$env_file_template_path = ""
+	$env_file_path = ""
+	if ($OS -eq 'Microsoft') {
+		$env_file_template_path = ".\Environment_Files\env_file$number"
+		$env_file_path = ".\Environment_Files\env_file"
+	}
 
-	cp -Force $env_file_template_path $env_file_path
+	if ($OS -eq 'Linux') {
+		$env_file_template_path = "./Environment_Files/env_file$number"
+		$env_file_path = "./Environment_Files/env_file"
+	}
+
+	Copy-Item -Force $env_file_template_path $env_file_path
 
 
 
@@ -204,7 +238,15 @@ function start-many {
 		[int]
 		$number = 3
 	)
-	$zones_file_path = ".\Zones_Files\zones_file$number"
+	$OS = $PSVersionTable.OS | cut -d ' ' -f1
+	$zones_file_path = ""
+	if ($OS -eq 'Microsoft') {
+		$zones_file_path = ".\Zones_Files\zones_file$number"
+	}
+
+	if ($OS -eq 'Linux') {
+		$zones_file_path = "./Zones_Files/zones_file$number"
+	}
 
 	[string[]]$zones = Get-Content -Path $zones_file_path
 
@@ -239,11 +281,11 @@ function Delete-VM {
 		[String]
 		$name,
 
-		[Parameter(Mandatory=$TRUE,
+		[Parameter(Mandatory=$FALSE,
 			HelpMessage="Enter zone to identify the vm.")]
 		[Alias("z")]
 		[string]
-		$zone
+		$zone = 'us-west1-a'
 	)
 
 	gcloud compute instances delete $name --zone=$zone --quiet
@@ -388,7 +430,15 @@ function Add-Server {
 
 	$new_cluster_size = $existing_server_count + $number
 
-	$zones_file_path = ".\Zones_Files\zones_file$new_cluster_size"
+	$OS = $PSVersionTable.OS | cut -d ' ' -f1
+	$zones_file_path = ""
+	if ($OS -eq 'Microsoft') {
+		$zones_file_path = ".\Zones_Files\zones_file$new_cluster_size"
+	}
+
+	if ($OS -eq 'Linux') {
+		$zones_file_path = "./Zones_Files/zones_file$new_cluster_size"
+	}
 
 	[string[]]$zones = Get-Content -Path $zones_file_path
 
@@ -435,10 +485,21 @@ function YCSB-Load-Local {
 		[String]
 		$workload = "workload_80_20"
 	)
+	$OS = $PSVersionTable.OS | cut -d ' ' -f1
 
 	$existing_server_count = $(gcloud compute instances list --filter="tags:zook-server" | measure-object -line).Lines - 1
 
-	.\YCSB\YCSB-master\bin\ycsb.bat load zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > .\YCSB\outputs\load-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+	if ($OS -eq 'Microsoft') {
+		.\YCSB\YCSB-master\bin\ycsb.bat load zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > .\YCSB\outputs\load-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+	}
+
+	if ($OS -eq 'Linux') {
+		cd ./YCSB/YCSB-master/
+		./bin/ycsb load zookeeper -s -P "../workloads/$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > ../outputs/load-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+		cd ../..
+	}
+
+
 }
 
 function YCSB-Run-Local {
@@ -460,9 +521,21 @@ function YCSB-Run-Local {
 		$workload = "workload_80_20"
 	)
 
+	$OS = $PSVersionTable.OS | cut -d ' ' -f1
+
 	$existing_server_count = $(gcloud compute instances list --filter="tags:zook-server" | measure-object -line).Lines - 1
 
-	.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > .\YCSB\outputs\run-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+	if ($OS -eq 'Microsoft') {
+		.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > .\YCSB\outputs\run-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+	}
+
+	if ($OS -eq 'Linux') {
+		cd ./YCSB/YCSB-master/
+		./bin/ycsb run zookeeper -s -P "../workloads/$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > ../outputs/run-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+		cd ../..
+	}
+
+
 }
 
 function YCSB-Run-Local-Cluster {
@@ -491,7 +564,17 @@ function YCSB-Run-Local-Cluster {
 
 	$existing_server_count = $vms.count
 
-	.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$connectString" -p recordcount="$recordcount" > .\YCSB\outputs\run-cluster-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+	$OS = $PSVersionTable.OS | cut -d ' ' -f1
+
+	if ($OS -eq 'Microsoft') {
+		.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > .\YCSB\outputs\run-cluster"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+	}
+
+	if ($OS -eq 'Linux') {
+		cd ./YCSB/YCSB-master/
+		./bin/ycsb run zookeeper -s -P "../workloads/$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > ../outputs/run-cluster-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+		cd ../..
+	}
 }
 
 
@@ -528,7 +611,7 @@ function YCSB-Test-All-Single-Connection {
 
 		YCSB-Load-Local $host_ip $recordcount $operationcount
 
-		$workloads = (ls .\YCSB\workloads\*).Name
+		$workloads = (Get-ChildItem .\YCSB\workloads\*).Name
 
 		# Iterate over all workloads
 		foreach ($w in $workloads) {
@@ -573,14 +656,13 @@ function YCSB-Test-All-Cluster {
 		$host_ip = $vms[1].EXTERNAL_IP
 
 		echo "Host ip: $host_ip"
-		echo $running_machines
 
 		echo "Waiting for 60 seconds..."
 		Start-Sleep 60
 
 		YCSB-Load-Local $host_ip $recordcount $operationcount
 
-		$workloads = (ls .\YCSB\workloads\*).Name
+		$workloads = (Get-ChildItem .\YCSB\workloads\*).Name
 
 		# Iterate over all workloads
 		foreach ($w in $workloads) {
@@ -628,6 +710,7 @@ function Create-VMTable {
 
 }
 
+#run on linux
 function Smoketest-Run-Cluster {
 	Param (
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode count")]
@@ -636,7 +719,7 @@ function Smoketest-Run-Cluster {
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode size")]
 		[int]
-		$znodesize = 100,
+		$znodesize = 100
 	)
 
 	$vms = Create-VMTable
@@ -648,7 +731,52 @@ function Smoketest-Run-Cluster {
 
 	$connectString = $ipsArray -Join ","
 
+	echo $connectString
+
 	$existing_server_count = $vms.count
 
-	.\zk-latencies.py --servers "$connectString" --znode_count=$znodecount --znode_size=$znodesize --synchronous > "zk-latency-output.txt"
+	python ../zk-smoketest/zk-latencies.py --servers "$connectString" --znode_count=$znodecount --znode_size=$znodesize --synchronous --verbose > "zk-latency-output-$existing_server_count.txt"
+}
+
+
+function Smoketest-All {
+
+	Param (
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode count")]
+		[int]
+		$znodecount = 100,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode size")]
+		[int]
+		$znodesize = 100
+	)
+
+	# Iterate from n = 3 to 13
+	for ($n = 6; $n -le 12; $n++) {
+		echo "Starting ensemble of $n..."
+
+		# Startup the cluster of size n
+		start-many $n
+
+		# YCSB-Load-Local
+		$vms = Create-VMTable
+		$host_ip = $vms[1].EXTERNAL_IP
+
+		echo "Host ip: $host_ip"
+
+		echo "Waiting for 60 seconds..."
+		Start-Sleep 60
+
+		YCSB-Load-Local $host_ip 1000 1000
+
+		Smoketest-Run-Cluster $znodecount $znodesize
+
+		echo "Deleting ensemble of $n in 60 seconds..."
+		Start-Sleep 60
+
+		# Delete VMs
+		Delete-Servers
+		echo "Waiting for 60 seconds..."
+		Start-Sleep 60
+	}
 }
