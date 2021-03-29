@@ -485,10 +485,19 @@ function YCSB-Load-Local {
 		[String]
 		$workload = "workload_80_20"
 	)
+	$OS = $PSVersionTable.OS | cut -d ' ' -f1
 
 	$existing_server_count = $(gcloud compute instances list --filter="tags:zook-server" | measure-object -line).Lines - 1
 
-	.\YCSB\YCSB-master\bin\ycsb.bat load zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > .\YCSB\outputs\load-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+	if ($OS -eq 'Microsoft') {
+		.\YCSB\YCSB-master\bin\ycsb.bat load zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > .\YCSB\outputs\load-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+	}
+
+	if ($OS -eq 'Linux') {
+		./YCSB/YCSB-master/bin/ycsb.bat load zookeeper -s -P "./YCSB/workloads/$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > ./YCSB/outputs/load-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+	}
+
+
 }
 
 function YCSB-Run-Local {
@@ -510,9 +519,19 @@ function YCSB-Run-Local {
 		$workload = "workload_80_20"
 	)
 
+	$OS = $PSVersionTable.OS | cut -d ' ' -f1
+
 	$existing_server_count = $(gcloud compute instances list --filter="tags:zook-server" | measure-object -line).Lines - 1
 
-	.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > .\YCSB\outputs\run-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+	if ($OS -eq 'Microsoft') {
+		.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > .\YCSB\outputs\run-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+	}
+
+	if ($OS -eq 'Linux') {
+		./YCSB/YCSB-master/bin/ycsb.bat run zookeeper -s -P "./YCSB/workloads/$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > ./YCSB/outputs/run-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+	}
+
+
 }
 
 function YCSB-Run-Local-Cluster {
@@ -541,7 +560,15 @@ function YCSB-Run-Local-Cluster {
 
 	$existing_server_count = $vms.count
 
-	.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$connectString" -p recordcount="$recordcount" > .\YCSB\outputs\run-cluster-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+	$OS = $PSVersionTable.OS | cut -d ' ' -f1
+
+	if ($OS -eq 'Microsoft') {
+		.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > .\YCSB\outputs\run-cluster"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+	}
+
+	if ($OS -eq 'Linux') {
+		./YCSB/YCSB-master/bin/ycsb.bat run zookeeper -s -P "./YCSB/workloads/$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > ./YCSB/outputs/run-cluster-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+	}
 }
 
 
@@ -623,7 +650,6 @@ function YCSB-Test-All-Cluster {
 		$host_ip = $vms[1].EXTERNAL_IP
 
 		echo "Host ip: $host_ip"
-		echo $running_machines
 
 		echo "Waiting for 60 seconds..."
 		Start-Sleep 60
@@ -703,7 +729,7 @@ function Smoketest-Run-Cluster {
 
 	$existing_server_count = $vms.count
 
-	python ../zk-smoketest/zk-latencies.py --servers "$connectString" --znode_count=$znodecount --znode_size=$znodesize --synchronous > "zk-latency-output-$existing_server_count.txt"
+	python ../zk-smoketest/zk-latencies.py --servers "$connectString" --znode_count=$znodecount --znode_size=$znodesize --synchronous --verbose > "zk-latency-output-$existing_server_count.txt"
 }
 
 
@@ -726,113 +752,25 @@ function Smoketest-All {
 		# Startup the cluster of size n
 		start-many $n
 
+		# YCSB-Load-Local
+		$vms = Create-VMTable
+		$host_ip = $vms[1].EXTERNAL_IP
+
+		echo "Host ip: $host_ip"
+
 		echo "Waiting for 60 seconds..."
 		Start-Sleep 60
 
+		YCSB-Load-Local $host_ip 1000 1000
+
 		Smoketest-Run-Cluster $znodecount $znodesize
 
-		echo "Deleting ensemble of $n..."
+		echo "Deleting ensemble of $n in 60 seconds..."
+		Start-Sleep 60
 
 		# Delete VMs
 		Delete-Servers
 		echo "Waiting for 60 seconds..."
 		Start-Sleep 60
 	}
-}
-
-function Start-Smoketest-VM {
-	Param (
-		[Parameter(Mandatory=$FALSE,
-				HelpMessage="Enter an integer to identify the vm.")]
-		[Alias("n")]
-		[int]
-		$number = 1,
-
-		[Parameter(Mandatory=$FALSE,
-				HelpMessage="Enter a zone, run 'gcloud compute zones list' for a listing of possibilities")]
-		[ValidateSet('us-east1-b',
-				'us-east1-c',
-				'us-east1-d',
-				'us-east4-c',
-				'us-east4-b',
-				'us-east4-a',
-				'us-central1-c',
-				'us-central1-a',
-				'us-central1-f',
-				'us-central1-b',
-				'us-west1-b',
-				'us-west1-c',
-				'us-west1-a',
-				'europe-west4-a',
-				'europe-west4-b',
-				'europe-west4-c',
-				'europe-west1-b',
-				'europe-west1-d',
-				'europe-west1-c',
-				'europe-west3-c',
-				'europe-west3-a',
-				'europe-west3-b',
-				'europe-west2-c',
-				'europe-west2-b',
-				'europe-west2-a',
-				'asia-east1-b',
-				'asia-east1-a',
-				'asia-east1-c',
-				'asia-southeast1-b',
-				'asia-southeast1-a',
-				'asia-southeast1-c',
-				'asia-northeast1-b',
-				'asia-northeast1-c',
-				'asia-northeast1-a',
-				'asia-south1-c',
-				'asia-south1-b',
-				'asia-south1-a',
-				'australia-southeast1-b',
-				'australia-southeast1-c',
-				'australia-southeast1-a',
-				'southamerica-east1-b',
-				'southamerica-east1-c',
-				'southamerica-east1-a',
-				'asia-east2-a',
-				'asia-east2-b',
-				'asia-east2-c',
-				'asia-northeast2-a',
-				'asia-northeast2-b',
-				'asia-northeast2-c',
-				'asia-northeast3-a',
-				'asia-northeast3-b',
-				'asia-northeast3-c',
-				'asia-southeast2-a',
-				'asia-southeast2-b',
-				'asia-southeast2-c',
-				'europe-north1-a',
-				'europe-north1-b',
-				'europe-north1-c',
-				'europe-west6-a',
-				'europe-west6-b',
-				'europe-west6-c',
-				'northamerica-northeast1-a',
-				'northamerica-northeast1-b',
-				'northamerica-northeast1-c',
-				'us-west2-a',
-				'us-west2-b',
-				'us-west2-c',
-				'us-west3-a',
-				'us-west3-b',
-				'us-west3-c',
-				'us-west4-a',
-				'us-west4-b',
-				'us-west4-c'
-		)]
-		[Alias("z")]
-		[String]
-		$zone = 'us-west1-a'
-
-	)
-
-	gcloud compute --project "leaderless-zookeeper" instances create-with-container "smoke$('{0:d3}' -f $number)" `
-	--container-image "docker.io/mesosphere/zk-smoketest:v2" --zone $zone --machine-type "n1-standard-2" `
-	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
-	--scopes=default --tags "zk-smoketest" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
-	--boot-disk-type "pd-standard" --boot-disk-device-name "smoke$('{0:d3}' -f $number)"
 }
