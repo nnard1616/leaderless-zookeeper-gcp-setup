@@ -42,7 +42,7 @@ RUN set -eux; \
 RUN git clone https://github.com/nnard1616/zookeeper.git
 RUN mv "/zookeeper/conf/"* "$ZOO_CONF_DIR";
 WORKDIR "/zookeeper"
-RUN mvn clean compile
+RUN mvn clean install -DskipTests
 
 VOLUME ["$ZOO_DATA_DIR", "$ZOO_DATA_LOG_DIR", "$ZOO_LOG_DIR"]
 
@@ -53,4 +53,4 @@ ENV PATH=$PATH:/$DISTRO_NAME/bin \
 
 COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["zkServer.sh", "start-foreground"]
+CMD ["./bin/zkServer.sh", "start-foreground"]
