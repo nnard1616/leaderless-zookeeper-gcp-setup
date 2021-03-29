@@ -1,0 +1,34 @@
+Connecting to 34.82.208.41:2181
+Connected in 475 ms, handle is 0
+Connecting to 35.204.2.79:2181
+Connected in 684 ms, handle is 1
+Connecting to 35.201.208.127:2181
+Connected in 653 ms, handle is 2
+Testing latencies on server 34.82.208.41:2181 using syncronous calls
+created     100 permanent znodes  in  34298 ms (342.986789 ms/op 2.915564/sec)
+set         100           znodes  in  34266 ms (342.664680 ms/op 2.918305/sec)
+get         100           znodes  in  10225 ms (102.250822 ms/op 9.779873/sec)
+deleted     100 permanent znodes  in  34237 ms (342.375619 ms/op 2.920769/sec)
+created     100 ephemeral znodes  in  34202 ms (342.021539 ms/op 2.923792/sec)
+watched     100           znodes  in  10091 ms (100.912280 ms/op 9.909597/sec)
+deleted     100 ephemeral znodes  in  34169 ms (341.696122 ms/op 2.926577/sec)
+notif       100           watches in   1160 ms (11.601119 ms/op 86.198581/sec)
+Testing latencies on server 35.204.2.79:2181 using syncronous calls
+created     100 permanent znodes  in  52450 ms (524.508300 ms/op 1.906548/sec)
+set         100           znodes  in  52426 ms (524.263139 ms/op 1.907439/sec)
+get         100           znodes  in  14619 ms (146.197190 ms/op 6.840077/sec)
+deleted     100 permanent znodes  in  52378 ms (523.781531 ms/op 1.909193/sec)
+created     100 ephemeral znodes  in  52431 ms (524.314270 ms/op 1.907253/sec)
+watched     100           znodes  in  14438 ms (144.388850 ms/op 6.925743/sec)
+deleted     100 ephemeral znodes  in  52332 ms (523.321900 ms/op 1.910870/sec)
+notif       100           watches in   1151 ms (11.514168 ms/op 86.849525/sec)
+Testing latencies on server 35.201.208.127:2181 using syncronous calls
+created     100 permanent znodes  in  34588 ms (345.883210 ms/op 2.891149/sec)
+set         100           znodes  in  34501 ms (345.018489 ms/op 2.898395/sec)
+get         100           znodes  in  22297 ms (222.975960 ms/op 4.484788/sec)
+deleted     100 permanent znodes  in  34410 ms (344.109631 ms/op 2.906051/sec)
+created     100 ephemeral znodes  in  34471 ms (344.718890 ms/op 2.900914/sec)
+watched     100           znodes  in  22383 ms (223.835461 ms/op 4.467567/sec)
+deleted     100 ephemeral znodes  in  34566 ms (345.667262 ms/op 2.892955/sec)
+notif       100           watches in   1590 ms (15.905819 ms/op 62.870073/sec)
+Latency test complete

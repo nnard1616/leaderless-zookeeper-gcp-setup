@@ -699,6 +699,8 @@ function Smoketest-Run-Cluster {
 
 	$connectString = $ipsArray -Join ","
 
+	echo $connectString
+
 	$existing_server_count = $vms.count
 
 	python ../zk-smoketest/zk-latencies.py --servers "$connectString" --znode_count=$znodecount --znode_size=$znodesize --synchronous > "zk-latency-output-$existing_server_count.txt"
