@@ -216,7 +216,7 @@ function prep-env {
 		$env_file_path = "./Environment_Files/env_file"
 	}
 
-	cp -Force $env_file_template_path $env_file_path
+	Copy-Item -Force $env_file_template_path $env_file_path
 
 
 
@@ -605,7 +605,7 @@ function YCSB-Test-All-Single-Connection {
 
 		YCSB-Load-Local $host_ip $recordcount $operationcount
 
-		$workloads = (ls .\YCSB\workloads\*).Name
+		$workloads = (Get-ChildItem .\YCSB\workloads\*).Name
 
 		# Iterate over all workloads
 		foreach ($w in $workloads) {
@@ -656,7 +656,7 @@ function YCSB-Test-All-Cluster {
 
 		YCSB-Load-Local $host_ip $recordcount $operationcount
 
-		$workloads = (ls .\YCSB\workloads\*).Name
+		$workloads = (Get-ChildItem .\YCSB\workloads\*).Name
 
 		# Iterate over all workloads
 		foreach ($w in $workloads) {
