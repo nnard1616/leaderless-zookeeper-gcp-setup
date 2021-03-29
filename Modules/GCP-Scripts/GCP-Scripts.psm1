@@ -494,7 +494,7 @@ function YCSB-Load-Local {
 	}
 
 	if ($OS -eq 'Linux') {
-		./YCSB/YCSB-master/bin/ycsb.bat load zookeeper -s -P "./YCSB/workloads/$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > ./YCSB/outputs/load-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+		./YCSB/YCSB-master/bin/ycsb load zookeeper -s -P "./YCSB/workloads/$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > ./YCSB/outputs/load-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
 	}
 
 
@@ -528,7 +528,7 @@ function YCSB-Run-Local {
 	}
 
 	if ($OS -eq 'Linux') {
-		./YCSB/YCSB-master/bin/ycsb.bat run zookeeper -s -P "./YCSB/workloads/$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > ./YCSB/outputs/run-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+		./YCSB/YCSB-master/bin/ycsb run zookeeper -s -P "./YCSB/workloads/$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > ./YCSB/outputs/run-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
 	}
 
 
@@ -567,7 +567,7 @@ function YCSB-Run-Local-Cluster {
 	}
 
 	if ($OS -eq 'Linux') {
-		./YCSB/YCSB-master/bin/ycsb.bat run zookeeper -s -P "./YCSB/workloads/$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > ./YCSB/outputs/run-cluster-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+		./YCSB/YCSB-master/bin/ycsb run zookeeper -s -P "./YCSB/workloads/$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > ./YCSB/outputs/run-cluster-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
 	}
 }
 
