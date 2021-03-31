@@ -87,7 +87,13 @@ function Start-Server {
 					)]
 		[Alias("z")]
 		[String]
-		$zone
+		$zone,
+
+		[Parameter(Mandatory=$TRUE,
+				HelpMessage="Enter a docker hub image")]
+		[Alias("c")]
+		[String]
+		$containerImage
 
 	)
 
@@ -102,7 +108,7 @@ function Start-Server {
 	}
 
 	gcloud compute --project "leaderless-zookeeper" instances create-with-container "zook$('{0:d3}' -f $number)" `
-	--container-image "docker.io/zookeeper:3.6.2" --zone $zone --machine-type "n1-standard-2" `
+	--container-image "$containerImage" --zone $zone --machine-type "n1-standard-2" `
 	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
 	--scopes=default --tags "zook-server" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
 	--boot-disk-type "pd-standard" --boot-disk-device-name "zook$('{0:d3}' -f $number)" --container-env=ZOO_MY_ID=$number `
@@ -236,7 +242,13 @@ function start-many {
 			HelpMessage="Enter a number of machines to create.")]
 		[Alias("n")]
 		[int]
-		$number = 3
+		$number = 3,
+
+		[Parameter(Mandatory=$TRUE,
+				HelpMessage="Enter a docker hub image")]
+		[Alias("c")]
+		[String]
+		$containerImage
 	)
 	$OS = $PSVersionTable.OS | cut -d ' ' -f1
 	$zones_file_path = ""
@@ -253,13 +265,13 @@ function start-many {
 	prep-env $number $zones_file_path
 
 	$scriptBlock = {
-		param($n, $z)
-		Write-Host $n $z
-		Start-Server $n $z
+		param($n, $z, $c)
+		Write-Host $n $z $c
+		Start-Server $n $z $c
 	}
 
 	1..$number | ForEach-Object {
-		Start-Job -ScriptBlock $scriptBlock -ArgumentList  $_, $zones[$($_-1)]
+		Start-Job -ScriptBlock $scriptBlock -ArgumentList  $_, $zones[$($_-1)], $containerImage
 	}
 
 	get-job
@@ -403,10 +415,16 @@ function Start-Client {
 		)]
 		[Alias("z")]
 		[String]
-		$zone
+		$zone,
+
+		[Parameter(Mandatory=$TRUE,
+				HelpMessage="Enter a docker hub image")]
+		[Alias("c")]
+		[String]
+		$containerImage
 	)
 	gcloud compute --project "leaderless-zookeeper" instances create-with-container "zook-client$('{0:d3}' -f $number)" `
-	--container-image "docker.io/zookeeper:3.6.2" --zone $zone --machine-type "n1-standard-2" `
+	--container-image "$containerImage" --zone $zone --machine-type "n1-standard-2" `
 	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
 	--scopes=default --tags "zook-client" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
 	--boot-disk-type "pd-standard" --boot-disk-device-name "zook-client$('{0:d3}' -f $number)"
@@ -418,7 +436,13 @@ function Add-Server {
 			HelpMessage="Enter a number of machines to create.")]
 		[Alias("n")]
 		[int]
-		$number = 1
+		$number = 1,
+
+		[Parameter(Mandatory=$TRUE,
+				HelpMessage="Enter a docker hub image")]
+		[Alias("c")]
+		[String]
+		$containerImage
 	)
 
 	$existing_server_count = $(gcloud compute instances list --filter="tags:zook-server" | measure-object -line).Lines - 1
@@ -447,13 +471,13 @@ function Add-Server {
 	Update-Servers
 
 	$scriptBlock = {
-		param($n, $z)
-		Write-Host $n $z
-		Start-Server $n $z
+		param($n, $z, $c)
+		Write-Host $n $z $c
+		Start-Server $n $z $c
 	}
 
 	($existing_server_count + 1)..$new_cluster_size | ForEach-Object {
-		Start-Job -ScriptBlock $scriptBlock -ArgumentList  $_, $zones[$($_-1)]
+		Start-Job -ScriptBlock $scriptBlock -ArgumentList  $_, $zones[$($_-1)], $containerImage
 	}
 
 	get-job
@@ -589,7 +613,13 @@ function YCSB-Test-All-Single-Connection {
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter opeation count")]
 		[int]
-		$operationcount = 1000
+		$operationcount = 1000,
+
+		[Parameter(Mandatory=$TRUE,
+				HelpMessage="Enter a docker hub image")]
+		[Alias("c")]
+		[String]
+		$containerImage
 	)
 
 	# Iterate from n = 3 to 13
@@ -597,7 +627,7 @@ function YCSB-Test-All-Single-Connection {
 		echo "Starting ensemble of $n..."
 
 		# Startup the cluster of size n
-		start-many $n
+		start-many $n $containerImage
 
 		# YCSB-Load-Local
 		$vms = Create-VMTable
@@ -641,7 +671,13 @@ function YCSB-Test-All-Cluster {
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter opeation count")]
 		[int]
-		$operationcount = 1000
+		$operationcount = 1000,
+
+		[Parameter(Mandatory=$TRUE,
+				HelpMessage="Enter a docker hub image")]
+		[Alias("c")]
+		[String]
+		$containerImage
 	)
 
 	# Iterate from n = 3 to 13
@@ -649,7 +685,7 @@ function YCSB-Test-All-Cluster {
 		echo "Starting ensemble of $n..."
 
 		# Startup the cluster of size n
-		start-many $n
+		start-many $n $containerImage
 
 		# YCSB-Load-Local
 		$vms = Create-VMTable
@@ -748,15 +784,21 @@ function Smoketest-All {
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode size")]
 		[int]
-		$znodesize = 100
+		$znodesize = 100,
+
+		[Parameter(Mandatory=$TRUE,
+				HelpMessage="Enter a docker hub image")]
+		[Alias("c")]
+		[String]
+		$containerImage
 	)
 
 	# Iterate from n = 3 to 13
-	for ($n = 6; $n -le 12; $n++) {
+	for ($n = 3; $n -le 12; $n++) {
 		echo "Starting ensemble of $n..."
 
 		# Startup the cluster of size n
-		start-many $n
+		start-many $n $containerImage
 
 		# YCSB-Load-Local
 		$vms = Create-VMTable
@@ -780,3 +822,71 @@ function Smoketest-All {
 		Start-Sleep 60
 	}
 }
+
+
+# Assumes no vms are up
+function YCSB-Smoketest-Test-All-Cluster {
+
+	Param (
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter record count")]
+		[int]
+		$recordcount = 1000,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter opeation count")]
+		[int]
+		$operationcount = 1000,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode count")]
+		[int]
+		$znodecount = 100,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode size")]
+		[int]
+		$znodesize = 100,
+
+		[Parameter(Mandatory=$TRUE,
+				HelpMessage="Enter a docker hub image")]
+		[Alias("c")]
+		[String]
+		$containerImage
+	)
+
+	# Iterate from n = 3 to 13
+	for ($n = 3; $n -le 12; $n++) {
+		echo "Starting ensemble of $n..."
+
+		# Startup the cluster of size n
+		start-many $n $containerImage
+
+		# YCSB-Load-Local
+		$vms = Create-VMTable
+		$host_ip = $vms[1].EXTERNAL_IP
+
+		echo "Host ip: $host_ip"
+
+		echo "Waiting for 60 seconds..."
+		Start-Sleep 60
+
+		YCSB-Load-Local $host_ip $recordcount $operationcount
+
+		Smoketest-Run-Cluster $znodecount $znodesize
+
+		$workloads = (Get-ChildItem .\YCSB\workloads\*).Name
+
+		# Iterate over all workloads
+		foreach ($w in $workloads) {
+
+			# YCSB-Run-Local
+			YCSB-Run-Local-Cluster $recordcount $operationcount $w
+
+		}
+
+		echo "Deleting ensemble of $n..."
+
+		# Delete VMs
+		Delete-Servers
+		echo "Waiting for 60 seconds..."
+		Start-Sleep 60
+	}
+}
+
