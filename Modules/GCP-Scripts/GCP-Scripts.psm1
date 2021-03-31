@@ -869,8 +869,6 @@ function YCSB-Smoketest-Test-All-Cluster {
 
 		YCSB-Load-Local $host_ip $recordcount $operationcount
 
-		Smoketest-Run-Cluster $znodecount $znodesize
-
 		$workloads = (Get-ChildItem .\YCSB\workloads\*).Name
 
 		# Iterate over all workloads
@@ -880,6 +878,8 @@ function YCSB-Smoketest-Test-All-Cluster {
 			YCSB-Run-Local-Cluster $recordcount $operationcount $w
 
 		}
+
+		Smoketest-Run-Cluster $znodecount $znodesize
 
 		echo "Deleting ensemble of $n..."
 
