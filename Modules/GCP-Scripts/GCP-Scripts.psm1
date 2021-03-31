@@ -102,7 +102,7 @@ function Start-Server {
 	}
 
 	gcloud compute --project "leaderless-zookeeper" instances create-with-container "zook$('{0:d3}' -f $number)" `
-	--container-image "docker.io/zookeeper:3.6.2" --zone $zone --machine-type "n1-standard-2" `
+	--container-image "atopcu/zk-repo:master" --zone $zone --machine-type "n1-standard-2" `
 	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
 	--scopes=default --tags "zook-server" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
 	--boot-disk-type "pd-standard" --boot-disk-device-name "zook$('{0:d3}' -f $number)" --container-env=ZOO_MY_ID=$number `
