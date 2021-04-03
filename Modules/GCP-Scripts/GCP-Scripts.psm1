@@ -693,8 +693,8 @@ function YCSB-Test-All-Cluster {
 
 		echo "Host ip: $host_ip"
 
-		echo "Waiting for 60 seconds..."
-		Start-Sleep 60
+		echo "Waiting for 600 seconds..."
+		Start-Sleep 600
 
 		YCSB-Load-Local $host_ip $recordcount $operationcount
 
