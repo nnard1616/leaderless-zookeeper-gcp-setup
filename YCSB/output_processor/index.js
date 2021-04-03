@@ -27,7 +27,7 @@ const run = () => {
       .forEach(zipFileName => {
         //decode zipFile name
         const splitZipFileName = zipFileName.split('_');
-        const testDate = splitZipFileName[6].split('.')[0]; //test date
+        const testDate = splitZipFileName[splitZipFileName.length - 1].split('.')[0]; //test date
         const zipFilePath = path.join(directoryPath, zipFileName)
         const zipFile = new Zip(zipFilePath);
         const workResults = zipFile.getEntries();
