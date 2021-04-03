@@ -2,3 +2,4 @@ YCSB/YCSB-master/*
 .idea/*
 .DS_Store
 YCSB/YCSB-master/
+/YCSB/output_processor/node_modules/
