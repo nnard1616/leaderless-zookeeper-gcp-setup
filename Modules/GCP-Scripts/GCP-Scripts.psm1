@@ -591,12 +591,12 @@ function YCSB-Run-Local-Cluster {
 	$OS = $PSVersionTable.OS | cut -d ' ' -f1
 
 	if ($OS -eq 'Microsoft') {
-		.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > .\YCSB\outputs\run-cluster"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+		.\YCSB\YCSB-master\bin\ycsb.bat run zookeeper -s -P ".\YCSB\workloads\$workload" -p zookeeper.connectString="$connectString" -p recordcount="$recordcount" > .\YCSB\outputs\run-cluster-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
 	}
 
 	if ($OS -eq 'Linux') {
 		cd ./YCSB/YCSB-master/
-		./bin/ycsb run zookeeper -s -P "../workloads/$workload" -p zookeeper.connectString="$target_host" -p recordcount="$recordcount" > ../outputs/run-cluster-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
+		./bin/ycsb run zookeeper -s -P "../workloads/$workload" -p zookeeper.connectString="$connectString" -p recordcount="$recordcount" > ../outputs/run-cluster-"$workload"-"$existing_server_count"-"$recordcount"-"$operationcount".txt
 		cd ../..
 	}
 }
@@ -636,8 +636,8 @@ function YCSB-Test-All-Single-Connection {
 		echo "Host ip: $host_ip"
 		echo $running_machines
 
-		echo "Waiting for 60 seconds..."
-		Start-Sleep 60
+		echo "Waiting for 600 seconds..."
+		Start-Sleep 600
 
 		YCSB-Load-Local $host_ip $recordcount $operationcount
 
