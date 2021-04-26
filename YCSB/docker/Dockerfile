@@ -15,7 +15,7 @@ RUN set -eux;\
         python3\
         maven;
 
-RUN git clone http://github.com/brianfrankcooper/YCSB.git
+RUN git clone https://github.com/arift/YCSB.git
 WORKDIR /YCSB
 RUN mvn -pl site.ycsb:zookeeper-binding -am clean package -DskipTests
 RUN mkdir /output
