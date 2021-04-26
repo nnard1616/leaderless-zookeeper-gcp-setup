@@ -491,6 +491,60 @@ function Add-Server {
 
 }
 
+function YCSB-Load-Remote {
+	Param (
+		[Parameter(Mandatory=$TRUE, HelpMessage="Enter target host:port")]
+		[String]
+		$target_host,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter record count")]
+		[int]
+		$recordcount = 1000,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter opeation count")]
+		[int]
+		$operationcount = 1000,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Workload")]
+		[String]
+		$workload = "workloadb"
+	)
+
+	gcloud compute --project "leaderless-zookeeper" instances create-with-container "ycsb-load" `
+	--container-image "docker.io/atopcu/ycsb" --zone "us-east1-c" --machine-type "n1-standard-2" `
+	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
+	--scopes=default --tags "ycsb-load" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
+	--boot-disk-type "pd-standard" --boot-disk-device-name "ycsb-load" --container-env=RUN_TYPE=load --container-env=CONNECT_STRING=$target_host `
+	--container-env=RECORD_COUNT=$recordcount --container-env=OPERATION_COUNT=$operationcount --container-env=workload=$workload --container-env=RECORD_COUNT=$recordcount
+}
+
+function YCSB-Run-Remote {
+	Param (
+		[Parameter(Mandatory=$TRUE, HelpMessage="Enter target host:port")]
+		[String]
+		$target_host,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter record count")]
+		[int]
+		$recordcount = 1000,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter opeation count")]
+		[int]
+		$operationcount = 1000,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Workload")]
+		[String]
+		$workload = "workloadb"
+	)
+
+	gcloud compute --project "leaderless-zookeeper" instances create-with-container "ycsb-run" `
+	--container-image "docker.io/atopcu/ycsb" --zone "us-east1-c" --machine-type "n1-standard-2" `
+	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
+	--scopes=default --tags "ycsb-run" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
+	--boot-disk-type "pd-standard" --boot-disk-device-name "ycsb-run" --container-env=RUN_TYPE=run --container-env=CONNECT_STRING=$target_host `
+	--container-env=RECORD_COUNT=$recordcount --container-env=OPERATION_COUNT=$operationcount --container-env=workload=$workload --container-env=RECORD_COUNT=$recordcount
+}
+
 function YCSB-Load-Local {
 	Param (
 		[Parameter(Mandatory=$TRUE, HelpMessage="Enter target host:port")]

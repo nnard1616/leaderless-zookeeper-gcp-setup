@@ -1,0 +1,11 @@
+version: "3.7"
+
+services:
+  app:
+    image: ycsb:latest
+    environment:
+      - RUN_TYPE=load
+      - WORKLOAD=worloadb
+      - CONNECT_STRING=35.197.84.227:2181
+      - RECORD_COUNT=10
+      - SERVER_PORT=80
