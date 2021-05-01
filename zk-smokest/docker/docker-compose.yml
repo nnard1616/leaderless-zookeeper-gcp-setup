@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  app:
+    image: atopcu/zk-smoketest:latest
+    environment:
+      - CONNECT_STRING=104.199.123.11:2181
+      - Z_NODE_COUNT=10
+      - Z_NODE_SIZE=10
