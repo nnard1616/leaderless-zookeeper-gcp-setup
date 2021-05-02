@@ -18,6 +18,7 @@ if [[ ! -f "$ZOO_CONF_DIR/zoo.cfg" ]]; then
         echo "tickTime=$ZOO_TICK_TIME"
         echo "initLimit=$ZOO_INIT_LIMIT"
         echo "syncLimit=$ZOO_SYNC_LIMIT"
+        echo "failLimit=$ZOO_FAIL_LIMIT"
 
         echo "autopurge.snapRetainCount=$ZOO_AUTOPURGE_SNAPRETAINCOUNT"
         echo "autopurge.purgeInterval=$ZOO_AUTOPURGE_PURGEINTERVAL"
