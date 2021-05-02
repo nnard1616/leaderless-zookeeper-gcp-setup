@@ -808,6 +808,37 @@ function Create-VMTable {
 
 }
 
+function Smoketest-Run-Cluster-Remote {
+	Param (
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode count")]
+		[int]
+		$znodecount = 100,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode size")]
+		[int]
+		$znodesize = 100,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Zone")]
+		[String]
+		$zone = "us-east1-c"
+	)
+
+	$vms = Create-VMTable
+
+	# empty array
+	$ipsArray = @()
+
+	1..$vms.count | foreach-object {$ipsArray = $ipsArray + ($vms[$_].EXTERNAL_IP + ":2181" )}
+
+	$connectString = $ipsArray -Join ","
+	gcloud compute --project "leaderless-zookeeper" instances create-with-container "zk-smoketest" `
+	--container-image "docker.io/atopcu/zk-smoketest" --zone $zone --machine-type "n1-standard-2" `
+	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
+	--scopes=default --tags "zk-smoketest" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
+	--boot-disk-type "pd-standard" --boot-disk-device-name "zk-smoketest" --container-env=^@^CONNECT_STRING=$connectString `
+	--container-env=Z_NODE_COUNT=$znodecount --container-env=Z_NODE_SIZE=$znodesize
+}
+
 #run on linux
 function Smoketest-Run-Cluster {
 	Param (
