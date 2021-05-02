@@ -25,10 +25,12 @@ RUN pip2 install zkpython;
 RUN git clone https://github.com/phunt/zk-smoketest.git
 RUN mkdir /output
 VOLUME /output
-ENTRYPOINT python2 /zk-smoketest/zk-latencies.py \
+ENTRYPOINT echo "Starting zk-smoketest..."; \
+python2 /zk-smoketest/zk-latencies.py \
 --servers $CONNECT_STRING \
 --znode_count=$Z_NODE_COUNT \
 --znode_size=$Z_NODE_SIZE \
 --synchronous \
---verbose >  /output/output.txt; \
+--verbose > /output/output.txt; \
+echo "Finished zk-smoketest."; \
 python3 -m http.server --directory /output $SERVER_PORT;
