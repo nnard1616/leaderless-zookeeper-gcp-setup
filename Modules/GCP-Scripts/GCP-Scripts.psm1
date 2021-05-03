@@ -515,7 +515,7 @@ function YCSB-Load-Remote {
 	)
 
 	gcloud compute --project "leaderless-zookeeper" instances create-with-container "ycsb-load" `
-	--container-image "docker.io/atopcu/ycsb-zk" --zone $zone --machine-type "n1-standard-2" `
+	--container-image "docker.io/atopcu/ycsb" --zone $zone --machine-type "n1-standard-2" `
 	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
 	--scopes=default --tags "ycsb-load" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
 	--boot-disk-type "pd-standard" --boot-disk-device-name "ycsb-load" --container-env=RUN_TYPE=load --container-env=CONNECT_STRING=$target_host `
@@ -546,7 +546,7 @@ function YCSB-Run-Remote {
 	)
 
 	gcloud compute --project "leaderless-zookeeper" instances create-with-container "ycsb-run" `
-	--container-image "docker.io/atopcu/ycsb-zk" --zone $zone --machine-type "n1-standard-2" `
+	--container-image "docker.io/atopcu/ycsb" --zone $zone --machine-type "n1-standard-2" `
 	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
 	--scopes=default --tags "ycsb-run" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
 	--boot-disk-type "pd-standard" --boot-disk-device-name "ycsb-run" --container-env=RUN_TYPE=run --container-env=CONNECT_STRING=$target_host `
