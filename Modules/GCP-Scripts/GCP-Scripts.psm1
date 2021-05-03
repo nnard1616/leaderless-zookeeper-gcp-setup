@@ -1081,17 +1081,29 @@ function YCSB-Smoketest-Test-All-Cluster-Remote {
 
 		YCSB-Load-Remote "$($host_ip):2181"
 
+		# while loop to wait until results are available
+
+		# Download result
+
+		# Delete Test vm
+
+
 		$workloads = (Get-ChildItem .\YCSB\workloads\*).Name
 
 		# Iterate over all workloads
 		foreach ($w in $workloads) {
 
 			# YCSB-Run-Local
-			YCSB-Run-Local-Cluster $recordcount $operationcount $w
+			YCSB-Run-Remote "$($host_ip):2181" "us-east1-c" $recordcount $operationcount $w
 
+			# while loop to wait until results are available
+
+			# Download result
+
+			# Delete Test vm
 		}
 
-		Smoketest-Run-Cluster $znodecount $znodesize
+		Smoketest-Run-Cluster-Remote $znodecount $znodesize
 
 		echo "Deleting ensemble of $n..."
 
