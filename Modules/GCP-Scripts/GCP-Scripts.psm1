@@ -329,6 +329,32 @@ function Delete-Servers {
 	Get-Job | % { Receive-Job $_.Id; Remove-Job $_.Id }
 }
 
+function Delete-Test-Servers {
+
+	$vms = Create-Test-VMTable
+
+	$existing_server_count = $vms.count
+
+	$scriptBlock = {
+		param($n, $z)
+		Write-Host $n $z
+		Delete-VM $n $z
+	}
+
+	for ($n = 1; $n -le $existing_server_count; $n++) {
+		Start-Job -ScriptBlock $scriptBlock -ArgumentList  $vms[$n].NAME, $vms[$n].ZONE
+	}
+
+	get-job
+
+	While (Get-Job -State "Running")
+	{
+		Start-Sleep 5
+	}
+
+	Get-Job | % { Receive-Job $_.Id; Remove-Job $_.Id }
+}
+
 function Start-Client {
 	Param (
 		[Parameter(Mandatory=$TRUE,
@@ -517,7 +543,7 @@ function YCSB-Load-Remote {
 	gcloud compute --project "leaderless-zookeeper" instances create-with-container "ycsb-load" `
 	--container-image "docker.io/atopcu/ycsb" --zone $zone --machine-type "n1-standard-2" `
 	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
-	--scopes=default --tags "ycsb-load" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
+	--scopes=default --tags "test-vm" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
 	--boot-disk-type "pd-standard" --boot-disk-device-name "ycsb-load" --container-env=RUN_TYPE=load --container-env=CONNECT_STRING=$target_host `
 	--container-env=RECORD_COUNT=$recordcount --container-env=OPERATION_COUNT=$operationcount --container-env=WORKLOAD=$workload --container-env=RECORD_COUNT=$recordcount
 }
@@ -548,7 +574,7 @@ function YCSB-Run-Remote {
 	gcloud compute --project "leaderless-zookeeper" instances create-with-container "ycsb-run" `
 	--container-image "docker.io/atopcu/ycsb" --zone $zone --machine-type "n1-standard-2" `
 	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
-	--scopes=default --tags "ycsb-run" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
+	--scopes=default --tags "test-vm" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
 	--boot-disk-type "pd-standard" --boot-disk-device-name "ycsb-run" --container-env=RUN_TYPE=run --container-env=CONNECT_STRING=$target_host `
 	--container-env=RECORD_COUNT=$recordcount --container-env=OPERATION_COUNT=$operationcount --container-env=WORKLOAD=$workload --container-env=RECORD_COUNT=$recordcount
 }
@@ -804,6 +830,32 @@ function Create-VMTable {
 	}
 
 	return $hash
+}
+
+function Create-Test-VMTable {
+
+	$table = gcloud compute instances list --sort-by="name" --filter="tags:test-vm" `
+		--format="table(NAME,ZONE,MACHINE_TYPE,INTERNAL_IP,EXTERNAL_IP,STATUS)"
+
+	$headers = $($table[0] | tr -s ' ').split()
+
+	$hash = @{}
+
+	for ($i = 1; $i -lt $table.length; $i++) {
+		$row = $($table[$i] | tr -s ' ' ).split()
+		$rowmap = @{
+			$headers[0] = $row[0];
+			$headers[1] = $row[1];
+			$headers[2] = $row[2];
+			$headers[3] = $row[3];
+			$headers[4] = $row[4];
+			$headers[5] = $row[5]
+		}
+
+		$hash[$i] = $rowmap
+	}
+
+	return $hash
 
 
 }
@@ -834,7 +886,7 @@ function Smoketest-Run-Cluster-Remote {
 	gcloud compute --project "leaderless-zookeeper" instances create-with-container "zk-smoketest" `
 	--container-image "docker.io/atopcu/zk-smoketest" --zone $zone --machine-type "n1-standard-2" `
 	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
-	--scopes=default --tags "zk-smoketest" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
+	--scopes=default --tags "test-vm" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
 	--boot-disk-type "pd-standard" --boot-disk-device-name "zk-smoketest" --container-env=^@^CONNECT_STRING=$connectString `
 	--container-env=Z_NODE_COUNT=$znodecount --container-env=Z_NODE_SIZE=$znodesize
 }
@@ -957,8 +1009,8 @@ function YCSB-Smoketest-Test-All-Cluster {
 
 		echo "Host ip: $host_ip"
 
-		echo "Waiting for 60 seconds..."
-		Start-Sleep 60
+		echo "Waiting for 600 seconds..."
+		Start-Sleep 600
 
 		YCSB-Load-Local $host_ip $recordcount $operationcount
 
@@ -978,6 +1030,74 @@ function YCSB-Smoketest-Test-All-Cluster {
 
 		# Delete VMs
 		Delete-Servers
+		echo "Waiting for 60 seconds..."
+		Start-Sleep 60
+	}
+}
+
+# Assumes no vms are up
+function YCSB-Smoketest-Test-All-Cluster-Remote {
+
+	Param (
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter record count")]
+		[int]
+		$recordcount = 1000,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter opeation count")]
+		[int]
+		$operationcount = 1000,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode count")]
+		[int]
+		$znodecount = 100,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode size")]
+		[int]
+		$znodesize = 100,
+
+		[Parameter(Mandatory=$TRUE,
+				HelpMessage="Enter a docker hub image")]
+		[Alias("c")]
+		[String]
+		$containerImage
+	)
+
+	# Iterate from n = 3 to 13
+	for ($n = 3; $n -le 12; $n++) {
+		echo "Starting ensemble of $n..."
+
+		# Startup the cluster of size n
+		start-many $n $containerImage
+
+		# Create Vm Table
+		$vms = Create-VMTable
+		$host_ip = $vms[1].EXTERNAL_IP
+
+		echo "Host ip: $host_ip"
+
+		echo "Waiting for 600 seconds..."
+		Start-Sleep 600
+
+
+		YCSB-Load-Remote "$($host_ip):2181"
+
+		$workloads = (Get-ChildItem .\YCSB\workloads\*).Name
+
+		# Iterate over all workloads
+		foreach ($w in $workloads) {
+
+			# YCSB-Run-Local
+			YCSB-Run-Local-Cluster $recordcount $operationcount $w
+
+		}
+
+		Smoketest-Run-Cluster $znodecount $znodesize
+
+		echo "Deleting ensemble of $n..."
+
+		# Delete VMs
+		Delete-Servers
+		Delete-Test-Servers
 		echo "Waiting for 60 seconds..."
 		Start-Sleep 60
 	}
