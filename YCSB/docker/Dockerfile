@@ -5,7 +5,8 @@ ENV RUN_TYPE=load\
     RECORD_COUNT=100\
     OPERATION_COUNT=100\
     WORLOAD=workloadb\
-    SERVER_PORT=80
+    SERVER_PORT=80\
+    YCSB_BINDING=zookeeper-binding
 
 RUN set -eux;\
     apt-get update;\
@@ -16,11 +17,10 @@ RUN set -eux;\
         maven;
 
 RUN git clone https://github.com/arift/YCSB.git
-WORKDIR /YCSB
-RUN mvn -pl site.ycsb:zookeeper-binding -am clean package -DskipTests
 RUN mkdir /output
 VOLUME /output
-ENTRYPOINT export OUTPUT_FILE_NAME=run-cluster.$RUN_TYPE.$WORLOAD.$RECORD_COUNT.$OPERATION_COUNT.txt; \
+ENTRYPOINT cd /YCSB && mvn -pl site.ycsb:$YCSB_BINDING -am clean package -DskipTests; \
+export OUTPUT_FILE_NAME=run-cluster.$RUN_TYPE.$WORLOAD.$RECORD_COUNT.$OPERATION_COUNT.txt; \
 /YCSB/bin/ycsb $RUN_TYPE zookeeper \
 -s -P /YCSB/workloads/$WORLOAD \
 -p zookeeper.connectString=$CONNECT_STRING \
