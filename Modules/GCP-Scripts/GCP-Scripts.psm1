@@ -1105,11 +1105,16 @@ function YCSB-Smoketest-Test-All-Cluster-Remote {
 
 		Smoketest-Run-Cluster-Remote $znodecount $znodesize
 
+		# while loop to wait until results are available
+
+		# Download result
+
+		# Delete Test vm
+
 		echo "Deleting ensemble of $n..."
 
 		# Delete VMs
 		Delete-Servers
-		Delete-Test-Servers
 		echo "Waiting for 60 seconds..."
 		Start-Sleep 60
 	}
