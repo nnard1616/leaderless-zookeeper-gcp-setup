@@ -535,9 +535,13 @@ function YCSB-Remote {
 		[int]
 		$operationcount = 1000,
 
-		[Parameter(Mandatory=$FALSE, HelpMessage="Workload")]
+		[Parameter(Mandatory=$FALSE, HelpMessage="Load Workload")]
 		[String]
-		$workload = "workload_80_20"
+		$workload_load = "workload_80_20",
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Run Workload(s)")]
+		[String]
+		$workload_run = "workload_100_0,workload_20_80,workload_50_50,workload_80_20"
 	)
 
 	gcloud compute --project "leaderless-zookeeper" instances create-with-container "ycsb-load" `
@@ -545,7 +549,8 @@ function YCSB-Remote {
 	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
 	--scopes=default --tags "test-vm" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
 	--boot-disk-type "pd-standard" --boot-disk-device-name "ycsb-load" --container-env=RUN_TYPE=load --container-env=CONNECT_STRING=$target_host `
-	--container-env=RECORD_COUNT=$recordcount --container-env=OPERATION_COUNT=$operationcount --container-env=WORKLOAD=$workload --container-env=RECORD_COUNT=$recordcount
+	--container-env=RECORD_COUNT=$recordcount --container-env=OPERATION_COUNT=$operationcount --container-env=WORKLOAD_LOAD=$workload_load `
+	--container-env=WORKLOAD_RUN=$workload_run
 }
 
 
