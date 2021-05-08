@@ -517,6 +517,38 @@ function Add-Server {
 
 }
 
+function YCSB-Remote {
+	Param (
+		[Parameter(Mandatory=$TRUE, HelpMessage="Enter target host:port")]
+		[String]
+		$target_host,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Zone")]
+		[String]
+		$zone = "us-east1-c",
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter record count")]
+		[int]
+		$recordcount = 1000,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Enter opeation count")]
+		[int]
+		$operationcount = 1000,
+
+		[Parameter(Mandatory=$FALSE, HelpMessage="Workload")]
+		[String]
+		$workload = "workload_80_20"
+	)
+
+	gcloud compute --project "leaderless-zookeeper" instances create-with-container "ycsb-load" `
+	--container-image "docker.io/atopcu/ycsb" --zone $zone --machine-type "n1-standard-2" `
+	--subnet "default" --maintenance-policy "MIGRATE" --service-account "858944573210-compute@developer.gserviceaccount.com" `
+	--scopes=default --tags "test-vm" --image "cos-stable-85-13310-1209-17" --image-project "cos-cloud" --boot-disk-size "10" `
+	--boot-disk-type "pd-standard" --boot-disk-device-name "ycsb-load" --container-env=RUN_TYPE=load --container-env=CONNECT_STRING=$target_host `
+	--container-env=RECORD_COUNT=$recordcount --container-env=OPERATION_COUNT=$operationcount --container-env=WORKLOAD=$workload --container-env=RECORD_COUNT=$recordcount
+}
+
+
 function YCSB-Load-Remote {
 	Param (
 		[Parameter(Mandatory=$TRUE, HelpMessage="Enter target host:port")]
@@ -1039,6 +1071,24 @@ function YCSB-Smoketest-Test-All-Cluster {
 function YCSB-Smoketest-Test-All-Cluster-Remote {
 
 	Param (
+		[Parameter(Mandatory=$TRUE,
+				HelpMessage="Enter a docker hub image")]
+		[Alias("c")]
+		[String]
+		$containerImage,
+
+		[Parameter(Mandatory=$TRUE,
+				HelpMessage="Enter a prefix for each test output")]
+		[Alias("p")]
+		[String]
+		$outputprefix,
+
+		[Parameter(Mandatory=$TRUE,
+				HelpMessage="Enter starting cluster size")]
+		[Alias("p")]
+		[String]
+		$startingClusterSize,
+
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter record count")]
 		[int]
 		$recordcount = 1000,
@@ -1053,17 +1103,11 @@ function YCSB-Smoketest-Test-All-Cluster-Remote {
 
 		[Parameter(Mandatory=$FALSE, HelpMessage="Enter znode size")]
 		[int]
-		$znodesize = 100,
-
-		[Parameter(Mandatory=$TRUE,
-				HelpMessage="Enter a docker hub image")]
-		[Alias("c")]
-		[String]
-		$containerImage
+		$znodesize = 100
 	)
 
 	# Iterate from n = 3 to 13
-	for ($n = 3; $n -le 12; $n++) {
+	for ($n = $startingClusterSize; $n -le 12; $n++) {
 		echo "Starting ensemble of $n..."
 
 		# Startup the cluster of size n
@@ -1075,48 +1119,74 @@ function YCSB-Smoketest-Test-All-Cluster-Remote {
 
 		echo "Host ip: $host_ip"
 
-		echo "Waiting for 600 seconds..."
-		Start-Sleep 600
+		echo "Waiting for 300 seconds..."
+		Start-Sleep 300
 
+		echo "Running YCSB load..."
 
-		YCSB-Load-Remote "$($host_ip):2181"
+		YCSB-Load-Remote "$($host_ip):2181" "us-east1-c" $recordcount $operationcount
 
-		# while loop to wait until results are available
+		YCSB-Remote
+		$vmt = Create-Test-VMTable
+
+		echo "Attempting to download YCSB load results..."
 
 		# Download result
+		wget "http://$($vmt[1].EXTERNAL_IP)/run-cluster.load.workload_80_20.$recordcount.$operationcount.txt" -t 0 --retry-connrefused `
+			-O ".\Test_Results\YCSB\$n\$outputprefix.run-cluster.load.workload_80_20.$recordcount.$operationcount.txt"
+
+		echo "Deleting test server..."
 
 		# Delete Test vm
+		Delete-Test-Servers
 
 
 		$workloads = (Get-ChildItem .\YCSB\workloads\*).Name
+		$workloadList = $workloads -Join ","
 
 		# Iterate over all workloads
 		foreach ($w in $workloads) {
 
+			echo "Doing YCSB run $w..."
+
 			# YCSB-Run-Local
 			YCSB-Run-Remote "$($host_ip):2181" "us-east1-c" $recordcount $operationcount $w
+			$vmt = Create-Test-VMTable
 
-			# while loop to wait until results are available
+			echo "Attempting to download YCSB run $w results..."
 
 			# Download result
+			wget "http://$($vmt[1].EXTERNAL_IP)/run-cluster.run.$w.$recordcount.$operationcount.txt" -t 0 --retry-connrefused `
+				-O ".\Test_Results\YCSB\$n\$outputprefix.run-cluster.run.$w.$recordcount.$operationcount.txt"
+
+			echo "Deleting test server..."
 
 			# Delete Test vm
+			Delete-Test-Servers
 		}
 
-		Smoketest-Run-Cluster-Remote $znodecount $znodesize
+		echo "Doing ZK-Smoketest..."
 
-		# while loop to wait until results are available
+		Smoketest-Run-Cluster-Remote $znodecount $znodesize
+		$vmt = Create-Test-VMTable
+
+		echo "Attempting to download Smoketest results..."
 
 		# Download result
+		wget "http://$($vmt[1].EXTERNAL_IP)/output.txt" -t 0 --retry-connrefused `
+				-O ".\Test_Results\Zk-Smoketest\$n\$outputprefix.output.$znodecount.$znodesize.txt"
 
-		# Delete Test vm
+		echo "Waiting for 60 seconds before deleting all vms..."
+		Start-Sleep 60
 
 		echo "Deleting ensemble of $n..."
 
 		# Delete VMs
 		Delete-Servers
-		echo "Waiting for 60 seconds..."
-		Start-Sleep 60
+
+		echo "Deleting test server..."
+		# Delete Test vm
+		Delete-Test-Servers
 	}
 }
 

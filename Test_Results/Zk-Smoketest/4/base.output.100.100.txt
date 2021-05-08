@@ -1,0 +1,2047 @@
+Connecting to 34.83.255.133:2181
+Connected in 526 ms, handle is 0
+Connecting to 35.204.26.15:2181
+Connected in 665 ms, handle is 1
+Connecting to 35.229.187.208:2181
+Connected in 715 ms, handle is 2
+Connecting to 34.151.149.197:2181
+Connected in 615 ms, handle is 3
+Node /zk-latencies created in 394 ms
+Testing latencies on server 34.83.255.133:2181 using syncronous calls
+Node /zk-latencies/session_0 created in 393 ms
+Node /zk-latencies/session_1 created in 393 ms
+Node /zk-latencies/session_2 created in 394 ms
+Node /zk-latencies/session_3 created in 394 ms
+Node /zk-latencies/session_4 created in 394 ms
+Node /zk-latencies/session_5 created in 393 ms
+Node /zk-latencies/session_6 created in 394 ms
+Node /zk-latencies/session_7 created in 394 ms
+Node /zk-latencies/session_8 created in 395 ms
+Node /zk-latencies/session_9 created in 393 ms
+Node /zk-latencies/session_10 created in 393 ms
+Node /zk-latencies/session_11 created in 396 ms
+Node /zk-latencies/session_12 created in 393 ms
+Node /zk-latencies/session_13 created in 394 ms
+Node /zk-latencies/session_14 created in 395 ms
+Node /zk-latencies/session_15 created in 394 ms
+Node /zk-latencies/session_16 created in 394 ms
+Node /zk-latencies/session_17 created in 394 ms
+Node /zk-latencies/session_18 created in 394 ms
+Node /zk-latencies/session_19 created in 394 ms
+Node /zk-latencies/session_20 created in 394 ms
+Node /zk-latencies/session_21 created in 395 ms
+Node /zk-latencies/session_22 created in 395 ms
+Node /zk-latencies/session_23 created in 394 ms
+Node /zk-latencies/session_24 created in 394 ms
+Node /zk-latencies/session_25 created in 394 ms
+Node /zk-latencies/session_26 created in 395 ms
+Node /zk-latencies/session_27 created in 395 ms
+Node /zk-latencies/session_28 created in 394 ms
+Node /zk-latencies/session_29 created in 396 ms
+Node /zk-latencies/session_30 created in 393 ms
+Node /zk-latencies/session_31 created in 393 ms
+Node /zk-latencies/session_32 created in 393 ms
+Node /zk-latencies/session_33 created in 393 ms
+Node /zk-latencies/session_34 created in 393 ms
+Node /zk-latencies/session_35 created in 394 ms
+Node /zk-latencies/session_36 created in 393 ms
+Node /zk-latencies/session_37 created in 393 ms
+Node /zk-latencies/session_38 created in 393 ms
+Node /zk-latencies/session_39 created in 393 ms
+Node /zk-latencies/session_40 created in 393 ms
+Node /zk-latencies/session_41 created in 393 ms
+Node /zk-latencies/session_42 created in 393 ms
+Node /zk-latencies/session_43 created in 393 ms
+Node /zk-latencies/session_44 created in 393 ms
+Node /zk-latencies/session_45 created in 395 ms
+Node /zk-latencies/session_46 created in 394 ms
+Node /zk-latencies/session_47 created in 397 ms
+Node /zk-latencies/session_48 created in 395 ms
+Node /zk-latencies/session_49 created in 393 ms
+Node /zk-latencies/session_50 created in 393 ms
+Node /zk-latencies/session_51 created in 394 ms
+Node /zk-latencies/session_52 created in 394 ms
+Node /zk-latencies/session_53 created in 394 ms
+Node /zk-latencies/session_54 created in 393 ms
+Node /zk-latencies/session_55 created in 393 ms
+Node /zk-latencies/session_56 created in 393 ms
+Node /zk-latencies/session_57 created in 393 ms
+Node /zk-latencies/session_58 created in 393 ms
+Node /zk-latencies/session_59 created in 393 ms
+Node /zk-latencies/session_60 created in 394 ms
+Node /zk-latencies/session_61 created in 394 ms
+Node /zk-latencies/session_62 created in 394 ms
+Node /zk-latencies/session_63 created in 395 ms
+Node /zk-latencies/session_64 created in 393 ms
+Node /zk-latencies/session_65 created in 395 ms
+Node /zk-latencies/session_66 created in 398 ms
+Node /zk-latencies/session_67 created in 395 ms
+Node /zk-latencies/session_68 created in 393 ms
+Node /zk-latencies/session_69 created in 393 ms
+Node /zk-latencies/session_70 created in 393 ms
+Node /zk-latencies/session_71 created in 394 ms
+Node /zk-latencies/session_72 created in 394 ms
+Node /zk-latencies/session_73 created in 393 ms
+Node /zk-latencies/session_74 created in 393 ms
+Node /zk-latencies/session_75 created in 393 ms
+Node /zk-latencies/session_76 created in 393 ms
+Node /zk-latencies/session_77 created in 393 ms
+Node /zk-latencies/session_78 created in 393 ms
+Node /zk-latencies/session_79 created in 393 ms
+Node /zk-latencies/session_80 created in 393 ms
+Node /zk-latencies/session_81 created in 394 ms
+Node /zk-latencies/session_82 created in 394 ms
+Node /zk-latencies/session_83 created in 394 ms
+Node /zk-latencies/session_84 created in 394 ms
+Node /zk-latencies/session_85 created in 396 ms
+Node /zk-latencies/session_86 created in 394 ms
+Node /zk-latencies/session_87 created in 393 ms
+Node /zk-latencies/session_88 created in 393 ms
+Node /zk-latencies/session_89 created in 393 ms
+Node /zk-latencies/session_90 created in 394 ms
+Node /zk-latencies/session_91 created in 394 ms
+Node /zk-latencies/session_92 created in 394 ms
+Node /zk-latencies/session_93 created in 395 ms
+Node /zk-latencies/session_94 created in 395 ms
+Node /zk-latencies/session_95 created in 394 ms
+Node /zk-latencies/session_96 created in 394 ms
+Node /zk-latencies/session_97 created in 394 ms
+Node /zk-latencies/session_98 created in 394 ms
+Node /zk-latencies/session_99 created in 394 ms
+created     100 permanent znodes  in  39434 ms (394.346361 ms/op 2.535842/sec)
+set         100           znodes  in  39397 ms (393.979790 ms/op 2.538201/sec)
+get         100           znodes  in   6617 ms (66.178229 ms/op 15.110710/sec)
+Node /zk-latencies/session_0 deleted in 397 ms
+Node /zk-latencies/session_1 deleted in 394 ms
+Node /zk-latencies/session_2 deleted in 393 ms
+Node /zk-latencies/session_3 deleted in 394 ms
+Node /zk-latencies/session_4 deleted in 394 ms
+Node /zk-latencies/session_5 deleted in 393 ms
+Node /zk-latencies/session_6 deleted in 394 ms
+Node /zk-latencies/session_7 deleted in 394 ms
+Node /zk-latencies/session_8 deleted in 394 ms
+Node /zk-latencies/session_9 deleted in 395 ms
+Node /zk-latencies/session_10 deleted in 393 ms
+Node /zk-latencies/session_11 deleted in 393 ms
+Node /zk-latencies/session_12 deleted in 393 ms
+Node /zk-latencies/session_13 deleted in 394 ms
+Node /zk-latencies/session_14 deleted in 394 ms
+Node /zk-latencies/session_15 deleted in 393 ms
+Node /zk-latencies/session_16 deleted in 393 ms
+Node /zk-latencies/session_17 deleted in 392 ms
+Node /zk-latencies/session_18 deleted in 393 ms
+Node /zk-latencies/session_19 deleted in 393 ms
+Node /zk-latencies/session_20 deleted in 393 ms
+Node /zk-latencies/session_21 deleted in 396 ms
+Node /zk-latencies/session_22 deleted in 393 ms
+Node /zk-latencies/session_23 deleted in 394 ms
+Node /zk-latencies/session_24 deleted in 397 ms
+Node /zk-latencies/session_25 deleted in 393 ms
+Node /zk-latencies/session_26 deleted in 393 ms
+Node /zk-latencies/session_27 deleted in 393 ms
+Node /zk-latencies/session_28 deleted in 393 ms
+Node /zk-latencies/session_29 deleted in 393 ms
+Node /zk-latencies/session_30 deleted in 393 ms
+Node /zk-latencies/session_31 deleted in 393 ms
+Node /zk-latencies/session_32 deleted in 392 ms
+Node /zk-latencies/session_33 deleted in 393 ms
+Node /zk-latencies/session_34 deleted in 393 ms
+Node /zk-latencies/session_35 deleted in 394 ms
+Node /zk-latencies/session_36 deleted in 394 ms
+Node /zk-latencies/session_37 deleted in 392 ms
+Node /zk-latencies/session_38 deleted in 393 ms
+Node /zk-latencies/session_39 deleted in 392 ms
+Node /zk-latencies/session_40 deleted in 393 ms
+Node /zk-latencies/session_41 deleted in 394 ms
+Node /zk-latencies/session_42 deleted in 393 ms
+Node /zk-latencies/session_43 deleted in 395 ms
+Node /zk-latencies/session_44 deleted in 394 ms
+Node /zk-latencies/session_45 deleted in 392 ms
+Node /zk-latencies/session_46 deleted in 393 ms
+Node /zk-latencies/session_47 deleted in 392 ms
+Node /zk-latencies/session_48 deleted in 393 ms
+Node /zk-latencies/session_49 deleted in 392 ms
+Node /zk-latencies/session_50 deleted in 393 ms
+Node /zk-latencies/session_51 deleted in 393 ms
+Node /zk-latencies/session_52 deleted in 393 ms
+Node /zk-latencies/session_53 deleted in 393 ms
+Node /zk-latencies/session_54 deleted in 393 ms
+Node /zk-latencies/session_55 deleted in 394 ms
+Node /zk-latencies/session_56 deleted in 394 ms
+Node /zk-latencies/session_57 deleted in 393 ms
+Node /zk-latencies/session_58 deleted in 394 ms
+Node /zk-latencies/session_59 deleted in 393 ms
+Node /zk-latencies/session_60 deleted in 393 ms
+Node /zk-latencies/session_61 deleted in 393 ms
+Node /zk-latencies/session_62 deleted in 393 ms
+Node /zk-latencies/session_63 deleted in 393 ms
+Node /zk-latencies/session_64 deleted in 392 ms
+Node /zk-latencies/session_65 deleted in 393 ms
+Node /zk-latencies/session_66 deleted in 393 ms
+Node /zk-latencies/session_67 deleted in 394 ms
+Node /zk-latencies/session_68 deleted in 397 ms
+Node /zk-latencies/session_69 deleted in 393 ms
+Node /zk-latencies/session_70 deleted in 393 ms
+Node /zk-latencies/session_71 deleted in 394 ms
+Node /zk-latencies/session_72 deleted in 396 ms
+Node /zk-latencies/session_73 deleted in 393 ms
+Node /zk-latencies/session_74 deleted in 393 ms
+Node /zk-latencies/session_75 deleted in 392 ms
+Node /zk-latencies/session_76 deleted in 393 ms
+Node /zk-latencies/session_77 deleted in 393 ms
+Node /zk-latencies/session_78 deleted in 393 ms
+Node /zk-latencies/session_79 deleted in 393 ms
+Node /zk-latencies/session_80 deleted in 393 ms
+Node /zk-latencies/session_81 deleted in 393 ms
+Node /zk-latencies/session_82 deleted in 393 ms
+Node /zk-latencies/session_83 deleted in 394 ms
+Node /zk-latencies/session_84 deleted in 394 ms
+Node /zk-latencies/session_85 deleted in 394 ms
+Node /zk-latencies/session_86 deleted in 394 ms
+Node /zk-latencies/session_87 deleted in 394 ms
+Node /zk-latencies/session_88 deleted in 394 ms
+Node /zk-latencies/session_89 deleted in 394 ms
+Node /zk-latencies/session_90 deleted in 394 ms
+Node /zk-latencies/session_91 deleted in 393 ms
+Node /zk-latencies/session_92 deleted in 394 ms
+Node /zk-latencies/session_93 deleted in 392 ms
+Node /zk-latencies/session_94 deleted in 393 ms
+Node /zk-latencies/session_95 deleted in 393 ms
+Node /zk-latencies/session_96 deleted in 393 ms
+Node /zk-latencies/session_97 deleted in 393 ms
+Node /zk-latencies/session_98 deleted in 393 ms
+Node /zk-latencies/session_99 deleted in 392 ms
+deleted     100 permanent znodes  in  39394 ms (393.941991 ms/op 2.538445/sec)
+Node /zk-latencies/session_0 created in 394 ms
+Node /zk-latencies/session_1 created in 393 ms
+Node /zk-latencies/session_2 created in 393 ms
+Node /zk-latencies/session_3 created in 393 ms
+Node /zk-latencies/session_4 created in 393 ms
+Node /zk-latencies/session_5 created in 393 ms
+Node /zk-latencies/session_6 created in 393 ms
+Node /zk-latencies/session_7 created in 393 ms
+Node /zk-latencies/session_8 created in 396 ms
+Node /zk-latencies/session_9 created in 393 ms
+Node /zk-latencies/session_10 created in 393 ms
+Node /zk-latencies/session_11 created in 393 ms
+Node /zk-latencies/session_12 created in 394 ms
+Node /zk-latencies/session_13 created in 396 ms
+Node /zk-latencies/session_14 created in 394 ms
+Node /zk-latencies/session_15 created in 394 ms
+Node /zk-latencies/session_16 created in 394 ms
+Node /zk-latencies/session_17 created in 394 ms
+Node /zk-latencies/session_18 created in 394 ms
+Node /zk-latencies/session_19 created in 393 ms
+Node /zk-latencies/session_20 created in 393 ms
+Node /zk-latencies/session_21 created in 393 ms
+Node /zk-latencies/session_22 created in 393 ms
+Node /zk-latencies/session_23 created in 394 ms
+Node /zk-latencies/session_24 created in 395 ms
+Node /zk-latencies/session_25 created in 393 ms
+Node /zk-latencies/session_26 created in 396 ms
+Node /zk-latencies/session_27 created in 393 ms
+Node /zk-latencies/session_28 created in 393 ms
+Node /zk-latencies/session_29 created in 393 ms
+Node /zk-latencies/session_30 created in 393 ms
+Node /zk-latencies/session_31 created in 394 ms
+Node /zk-latencies/session_32 created in 394 ms
+Node /zk-latencies/session_33 created in 395 ms
+Node /zk-latencies/session_34 created in 393 ms
+Node /zk-latencies/session_35 created in 393 ms
+Node /zk-latencies/session_36 created in 393 ms
+Node /zk-latencies/session_37 created in 393 ms
+Node /zk-latencies/session_38 created in 393 ms
+Node /zk-latencies/session_39 created in 393 ms
+Node /zk-latencies/session_40 created in 393 ms
+Node /zk-latencies/session_41 created in 393 ms
+Node /zk-latencies/session_42 created in 393 ms
+Node /zk-latencies/session_43 created in 394 ms
+Node /zk-latencies/session_44 created in 393 ms
+Node /zk-latencies/session_45 created in 396 ms
+Node /zk-latencies/session_46 created in 393 ms
+Node /zk-latencies/session_47 created in 393 ms
+Node /zk-latencies/session_48 created in 393 ms
+Node /zk-latencies/session_49 created in 393 ms
+Node /zk-latencies/session_50 created in 394 ms
+Node /zk-latencies/session_51 created in 394 ms
+Node /zk-latencies/session_52 created in 393 ms
+Node /zk-latencies/session_53 created in 393 ms
+Node /zk-latencies/session_54 created in 394 ms
+Node /zk-latencies/session_55 created in 395 ms
+Node /zk-latencies/session_56 created in 394 ms
+Node /zk-latencies/session_57 created in 393 ms
+Node /zk-latencies/session_58 created in 393 ms
+Node /zk-latencies/session_59 created in 393 ms
+Node /zk-latencies/session_60 created in 393 ms
+Node /zk-latencies/session_61 created in 393 ms
+Node /zk-latencies/session_62 created in 393 ms
+Node /zk-latencies/session_63 created in 395 ms
+Node /zk-latencies/session_64 created in 393 ms
+Node /zk-latencies/session_65 created in 393 ms
+Node /zk-latencies/session_66 created in 394 ms
+Node /zk-latencies/session_67 created in 393 ms
+Node /zk-latencies/session_68 created in 393 ms
+Node /zk-latencies/session_69 created in 393 ms
+Node /zk-latencies/session_70 created in 393 ms
+Node /zk-latencies/session_71 created in 393 ms
+Node /zk-latencies/session_72 created in 393 ms
+Node /zk-latencies/session_73 created in 393 ms
+Node /zk-latencies/session_74 created in 393 ms
+Node /zk-latencies/session_75 created in 393 ms
+Node /zk-latencies/session_76 created in 393 ms
+Node /zk-latencies/session_77 created in 393 ms
+Node /zk-latencies/session_78 created in 393 ms
+Node /zk-latencies/session_79 created in 394 ms
+Node /zk-latencies/session_80 created in 393 ms
+Node /zk-latencies/session_81 created in 394 ms
+Node /zk-latencies/session_82 created in 395 ms
+Node /zk-latencies/session_83 created in 393 ms
+Node /zk-latencies/session_84 created in 393 ms
+Node /zk-latencies/session_85 created in 393 ms
+Node /zk-latencies/session_86 created in 393 ms
+Node /zk-latencies/session_87 created in 394 ms
+Node /zk-latencies/session_88 created in 394 ms
+Node /zk-latencies/session_89 created in 393 ms
+Node /zk-latencies/session_90 created in 394 ms
+Node /zk-latencies/session_91 created in 393 ms
+Node /zk-latencies/session_92 created in 393 ms
+Node /zk-latencies/session_93 created in 394 ms
+Node /zk-latencies/session_94 created in 393 ms
+Node /zk-latencies/session_95 created in 392 ms
+Node /zk-latencies/session_96 created in 393 ms
+Node /zk-latencies/session_97 created in 393 ms
+Node /zk-latencies/session_98 created in 394 ms
+Node /zk-latencies/session_99 created in 393 ms
+created     100 ephemeral znodes  in  39394 ms (393.946390 ms/op 2.538416/sec)
+watched     100           znodes  in   6613 ms (66.136339 ms/op 15.120281/sec)
+Node /zk-latencies/session_0 deleted in 395 ms
+Node /zk-latencies/session_1 deleted in 397 ms
+Node /zk-latencies/session_2 deleted in 393 ms
+Node /zk-latencies/session_3 deleted in 395 ms
+Node /zk-latencies/session_4 deleted in 393 ms
+Node /zk-latencies/session_5 deleted in 393 mshandle 0 got watch for /zk-latencies/session_0 in watcher 0, count 1
+handle 0 got watch for /zk-latencies/session_1 in watcher 0, count 2
+handle 0 got watch for /zk-latencies/session_2 in watcher 0, count 3
+handle 0 got watch for /zk-latencies/session_3 in watcher 0, count 4
+handle 0 got watch for /zk-latencies/session_4 in watcher 0, count 5
+handle 0 got watch for /zk-latencies/session_5 in watcher 0, count 6
+
+Node /zk-latencies/session_6 deleted in 394 ms
+Node /zk-latencies/session_7 deleted in 394 ms
+Node /zk-latencies/session_8 deleted in 393 ms
+Node /zk-latencies/session_9 deleted in 393 ms
+Node /zk-latencies/session_10 deleted in 394 ms
+Node /zk-latencies/session_11 deleted in 394 ms
+Node /zk-latencies/session_12 deleted in 393 ms
+Node /zk-latencies/session_13 deleted in 393 mshandle 0 got watch for /zk-latencies/session_6 in watcher 0, count 7
+
+ handle 0 got watch for /zk-latencies/session_7 in watcher 0, count 8Node /zk-latencies/session_14 deleted in 393 ms
+Node /zk-latencies/session_15 deleted in 393 ms
+
+Node /zk-latencies/session_16 deleted in 393 ms
+Node /zk-latencies/session_17 deleted in 393 ms
+Node /zk-latencies/session_18 deleted in 393 ms
+Node /zk-latencies/session_19 deleted in 393 ms
+Node /zk-latencies/session_20 deleted in 393 ms
+Node /zk-latencies/session_21 deleted in 394 ms
+Node /zk-latencies/session_22 deleted in 392 mshandle 0 got watch for /zk-latencies/session_8 in watcher 0, count 9
+handle 0 got watch for /zk-latencies/session_9 in watcher 0, count 10
+handle 0 got watch for /zk-latencies/session_10 in watcher 0, count 11
+handle 0 got watch for /zk-latencies/session_11 in watcher 0, count 12
+handle 0 got watch for /zk-latencies/session_12 in watcher 0, count 13
+handle 0 got watch for /zk-latencies/session_13 in watcher 0, count 14
+
+Node /zk-latencies/session_23 deleted in 392 ms
+ handle 0 got watch for /zk-latencies/session_14 in watcher 0, count 15
+handle 0 got watch for /zk-latencies/session_15 in watcher 0, count 16
+handle 0 got watch for /zk-latencies/session_16 in watcher 0, count 17
+handle 0 got watch for /zk-latencies/session_17 in watcher 0, count 18
+Node /zk-latencies/session_24 deleted in 393 ms
+Node /zk-latencies/session_25 deleted in 393 ms
+Node /zk-latencies/session_26 deleted in 392 ms
+Node /zk-latencies/session_27 deleted in 395 mshandle 0 got watch for /zk-latencies/session_18 in watcher 0, count 19
+handle 0 got watch for /zk-latencies/session_19 in watcher 0, count 20
+handle 0 got watch for /zk-latencies/session_20 in watcher 0, count 21
+
+Node /zk-latencies/session_28 deleted in 394 ms
+Node /zk-latencies/session_29 deleted in 393 ms
+Node /zk-latencies/session_30 deleted in 394 ms
+Node /zk-latencies/session_31 deleted in 394 ms
+Node /zk-latencies/session_32 deleted in 394 ms
+Node /zk-latencies/session_33 deleted in 394 ms
+Node /zk-latencies/session_34 deleted in 394 ms
+Node /zk-latencies/session_35 deleted in 393 ms
+Node /zk-latencies/session_36 deleted in 394 ms
+Node /zk-latencies/session_37 deleted in 393 ms
+Node /zk-latencies/session_38 deleted in 393 ms
+Node /zk-latencies/session_39 deleted in 393 ms
+Node /zk-latencies/session_40 deleted in 393 ms
+Node /zk-latencies/session_41 deleted in 393 ms
+Node /zk-latencies/session_42 deleted in 393 ms
+Node /zk-latencies/session_43 deleted in 394 ms
+handle 0 got watch for /zk-latencies/session_21 in watcher 0, count 22
+handle 0 got watch for /zk-latencies/session_22 in watcher 0, count 23
+Node /zk-latencies/session_44 deleted in 393 ms
+Node /zk-latencies/session_45 deleted in 393 ms
+ handle 0 got watch for /zk-latencies/session_23 in watcher 0, count 24
+handle 0 got watch for /zk-latencies/session_24 in watcher 0, count 25
+handle 0 got watch for /zk-latencies/session_25 in watcher 0, count 26
+handle 0 got watch for /zk-latencies/session_26 in watcher 0, count 27
+handle 0 got watch for /zk-latencies/session_27 in watcher 0, count 28
+handle 0 got watch for /zk-latencies/session_28 in watcher 0, count 29
+handle 0 got watch for /zk-latencies/session_29 in watcher 0, count 30Node /zk-latencies/session_46 deleted in 393 ms
+Node /zk-latencies/session_47 deleted in 393 ms
+Node /zk-latencies/session_48 deleted in 394 ms
+Node /zk-latencies/session_49 deleted in 394 ms
+Node /zk-latencies/session_50 deleted in 396 ms
+Node /zk-latencies/session_51 deleted in 393 ms
+Node /zk-latencies/session_52 deleted in 394 ms
+Node /zk-latencies/session_53 deleted in 393 ms
+Node /zk-latencies/session_54 deleted in 393 ms
+Node /zk-latencies/session_55 deleted in 394 ms
+Node /zk-latencies/session_56 deleted in 393 ms
+Node /zk-latencies/session_57 deleted in 394 ms
+Node /zk-latencies/session_58 deleted in 393 ms
+Node /zk-latencies/session_59 deleted in 392 ms
+
+Node /zk-latencies/session_60 deleted in 393 ms
+Node /zk-latencies/session_61 deleted in 393 ms
+Node /zk-latencies/session_62 deleted in 392 ms
+Node /zk-latencies/session_63 deleted in 393 ms
+Node /zk-latencies/session_64 deleted in 393 ms
+Node /zk-latencies/session_65 deleted in 393 mshandle 0 got watch for /zk-latencies/session_30 in watcher 0, count 31
+
+Node /zk-latencies/session_66 deleted in 393 ms
+Node /zk-latencies/session_67 deleted in 393 ms
+handle 0 got watch for /zk-latencies/session_31 in watcher 0, count 32
+Node /zk-latencies/session_68 deleted in 393 ms
+Node /zk-latencies/session_69 deleted in 393 ms
+Node /zk-latencies/session_70 deleted in 393 ms
+Node /zk-latencies/session_71 deleted in 393 ms
+Node /zk-latencies/session_72 deleted in 393 ms
+Node /zk-latencies/session_73 deleted in 393 ms
+ handle 0 got watch for /zk-latencies/session_32 in watcher 0, count 33
+Node /zk-latencies/session_74 deleted in 394 ms
+Node /zk-latencies/session_75 deleted in 393 ms
+Node /zk-latencies/session_76 deleted in 393 ms
+Node /zk-latencies/session_77 deleted in 394 ms
+Node /zk-latencies/session_78 deleted in 394 ms
+Node /zk-latencies/session_79 deleted in 393 ms
+Node /zk-latencies/session_80 deleted in 393 ms
+Node /zk-latencies/session_81 deleted in 392 mshandle 0 got watch for /zk-latencies/session_33 in watcher 0, count 34
+handle 0 got watch for /zk-latencies/session_34 in watcher 0, count 35
+
+Node /zk-latencies/session_82 deleted in 392 ms
+Node /zk-latencies/session_83 deleted in 392 ms
+Node /zk-latencies/session_84 deleted in 393 ms
+Node /zk-latencies/session_85 deleted in 393 ms
+Node /zk-latencies/session_86 deleted in 393 ms
+Node /zk-latencies/session_87 deleted in 393 ms
+Node /zk-latencies/session_88 deleted in 394 ms
+Node /zk-latencies/session_89 deleted in 394 ms
+Node /zk-latencies/session_90 deleted in 393 ms
+Node /zk-latencies/session_91 deleted in 393 ms
+Node /zk-latencies/session_92 deleted in 393 ms
+Node /zk-latencies/session_93 deleted in 393 ms
+Node /zk-latencies/session_94 deleted in 394 ms
+Node /zk-latencies/session_95 deleted in 392 ms
+Node /zk-latencies/session_96 deleted in 392 ms
+Node /zk-latencies/session_97 deleted in 392 ms
+Node /zk-latencies/session_98 deleted in 395 ms
+Node /zk-latencies/session_99 deleted in 392 ms
+deleted     100 ephemeral znodes  in  39377 ms (393.775358 ms/op 2.539519/sec)
+handle 0 got watch for /zk-latencies/session_35 in watcher 0, count 36
+handle 0 got watch for /zk-latencies/session_36 in watcher 0, count 37
+handle 0 got watch for /zk-latencies/session_37 in watcher 0, count 38
+handle 0 got watch for /zk-latencies/session_38 in watcher 0, count 39
+handle 0 got watch for /zk-latencies/session_39 in watcher 0, count 40
+handle 0 got watch for /zk-latencies/session_40 in watcher 0, count 41
+handle 0 got watch for /zk-latencies/session_41 in watcher 0, count 42
+handle 0 got watch for /zk-latencies/session_42 in watcher 0, count 43
+handle 0 got watch for /zk-latencies/session_43 in watcher 0, count 44
+handle 0 got watch for /zk-latencies/session_44 in watcher 0, count 45
+handle 0 got watch for /zk-latencies/session_45 in watcher 0, count 46
+handle 0 got watch for /zk-latencies/session_46 in watcher 0, count 47
+handle 0 got watch for /zk-latencies/session_47 in watcher 0, count 48
+handle 0 got watch for /zk-latencies/session_48 in watcher 0, count 49
+handle 0 got watch for /zk-latencies/session_49 in watcher 0, count 50
+handle 0 got watch for /zk-latencies/session_50 in watcher 0, count 51
+handle 0 got watch for /zk-latencies/session_51 in watcher 0, count 52
+handle 0 got watch for /zk-latencies/session_52 in watcher 0, count 53
+handle 0 got watch for /zk-latencies/session_53 in watcher 0, count 54
+handle 0 got watch for /zk-latencies/session_54 in watcher 0, count 55
+handle 0 got watch for /zk-latencies/session_55 in watcher 0, count 56
+handle 0 got watch for /zk-latencies/session_56 in watcher 0, count 57
+handle 0 got watch for /zk-latencies/session_57 in watcher 0, count 58
+handle 0 got watch for /zk-latencies/session_58 in watcher 0, count 59
+handle 0 got watch for /zk-latencies/session_59 in watcher 0, count 60
+handle 0 got watch for /zk-latencies/session_60 in watcher 0, count 61
+handle 0 got watch for /zk-latencies/session_61 in watcher 0, count 62
+handle 0 got watch for /zk-latencies/session_62 in watcher 0, count 63
+handle 0 got watch for /zk-latencies/session_63 in watcher 0, count 64
+handle 0 got watch for /zk-latencies/session_64 in watcher 0, count 65
+handle 0 got watch for /zk-latencies/session_65 in watcher 0, count 66
+handle 0 got watch for /zk-latencies/session_66 in watcher 0, count 67
+handle 0 got watch for /zk-latencies/session_67 in watcher 0, count 68
+handle 0 got watch for /zk-latencies/session_68 in watcher 0, count 69
+handle 0 got watch for /zk-latencies/session_69 in watcher 0, count 70
+handle 0 got watch for /zk-latencies/session_70 in watcher 0, count 71
+handle 0 got watch for /zk-latencies/session_71 in watcher 0, count 72
+handle 0 got watch for /zk-latencies/session_72 in watcher 0, count 73
+handle 0 got watch for /zk-latencies/session_73 in watcher 0, count 74
+handle 0 got watch for /zk-latencies/session_74 in watcher 0, count 75
+handle 0 got watch for /zk-latencies/session_75 in watcher 0, count 76
+handle 0 got watch for /zk-latencies/session_76 in watcher 0, count 77
+handle 0 got watch for /zk-latencies/session_77 in watcher 0, count 78
+handle 0 got watch for /zk-latencies/session_78 in watcher 0, count 79
+handle 0 got watch for /zk-latencies/session_79 in watcher 0, count 80
+handle 0 got watch for /zk-latencies/session_80 in watcher 0, count 81
+handle 0 got watch for /zk-latencies/session_81 in watcher 0, count 82
+handle 0 got watch for /zk-latencies/session_82 in watcher 0, count 83
+handle 0 got watch for /zk-latencies/session_83 in watcher 0, count 84
+handle 0 got watch for /zk-latencies/session_84 in watcher 0, count 85
+handle 0 got watch for /zk-latencies/session_85 in watcher 0, count 86
+handle 0 got watch for /zk-latencies/session_86 in watcher 0, count 87
+handle 0 got watch for /zk-latencies/session_87 in watcher 0, count 88
+handle 0 got watch for /zk-latencies/session_88 in watcher 0, count 89
+handle 0 got watch for /zk-latencies/session_89 in watcher 0, count 90
+handle 0 got watch for /zk-latencies/session_90 in watcher 0, count 91
+handle 0 got watch for /zk-latencies/session_91 in watcher 0, count 92
+handle 0 got watch for /zk-latencies/session_92 in watcher 0, count 93
+handle 0 got watch for /zk-latencies/session_93 in watcher 0, count 94
+handle 0 got watch for /zk-latencies/session_94 in watcher 0, count 95
+handle 0 got watch for /zk-latencies/session_95 in watcher 0, count 96
+handle 0 got watch for /zk-latencies/session_96 in watcher 0, count 97
+handle 0 got watch for /zk-latencies/session_97 in watcher 0, count 98
+handle 0 got watch for /zk-latencies/session_98 in watcher 0, count 99
+handle 0 got watch for /zk-latencies/session_99 in watcher 0, count 100
+notif       100           watches in   1001 ms (10.011179 ms/op 99.888330/sec)
+Testing latencies on server 35.204.26.15:2181 using syncronous calls
+Node /zk-latencies/session_0 created in 545 ms
+Node /zk-latencies/session_1 created in 543 ms
+Node /zk-latencies/session_2 created in 542 ms
+Node /zk-latencies/session_3 created in 543 ms
+Node /zk-latencies/session_4 created in 543 ms
+Node /zk-latencies/session_5 created in 544 ms
+Node /zk-latencies/session_6 created in 543 ms
+Node /zk-latencies/session_7 created in 544 ms
+Node /zk-latencies/session_8 created in 543 ms
+Node /zk-latencies/session_9 created in 543 ms
+Node /zk-latencies/session_10 created in 543 ms
+Node /zk-latencies/session_11 created in 542 ms
+Node /zk-latencies/session_12 created in 544 ms
+Node /zk-latencies/session_13 created in 542 ms
+Node /zk-latencies/session_14 created in 542 ms
+Node /zk-latencies/session_15 created in 543 ms
+Node /zk-latencies/session_16 created in 543 ms
+Node /zk-latencies/session_17 created in 545 ms
+Node /zk-latencies/session_18 created in 543 ms
+Node /zk-latencies/session_19 created in 543 ms
+Node /zk-latencies/session_20 created in 543 ms
+Node /zk-latencies/session_21 created in 542 ms
+Node /zk-latencies/session_22 created in 543 ms
+Node /zk-latencies/session_23 created in 543 ms
+Node /zk-latencies/session_24 created in 543 ms
+Node /zk-latencies/session_25 created in 543 ms
+Node /zk-latencies/session_26 created in 543 ms
+Node /zk-latencies/session_27 created in 544 ms
+Node /zk-latencies/session_28 created in 548 ms
+Node /zk-latencies/session_29 created in 543 ms
+Node /zk-latencies/session_30 created in 543 ms
+Node /zk-latencies/session_31 created in 542 ms
+Node /zk-latencies/session_32 created in 543 ms
+Node /zk-latencies/session_33 created in 542 ms
+Node /zk-latencies/session_34 created in 543 ms
+Node /zk-latencies/session_35 created in 543 ms
+Node /zk-latencies/session_36 created in 545 ms
+Node /zk-latencies/session_37 created in 542 ms
+Node /zk-latencies/session_38 created in 543 ms
+Node /zk-latencies/session_39 created in 543 ms
+Node /zk-latencies/session_40 created in 543 ms
+Node /zk-latencies/session_41 created in 543 ms
+Node /zk-latencies/session_42 created in 544 ms
+Node /zk-latencies/session_43 created in 543 ms
+Node /zk-latencies/session_44 created in 543 ms
+Node /zk-latencies/session_45 created in 542 ms
+Node /zk-latencies/session_46 created in 544 ms
+Node /zk-latencies/session_47 created in 543 ms
+Node /zk-latencies/session_48 created in 543 ms
+Node /zk-latencies/session_49 created in 543 ms
+Node /zk-latencies/session_50 created in 543 ms
+Node /zk-latencies/session_51 created in 542 ms
+Node /zk-latencies/session_52 created in 542 ms
+Node /zk-latencies/session_53 created in 543 ms
+Node /zk-latencies/session_54 created in 543 ms
+Node /zk-latencies/session_55 created in 546 ms
+Node /zk-latencies/session_56 created in 542 ms
+Node /zk-latencies/session_57 created in 543 ms
+Node /zk-latencies/session_58 created in 543 ms
+Node /zk-latencies/session_59 created in 543 ms
+Node /zk-latencies/session_60 created in 543 ms
+Node /zk-latencies/session_61 created in 544 ms
+Node /zk-latencies/session_62 created in 543 ms
+Node /zk-latencies/session_63 created in 543 ms
+Node /zk-latencies/session_64 created in 543 ms
+Node /zk-latencies/session_65 created in 542 ms
+Node /zk-latencies/session_66 created in 543 ms
+Node /zk-latencies/session_67 created in 543 ms
+Node /zk-latencies/session_68 created in 542 ms
+Node /zk-latencies/session_69 created in 542 ms
+Node /zk-latencies/session_70 created in 543 ms
+Node /zk-latencies/session_71 created in 543 ms
+Node /zk-latencies/session_72 created in 542 ms
+Node /zk-latencies/session_73 created in 545 ms
+Node /zk-latencies/session_74 created in 543 ms
+Node /zk-latencies/session_75 created in 543 ms
+Node /zk-latencies/session_76 created in 543 ms
+Node /zk-latencies/session_77 created in 543 ms
+Node /zk-latencies/session_78 created in 542 ms
+Node /zk-latencies/session_79 created in 542 ms
+Node /zk-latencies/session_80 created in 543 ms
+Node /zk-latencies/session_81 created in 543 ms
+Node /zk-latencies/session_82 created in 544 ms
+Node /zk-latencies/session_83 created in 543 ms
+Node /zk-latencies/session_84 created in 543 ms
+Node /zk-latencies/session_85 created in 542 ms
+Node /zk-latencies/session_86 created in 542 ms
+Node /zk-latencies/session_87 created in 543 ms
+Node /zk-latencies/session_88 created in 543 ms
+Node /zk-latencies/session_89 created in 543 ms
+Node /zk-latencies/session_90 created in 545 ms
+Node /zk-latencies/session_91 created in 543 ms
+Node /zk-latencies/session_92 created in 545 ms
+Node /zk-latencies/session_93 created in 542 ms
+Node /zk-latencies/session_94 created in 543 ms
+Node /zk-latencies/session_95 created in 542 ms
+Node /zk-latencies/session_96 created in 543 ms
+Node /zk-latencies/session_97 created in 542 ms
+Node /zk-latencies/session_98 created in 543 ms
+Node /zk-latencies/session_99 created in 543 ms
+created     100 permanent znodes  in  54356 ms (543.561411 ms/op 1.839719/sec)
+set         100           znodes  in  54341 ms (543.415382 ms/op 1.840213/sec)
+get         100           znodes  in   9582 ms (95.820532 ms/op 10.436177/sec)
+Node /zk-latencies/session_0 deleted in 543 ms
+Node /zk-latencies/session_1 deleted in 543 ms
+Node /zk-latencies/session_2 deleted in 542 ms
+Node /zk-latencies/session_3 deleted in 542 ms
+Node /zk-latencies/session_4 deleted in 542 ms
+Node /zk-latencies/session_5 deleted in 543 ms
+Node /zk-latencies/session_6 deleted in 542 ms
+Node /zk-latencies/session_7 deleted in 543 ms
+Node /zk-latencies/session_8 deleted in 543 ms
+Node /zk-latencies/session_9 deleted in 542 ms
+Node /zk-latencies/session_10 deleted in 543 ms
+Node /zk-latencies/session_11 deleted in 542 ms
+Node /zk-latencies/session_12 deleted in 542 ms
+Node /zk-latencies/session_13 deleted in 543 ms
+Node /zk-latencies/session_14 deleted in 542 ms
+Node /zk-latencies/session_15 deleted in 543 ms
+Node /zk-latencies/session_16 deleted in 542 ms
+Node /zk-latencies/session_17 deleted in 543 ms
+Node /zk-latencies/session_18 deleted in 542 ms
+Node /zk-latencies/session_19 deleted in 543 ms
+Node /zk-latencies/session_20 deleted in 543 ms
+Node /zk-latencies/session_21 deleted in 543 ms
+Node /zk-latencies/session_22 deleted in 543 ms
+Node /zk-latencies/session_23 deleted in 542 ms
+Node /zk-latencies/session_24 deleted in 543 ms
+Node /zk-latencies/session_25 deleted in 542 ms
+Node /zk-latencies/session_26 deleted in 543 ms
+Node /zk-latencies/session_27 deleted in 543 ms
+Node /zk-latencies/session_28 deleted in 542 ms
+Node /zk-latencies/session_29 deleted in 543 ms
+Node /zk-latencies/session_30 deleted in 543 ms
+Node /zk-latencies/session_31 deleted in 544 ms
+Node /zk-latencies/session_32 deleted in 543 ms
+Node /zk-latencies/session_33 deleted in 543 ms
+Node /zk-latencies/session_34 deleted in 543 ms
+Node /zk-latencies/session_35 deleted in 542 ms
+Node /zk-latencies/session_36 deleted in 543 ms
+Node /zk-latencies/session_37 deleted in 542 ms
+Node /zk-latencies/session_38 deleted in 543 ms
+Node /zk-latencies/session_39 deleted in 542 ms
+Node /zk-latencies/session_40 deleted in 542 ms
+Node /zk-latencies/session_41 deleted in 545 ms
+Node /zk-latencies/session_42 deleted in 543 ms
+Node /zk-latencies/session_43 deleted in 543 ms
+Node /zk-latencies/session_44 deleted in 543 ms
+Node /zk-latencies/session_45 deleted in 543 ms
+Node /zk-latencies/session_46 deleted in 543 ms
+Node /zk-latencies/session_47 deleted in 543 ms
+Node /zk-latencies/session_48 deleted in 543 ms
+Node /zk-latencies/session_49 deleted in 543 ms
+Node /zk-latencies/session_50 deleted in 544 ms
+Node /zk-latencies/session_51 deleted in 543 ms
+Node /zk-latencies/session_52 deleted in 543 ms
+Node /zk-latencies/session_53 deleted in 543 ms
+Node /zk-latencies/session_54 deleted in 543 ms
+Node /zk-latencies/session_55 deleted in 543 ms
+Node /zk-latencies/session_56 deleted in 543 ms
+Node /zk-latencies/session_57 deleted in 543 ms
+Node /zk-latencies/session_58 deleted in 543 ms
+Node /zk-latencies/session_59 deleted in 542 ms
+Node /zk-latencies/session_60 deleted in 542 ms
+Node /zk-latencies/session_61 deleted in 543 ms
+Node /zk-latencies/session_62 deleted in 543 ms
+Node /zk-latencies/session_63 deleted in 542 ms
+Node /zk-latencies/session_64 deleted in 542 ms
+Node /zk-latencies/session_65 deleted in 542 ms
+Node /zk-latencies/session_66 deleted in 543 ms
+Node /zk-latencies/session_67 deleted in 543 ms
+Node /zk-latencies/session_68 deleted in 543 ms
+Node /zk-latencies/session_69 deleted in 543 ms
+Node /zk-latencies/session_70 deleted in 542 ms
+Node /zk-latencies/session_71 deleted in 542 ms
+Node /zk-latencies/session_72 deleted in 543 ms
+Node /zk-latencies/session_73 deleted in 543 ms
+Node /zk-latencies/session_74 deleted in 543 ms
+Node /zk-latencies/session_75 deleted in 544 ms
+Node /zk-latencies/session_76 deleted in 548 ms
+Node /zk-latencies/session_77 deleted in 543 ms
+Node /zk-latencies/session_78 deleted in 543 ms
+Node /zk-latencies/session_79 deleted in 542 ms
+Node /zk-latencies/session_80 deleted in 543 ms
+Node /zk-latencies/session_81 deleted in 543 ms
+Node /zk-latencies/session_82 deleted in 543 ms
+Node /zk-latencies/session_83 deleted in 543 ms
+Node /zk-latencies/session_84 deleted in 543 ms
+Node /zk-latencies/session_85 deleted in 543 ms
+Node /zk-latencies/session_86 deleted in 542 ms
+Node /zk-latencies/session_87 deleted in 542 ms
+Node /zk-latencies/session_88 deleted in 543 ms
+Node /zk-latencies/session_89 deleted in 545 ms
+Node /zk-latencies/session_90 deleted in 543 ms
+Node /zk-latencies/session_91 deleted in 543 ms
+Node /zk-latencies/session_92 deleted in 543 ms
+Node /zk-latencies/session_93 deleted in 542 ms
+Node /zk-latencies/session_94 deleted in 543 ms
+Node /zk-latencies/session_95 deleted in 543 ms
+Node /zk-latencies/session_96 deleted in 543 ms
+Node /zk-latencies/session_97 deleted in 543 ms
+Node /zk-latencies/session_98 deleted in 542 ms
+Node /zk-latencies/session_99 deleted in 542 ms
+deleted     100 permanent znodes  in  54334 ms (543.340402 ms/op 1.840467/sec)
+Node /zk-latencies/session_0 created in 543 ms
+Node /zk-latencies/session_1 created in 542 ms
+Node /zk-latencies/session_2 created in 542 ms
+Node /zk-latencies/session_3 created in 542 ms
+Node /zk-latencies/session_4 created in 542 ms
+Node /zk-latencies/session_5 created in 542 ms
+Node /zk-latencies/session_6 created in 542 ms
+Node /zk-latencies/session_7 created in 542 ms
+Node /zk-latencies/session_8 created in 543 ms
+Node /zk-latencies/session_9 created in 544 ms
+Node /zk-latencies/session_10 created in 543 ms
+Node /zk-latencies/session_11 created in 542 ms
+Node /zk-latencies/session_12 created in 542 ms
+Node /zk-latencies/session_13 created in 543 ms
+Node /zk-latencies/session_14 created in 545 ms
+Node /zk-latencies/session_15 created in 542 ms
+Node /zk-latencies/session_16 created in 543 ms
+Node /zk-latencies/session_17 created in 542 ms
+Node /zk-latencies/session_18 created in 542 ms
+Node /zk-latencies/session_19 created in 542 ms
+Node /zk-latencies/session_20 created in 543 ms
+Node /zk-latencies/session_21 created in 542 ms
+Node /zk-latencies/session_22 created in 542 ms
+Node /zk-latencies/session_23 created in 542 ms
+Node /zk-latencies/session_24 created in 542 ms
+Node /zk-latencies/session_25 created in 542 ms
+Node /zk-latencies/session_26 created in 542 ms
+Node /zk-latencies/session_27 created in 542 ms
+Node /zk-latencies/session_28 created in 542 ms
+Node /zk-latencies/session_29 created in 543 ms
+Node /zk-latencies/session_30 created in 542 ms
+Node /zk-latencies/session_31 created in 543 ms
+Node /zk-latencies/session_32 created in 543 ms
+Node /zk-latencies/session_33 created in 546 ms
+Node /zk-latencies/session_34 created in 543 ms
+Node /zk-latencies/session_35 created in 543 ms
+Node /zk-latencies/session_36 created in 543 ms
+Node /zk-latencies/session_37 created in 542 ms
+Node /zk-latencies/session_38 created in 542 ms
+Node /zk-latencies/session_39 created in 543 ms
+Node /zk-latencies/session_40 created in 543 ms
+Node /zk-latencies/session_41 created in 542 ms
+Node /zk-latencies/session_42 created in 542 ms
+Node /zk-latencies/session_43 created in 543 ms
+Node /zk-latencies/session_44 created in 542 ms
+Node /zk-latencies/session_45 created in 542 ms
+Node /zk-latencies/session_46 created in 542 ms
+Node /zk-latencies/session_47 created in 542 ms
+Node /zk-latencies/session_48 created in 542 ms
+Node /zk-latencies/session_49 created in 542 ms
+Node /zk-latencies/session_50 created in 542 ms
+Node /zk-latencies/session_51 created in 545 ms
+Node /zk-latencies/session_52 created in 543 ms
+Node /zk-latencies/session_53 created in 543 ms
+Node /zk-latencies/session_54 created in 543 ms
+Node /zk-latencies/session_55 created in 543 ms
+Node /zk-latencies/session_56 created in 542 ms
+Node /zk-latencies/session_57 created in 543 ms
+Node /zk-latencies/session_58 created in 542 ms
+Node /zk-latencies/session_59 created in 543 ms
+Node /zk-latencies/session_60 created in 542 ms
+Node /zk-latencies/session_61 created in 543 ms
+Node /zk-latencies/session_62 created in 542 ms
+Node /zk-latencies/session_63 created in 543 ms
+Node /zk-latencies/session_64 created in 542 ms
+Node /zk-latencies/session_65 created in 542 ms
+Node /zk-latencies/session_66 created in 543 ms
+Node /zk-latencies/session_67 created in 542 ms
+Node /zk-latencies/session_68 created in 542 ms
+Node /zk-latencies/session_69 created in 543 ms
+Node /zk-latencies/session_70 created in 546 ms
+Node /zk-latencies/session_71 created in 543 ms
+Node /zk-latencies/session_72 created in 543 ms
+Node /zk-latencies/session_73 created in 544 ms
+Node /zk-latencies/session_74 created in 543 ms
+Node /zk-latencies/session_75 created in 543 ms
+Node /zk-latencies/session_76 created in 543 ms
+Node /zk-latencies/session_77 created in 542 ms
+Node /zk-latencies/session_78 created in 543 ms
+Node /zk-latencies/session_79 created in 543 ms
+Node /zk-latencies/session_80 created in 542 ms
+Node /zk-latencies/session_81 created in 542 ms
+Node /zk-latencies/session_82 created in 542 ms
+Node /zk-latencies/session_83 created in 542 ms
+Node /zk-latencies/session_84 created in 543 ms
+Node /zk-latencies/session_85 created in 543 ms
+Node /zk-latencies/session_86 created in 545 ms
+Node /zk-latencies/session_87 created in 543 ms
+Node /zk-latencies/session_88 created in 545 ms
+Node /zk-latencies/session_89 created in 542 ms
+Node /zk-latencies/session_90 created in 543 ms
+Node /zk-latencies/session_91 created in 542 ms
+Node /zk-latencies/session_92 created in 542 ms
+Node /zk-latencies/session_93 created in 542 ms
+Node /zk-latencies/session_94 created in 543 ms
+Node /zk-latencies/session_95 created in 542 ms
+Node /zk-latencies/session_96 created in 543 ms
+Node /zk-latencies/session_97 created in 543 ms
+Node /zk-latencies/session_98 created in 543 ms
+Node /zk-latencies/session_99 created in 543 ms
+created     100 ephemeral znodes  in  54317 ms (543.176680 ms/op 1.841022/sec)
+watched     100           znodes  in   9578 ms (95.788980 ms/op 10.439614/sec)
+handle 1 got watch for /zk-latencies/session_0 in watcher 1, count 1
+Node /zk-latencies/session_0 deleted in 543 ms
+handle 1 got watch for /zk-latencies/session_1 in watcher 1, count 2
+Node /zk-latencies/session_1 deleted in 542 ms
+Node /zk-latencies/session_2 deleted in 542 ms
+handle 1 got watch for /zk-latencies/session_2 in watcher 1, count 3
+handle 1 got watch for /zk-latencies/session_3 in watcher 1, count 4
+Node /zk-latencies/session_3 deleted in 542 ms
+Node /zk-latencies/session_4 deleted in 541 ms
+ handle 1 got watch for /zk-latencies/session_4 in watcher 1, count 5
+Node /zk-latencies/session_5 deleted in 542 ms
+handle 1 got watch for /zk-latencies/session_5 in watcher 1, count 6
+handle 1 got watch for /zk-latencies/session_6 in watcher 1, count 7
+Node /zk-latencies/session_6 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_7 in watcher 1, count 8
+Node /zk-latencies/session_7 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_8 in watcher 1, count 9
+Node /zk-latencies/session_8 deleted in 542 ms
+handle 1 got watch for /zk-latencies/session_9 in watcher 1, count 10
+Node /zk-latencies/session_9 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_10 in watcher 1, count 11
+Node /zk-latencies/session_10 deleted in 542 ms
+handle 1 got watch for /zk-latencies/session_11 in watcher 1, count 12
+Node /zk-latencies/session_11 deleted in 542 ms
+handle 1 got watch for /zk-latencies/session_12 in watcher 1, count 13
+Node /zk-latencies/session_12 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_13 in watcher 1, count 14
+Node /zk-latencies/session_13 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_14 in watcher 1, count 15
+Node /zk-latencies/session_14 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_15 in watcher 1, count 16
+Node /zk-latencies/session_15 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_16 in watcher 1, count 17
+Node /zk-latencies/session_16 deleted in 541 ms
+Node /zk-latencies/session_17 deleted in 541 ms
+Node /zk-latencies/session_18 deleted in 542 ms
+Node /zk-latencies/session_19 deleted in 544 ms
+ handle 1 got watch for /zk-latencies/session_17 in watcher 1, count 18
+Node /zk-latencies/session_20 deleted in 541 ms
+Node /zk-latencies/session_21 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_18 in watcher 1, count 19
+handle 1 got watch for /zk-latencies/session_19 in watcher 1, count 20
+handle 1 got watch for /zk-latencies/session_20 in watcher 1, count 21
+handle 1 got watch for /zk-latencies/session_21 in watcher 1, count 22
+handle 1 got watch for /zk-latencies/session_22 in watcher 1, count 23
+Node /zk-latencies/session_22 deleted in 542 ms
+handle 1 got watch for /zk-latencies/session_23 in watcher 1, count 24
+Node /zk-latencies/session_23 deleted in 542 ms
+handle 1 got watch for /zk-latencies/session_24 in watcher 1, count 25
+Node /zk-latencies/session_24 deleted in 542 ms
+Node /zk-latencies/session_25 deleted in 541 ms
+Node /zk-latencies/session_26 deleted in 541 ms
+Node /zk-latencies/session_27 deleted in 541 ms
+Node /zk-latencies/session_28 deleted in 541 ms
+Node /zk-latencies/session_29 deleted in 542 ms
+Node /zk-latencies/session_30 deleted in 541 ms
+Node /zk-latencies/session_31 deleted in 541 ms
+Node /zk-latencies/session_32 deleted in 542 ms
+Node /zk-latencies/session_33 deleted in 541 ms
+Node /zk-latencies/session_34 deleted in 541 ms
+Node /zk-latencies/session_35 deleted in 542 ms
+Node /zk-latencies/session_36 deleted in 541 ms
+ handle 1 got watch for /zk-latencies/session_25 in watcher 1, count 26
+handle 1 got watch for /zk-latencies/session_26 in watcher 1, count 27
+handle 1 got watch for /zk-latencies/session_27 in watcher 1, count 28
+handle 1 got watch for /zk-latencies/session_28 in watcher 1, count 29
+handle 1 got watch for /zk-latencies/session_29 in watcher 1, count 30
+handle 1 got watch for /zk-latencies/session_30 in watcher 1, count 31Node /zk-latencies/session_37 deleted in 542 ms
+Node /zk-latencies/session_38 deleted in 541 ms
+Node /zk-latencies/session_39 deleted in 541 ms
+
+handle 1 got watch for /zk-latencies/session_31 in watcher 1, count 32
+handle 1 got watch for /zk-latencies/session_32 in watcher 1, count 33
+handle 1 got watch for /zk-latencies/session_33 in watcher 1, count 34
+handle 1 got watch for /zk-latencies/session_34 in watcher 1, count 35
+handle 1 got watch for /zk-latencies/session_35 in watcher 1, count 36
+handle 1 got watch for /zk-latencies/session_36 in watcher 1, count 37
+handle 1 got watch for /zk-latencies/session_37 in watcher 1, count 38
+handle 1 got watch for /zk-latencies/session_38 in watcher 1, count 39
+handle 1 got watch for /zk-latencies/session_39 in watcher 1, count 40
+handle 1 got watch for /zk-latencies/session_40 in watcher 1, count 41
+Node /zk-latencies/session_40 deleted in 541 ms
+Node /zk-latencies/session_41 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_41 in watcher 1, count 42
+handle 1 got watch for /zk-latencies/session_42 in watcher 1, count 43
+Node /zk-latencies/session_42 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_43 in watcher 1, count 44
+Node /zk-latencies/session_43 deleted in 541 ms
+Node /zk-latencies/session_44 deleted in 541 ms
+Node /zk-latencies/session_45 deleted in 542 ms
+Node /zk-latencies/session_46 deleted in 542 ms
+handle 1 got watch for /zk-latencies/session_44 in watcher 1, count 45
+handle 1 got watch for /zk-latencies/session_45 in watcher 1, count 46
+handle 1 got watch for /zk-latencies/session_46 in watcher 1, count 47
+handle 1 got watch for /zk-latencies/session_47 in watcher 1, count 48
+ Node /zk-latencies/session_47 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_48 in watcher 1, count 49
+Node /zk-latencies/session_48 deleted in 541 ms
+Node /zk-latencies/session_49 deleted in 542 ms
+handle 1 got watch for /zk-latencies/session_49 in watcher 1, count 50
+handle 1 got watch for /zk-latencies/session_50 in watcher 1, count 51
+Node /zk-latencies/session_50 deleted in 542 ms
+handle 1 got watch for /zk-latencies/session_51 in watcher 1, count 52
+Node /zk-latencies/session_51 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_52 in watcher 1, count 53
+Node /zk-latencies/session_52 deleted in 541 ms
+Node /zk-latencies/session_53 deleted in 541 ms
+Node /zk-latencies/session_54 deleted in 541 ms
+Node /zk-latencies/session_55 deleted in 541 ms
+Node /zk-latencies/session_56 deleted in 541 ms
+Node /zk-latencies/session_57 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_53 in watcher 1, count 54
+handle 1 got watch for /zk-latencies/session_54 in watcher 1, count 55
+handle 1 got watch for /zk-latencies/session_55 in watcher 1, count 56
+handle 1 got watch for /zk-latencies/session_56 in watcher 1, count 57
+handle 1 got watch for /zk-latencies/session_57 in watcher 1, count 58
+Node /zk-latencies/session_58 deleted in 541 ms
+Node /zk-latencies/session_59 deleted in 541 ms
+ handle 1 got watch for /zk-latencies/session_58 in watcher 1, count 59
+handle 1 got watch for /zk-latencies/session_59 in watcher 1, count 60
+handle 1 got watch for /zk-latencies/session_60 in watcher 1, count 61
+Node /zk-latencies/session_60 deleted in 541 ms
+Node /zk-latencies/session_61 deleted in 542 ms
+handle 1 got watch for /zk-latencies/session_61 in watcher 1, count 62
+handle 1 got watch for /zk-latencies/session_62 in watcher 1, count 63
+Node /zk-latencies/session_62 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_63 in watcher 1, count 64
+Node /zk-latencies/session_63 deleted in 541 ms
+Node /zk-latencies/session_64 deleted in 541 ms
+Node /zk-latencies/session_65 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_64 in watcher 1, count 65
+handle 1 got watch for /zk-latencies/session_65 in watcher 1, count 66
+handle 1 got watch for /zk-latencies/session_66 in watcher 1, count 67
+Node /zk-latencies/session_66 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_67 in watcher 1, count 68
+Node /zk-latencies/session_67 deleted in 544 ms
+handle 1 got watch for /zk-latencies/session_68 in watcher 1, count 69
+Node /zk-latencies/session_68 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_69 in watcher 1, count 70
+Node /zk-latencies/session_69 deleted in 542 ms
+handle 1 got watch for /zk-latencies/session_70 in watcher 1, count 71
+Node /zk-latencies/session_70 deleted in 542 ms
+Node /zk-latencies/session_71 deleted in 542 ms
+Node /zk-latencies/session_72 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_71 in watcher 1, count 72
+handle 1 got watch for /zk-latencies/session_72 in watcher 1, count 73
+handle 1 got watch for /zk-latencies/session_73 in watcher 1, count 74
+Node /zk-latencies/session_73 deleted in 542 ms
+handle 1 got watch for /zk-latencies/session_74 in watcher 1, count 75
+Node /zk-latencies/session_74 deleted in 541 ms
+Node /zk-latencies/session_75 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_75 in watcher 1, count 76
+handle 1 got watch for /zk-latencies/session_76 in watcher 1, count 77
+Node /zk-latencies/session_76 deleted in 541 ms
+Node /zk-latencies/session_77 deleted in 544 ms
+Node /zk-latencies/session_78 deleted in 541 ms
+Node /zk-latencies/session_79 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_77 in watcher 1, count 78
+handle 1 got watch for /zk-latencies/session_78 in watcher 1, count 79
+handle 1 got watch for /zk-latencies/session_79 in watcher 1, count 80
+handle 1 got watch for /zk-latencies/session_80 in watcher 1, count 81
+Node /zk-latencies/session_80 deleted in 541 ms
+Node /zk-latencies/session_81 deleted in 541 ms
+Node /zk-latencies/session_82 deleted in 542 ms
+Node /zk-latencies/session_83 deleted in 542 ms
+Node /zk-latencies/session_84 deleted in 542 ms
+handle 1 got watch for /zk-latencies/session_81 in watcher 1, count 82
+Node /zk-latencies/session_85 deleted in 541 ms
+Node /zk-latencies/session_86 deleted in 541 ms
+Node /zk-latencies/session_87 deleted in 541 ms
+Node /zk-latencies/session_88 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_82 in watcher 1, count 83
+handle 1 got watch for /zk-latencies/session_83 in watcher 1, count 84
+handle 1 got watch for /zk-latencies/session_84 in watcher 1, count 85
+handle 1 got watch for /zk-latencies/session_85 in watcher 1, count 86
+handle 1 got watch for /zk-latencies/session_86 in watcher 1, count 87
+handle 1 got watch for /zk-latencies/session_87 in watcher 1, count 88
+handle 1 got watch for /zk-latencies/session_88 in watcher 1, count 89
+handle 1 got watch for /zk-latencies/session_89 in watcher 1, count 90
+Node /zk-latencies/session_89 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_90 in watcher 1, count 91
+Node /zk-latencies/session_90 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_91 in watcher 1, count 92
+Node /zk-latencies/session_91 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_92 in watcher 1, count 93
+Node /zk-latencies/session_92 deleted in 541 ms
+handle 1 got watch for /zk-latencies/session_93 in watcher 1, count 94
+Node /zk-latencies/session_93 deleted in 542 ms
+Node /zk-latencies/session_94 deleted in 542 ms
+handle 1 got watch for /zk-latencies/session_94 in watcher 1, count 95
+handle 1 got watch for /zk-latencies/session_95 in watcher 1, count 96
+Node /zk-latencies/session_95 deleted in 542 ms
+Node /zk-latencies/session_96 deleted in 542 ms
+Node /zk-latencies/session_97 deleted in 542 ms
+Node /zk-latencies/session_98 deleted in 542 ms
+Node /zk-latencies/session_99 deleted in 541 ms
+deleted     100 ephemeral znodes  in  54206 ms (542.061191 ms/op 1.844810/sec)
+handle 1 got watch for /zk-latencies/session_96 in watcher 1, count 97
+handle 1 got watch for /zk-latencies/session_97 in watcher 1, count 98
+handle 1 got watch for /zk-latencies/session_98 in watcher 1, count 99
+handle 1 got watch for /zk-latencies/session_99 in watcher 1, count 100
+notif       100           watches in   1001 ms (10.011420 ms/op 99.885928/sec)
+Testing latencies on server 35.229.187.208:2181 using syncronous calls
+Node /zk-latencies/session_0 created in 488 ms
+Node /zk-latencies/session_1 created in 485 ms
+Node /zk-latencies/session_2 created in 485 ms
+Node /zk-latencies/session_3 created in 484 ms
+Node /zk-latencies/session_4 created in 485 ms
+Node /zk-latencies/session_5 created in 484 ms
+Node /zk-latencies/session_6 created in 487 ms
+Node /zk-latencies/session_7 created in 484 ms
+Node /zk-latencies/session_8 created in 485 ms
+Node /zk-latencies/session_9 created in 485 ms
+Node /zk-latencies/session_10 created in 485 ms
+Node /zk-latencies/session_11 created in 485 ms
+Node /zk-latencies/session_12 created in 484 ms
+Node /zk-latencies/session_13 created in 485 ms
+Node /zk-latencies/session_14 created in 484 ms
+Node /zk-latencies/session_15 created in 485 ms
+Node /zk-latencies/session_16 created in 485 ms
+Node /zk-latencies/session_17 created in 485 ms
+Node /zk-latencies/session_18 created in 485 ms
+Node /zk-latencies/session_19 created in 485 ms
+Node /zk-latencies/session_20 created in 485 ms
+Node /zk-latencies/session_21 created in 484 ms
+Node /zk-latencies/session_22 created in 485 ms
+Node /zk-latencies/session_23 created in 485 ms
+Node /zk-latencies/session_24 created in 487 ms
+Node /zk-latencies/session_25 created in 484 ms
+Node /zk-latencies/session_26 created in 484 ms
+Node /zk-latencies/session_27 created in 484 ms
+Node /zk-latencies/session_28 created in 484 ms
+Node /zk-latencies/session_29 created in 484 ms
+Node /zk-latencies/session_30 created in 484 ms
+Node /zk-latencies/session_31 created in 485 ms
+Node /zk-latencies/session_32 created in 485 ms
+Node /zk-latencies/session_33 created in 486 ms
+Node /zk-latencies/session_34 created in 484 ms
+Node /zk-latencies/session_35 created in 485 ms
+Node /zk-latencies/session_36 created in 485 ms
+Node /zk-latencies/session_37 created in 484 ms
+Node /zk-latencies/session_38 created in 485 ms
+Node /zk-latencies/session_39 created in 485 ms
+Node /zk-latencies/session_40 created in 484 ms
+Node /zk-latencies/session_41 created in 485 ms
+Node /zk-latencies/session_42 created in 485 ms
+Node /zk-latencies/session_43 created in 487 ms
+Node /zk-latencies/session_44 created in 484 ms
+Node /zk-latencies/session_45 created in 485 ms
+Node /zk-latencies/session_46 created in 485 ms
+Node /zk-latencies/session_47 created in 485 ms
+Node /zk-latencies/session_48 created in 485 ms
+Node /zk-latencies/session_49 created in 485 ms
+Node /zk-latencies/session_50 created in 485 ms
+Node /zk-latencies/session_51 created in 485 ms
+Node /zk-latencies/session_52 created in 484 ms
+Node /zk-latencies/session_53 created in 485 ms
+Node /zk-latencies/session_54 created in 485 ms
+Node /zk-latencies/session_55 created in 485 ms
+Node /zk-latencies/session_56 created in 485 ms
+Node /zk-latencies/session_57 created in 484 ms
+Node /zk-latencies/session_58 created in 484 ms
+Node /zk-latencies/session_59 created in 485 ms
+Node /zk-latencies/session_60 created in 485 ms
+Node /zk-latencies/session_61 created in 487 ms
+Node /zk-latencies/session_62 created in 485 ms
+Node /zk-latencies/session_63 created in 486 ms
+Node /zk-latencies/session_64 created in 485 ms
+Node /zk-latencies/session_65 created in 484 ms
+Node /zk-latencies/session_66 created in 485 ms
+Node /zk-latencies/session_67 created in 485 ms
+Node /zk-latencies/session_68 created in 485 ms
+Node /zk-latencies/session_69 created in 485 ms
+Node /zk-latencies/session_70 created in 485 ms
+Node /zk-latencies/session_71 created in 484 ms
+Node /zk-latencies/session_72 created in 485 ms
+Node /zk-latencies/session_73 created in 484 ms
+Node /zk-latencies/session_74 created in 484 ms
+Node /zk-latencies/session_75 created in 484 ms
+Node /zk-latencies/session_76 created in 484 ms
+Node /zk-latencies/session_77 created in 484 ms
+Node /zk-latencies/session_78 created in 485 ms
+Node /zk-latencies/session_79 created in 485 ms
+Node /zk-latencies/session_80 created in 487 ms
+Node /zk-latencies/session_81 created in 485 ms
+Node /zk-latencies/session_82 created in 485 ms
+Node /zk-latencies/session_83 created in 484 ms
+Node /zk-latencies/session_84 created in 484 ms
+Node /zk-latencies/session_85 created in 484 ms
+Node /zk-latencies/session_86 created in 484 ms
+Node /zk-latencies/session_87 created in 484 ms
+Node /zk-latencies/session_88 created in 485 ms
+Node /zk-latencies/session_89 created in 485 ms
+Node /zk-latencies/session_90 created in 485 ms
+Node /zk-latencies/session_91 created in 484 ms
+Node /zk-latencies/session_92 created in 484 ms
+Node /zk-latencies/session_93 created in 485 ms
+Node /zk-latencies/session_94 created in 484 ms
+Node /zk-latencies/session_95 created in 484 ms
+Node /zk-latencies/session_96 created in 484 ms
+Node /zk-latencies/session_97 created in 485 ms
+Node /zk-latencies/session_98 created in 487 ms
+Node /zk-latencies/session_99 created in 485 ms
+created     100 permanent znodes  in  48537 ms (485.374730 ms/op 2.060264/sec)
+set         100           znodes  in  48515 ms (485.152080 ms/op 2.061209/sec)
+get         100           znodes  in  18414 ms (184.146140 ms/op 5.430470/sec)
+Node /zk-latencies/session_0 deleted in 485 ms
+Node /zk-latencies/session_1 deleted in 485 ms
+Node /zk-latencies/session_2 deleted in 484 ms
+Node /zk-latencies/session_3 deleted in 484 ms
+Node /zk-latencies/session_4 deleted in 484 ms
+Node /zk-latencies/session_5 deleted in 485 ms
+Node /zk-latencies/session_6 deleted in 484 ms
+Node /zk-latencies/session_7 deleted in 484 ms
+Node /zk-latencies/session_8 deleted in 484 ms
+Node /zk-latencies/session_9 deleted in 484 ms
+Node /zk-latencies/session_10 deleted in 488 ms
+Node /zk-latencies/session_11 deleted in 484 ms
+Node /zk-latencies/session_12 deleted in 484 ms
+Node /zk-latencies/session_13 deleted in 484 ms
+Node /zk-latencies/session_14 deleted in 480 ms
+Node /zk-latencies/session_15 deleted in 480 ms
+Node /zk-latencies/session_16 deleted in 480 ms
+Node /zk-latencies/session_17 deleted in 480 ms
+Node /zk-latencies/session_18 deleted in 480 ms
+Node /zk-latencies/session_19 deleted in 480 ms
+Node /zk-latencies/session_20 deleted in 483 ms
+Node /zk-latencies/session_21 deleted in 481 ms
+Node /zk-latencies/session_22 deleted in 480 ms
+Node /zk-latencies/session_23 deleted in 480 ms
+Node /zk-latencies/session_24 deleted in 481 ms
+Node /zk-latencies/session_25 deleted in 480 ms
+Node /zk-latencies/session_26 deleted in 480 ms
+Node /zk-latencies/session_27 deleted in 480 ms
+Node /zk-latencies/session_28 deleted in 480 ms
+Node /zk-latencies/session_29 deleted in 480 ms
+Node /zk-latencies/session_30 deleted in 480 ms
+Node /zk-latencies/session_31 deleted in 481 ms
+Node /zk-latencies/session_32 deleted in 482 ms
+Node /zk-latencies/session_33 deleted in 481 ms
+Node /zk-latencies/session_34 deleted in 480 ms
+Node /zk-latencies/session_35 deleted in 480 ms
+Node /zk-latencies/session_36 deleted in 480 ms
+Node /zk-latencies/session_37 deleted in 480 ms
+Node /zk-latencies/session_38 deleted in 481 ms
+Node /zk-latencies/session_39 deleted in 480 ms
+Node /zk-latencies/session_40 deleted in 480 ms
+Node /zk-latencies/session_41 deleted in 480 ms
+Node /zk-latencies/session_42 deleted in 479 ms
+Node /zk-latencies/session_43 deleted in 480 ms
+Node /zk-latencies/session_44 deleted in 480 ms
+Node /zk-latencies/session_45 deleted in 480 ms
+Node /zk-latencies/session_46 deleted in 481 ms
+Node /zk-latencies/session_47 deleted in 480 ms
+Node /zk-latencies/session_48 deleted in 479 ms
+Node /zk-latencies/session_49 deleted in 480 ms
+Node /zk-latencies/session_50 deleted in 480 ms
+Node /zk-latencies/session_51 deleted in 480 ms
+Node /zk-latencies/session_52 deleted in 480 ms
+Node /zk-latencies/session_53 deleted in 480 ms
+Node /zk-latencies/session_54 deleted in 481 ms
+Node /zk-latencies/session_55 deleted in 480 ms
+Node /zk-latencies/session_56 deleted in 479 ms
+Node /zk-latencies/session_57 deleted in 480 ms
+Node /zk-latencies/session_58 deleted in 480 ms
+Node /zk-latencies/session_59 deleted in 481 ms
+Node /zk-latencies/session_60 deleted in 480 ms
+Node /zk-latencies/session_61 deleted in 480 ms
+Node /zk-latencies/session_62 deleted in 480 ms
+Node /zk-latencies/session_63 deleted in 480 ms
+Node /zk-latencies/session_64 deleted in 479 ms
+Node /zk-latencies/session_65 deleted in 480 ms
+Node /zk-latencies/session_66 deleted in 479 ms
+Node /zk-latencies/session_67 deleted in 480 ms
+Node /zk-latencies/session_68 deleted in 481 ms
+Node /zk-latencies/session_69 deleted in 480 ms
+Node /zk-latencies/session_70 deleted in 480 ms
+Node /zk-latencies/session_71 deleted in 480 ms
+Node /zk-latencies/session_72 deleted in 480 ms
+Node /zk-latencies/session_73 deleted in 480 ms
+Node /zk-latencies/session_74 deleted in 479 ms
+Node /zk-latencies/session_75 deleted in 480 ms
+Node /zk-latencies/session_76 deleted in 480 ms
+Node /zk-latencies/session_77 deleted in 480 ms
+Node /zk-latencies/session_78 deleted in 480 ms
+Node /zk-latencies/session_79 deleted in 480 ms
+Node /zk-latencies/session_80 deleted in 480 ms
+Node /zk-latencies/session_81 deleted in 479 ms
+Node /zk-latencies/session_82 deleted in 480 ms
+Node /zk-latencies/session_83 deleted in 479 ms
+Node /zk-latencies/session_84 deleted in 480 ms
+Node /zk-latencies/session_85 deleted in 480 ms
+Node /zk-latencies/session_86 deleted in 479 ms
+Node /zk-latencies/session_87 deleted in 479 ms
+Node /zk-latencies/session_88 deleted in 479 ms
+Node /zk-latencies/session_89 deleted in 480 ms
+Node /zk-latencies/session_90 deleted in 480 ms
+Node /zk-latencies/session_91 deleted in 480 ms
+Node /zk-latencies/session_92 deleted in 480 ms
+Node /zk-latencies/session_93 deleted in 480 ms
+Node /zk-latencies/session_94 deleted in 481 ms
+Node /zk-latencies/session_95 deleted in 480 ms
+Node /zk-latencies/session_96 deleted in 480 ms
+Node /zk-latencies/session_97 deleted in 480 ms
+Node /zk-latencies/session_98 deleted in 480 ms
+Node /zk-latencies/session_99 deleted in 479 ms
+deleted     100 permanent znodes  in  48120 ms (481.209102 ms/op 2.078099/sec)
+Node /zk-latencies/session_0 created in 480 ms
+Node /zk-latencies/session_1 created in 480 ms
+Node /zk-latencies/session_2 created in 483 ms
+Node /zk-latencies/session_3 created in 482 ms
+Node /zk-latencies/session_4 created in 480 ms
+Node /zk-latencies/session_5 created in 480 ms
+Node /zk-latencies/session_6 created in 480 ms
+Node /zk-latencies/session_7 created in 480 ms
+Node /zk-latencies/session_8 created in 480 ms
+Node /zk-latencies/session_9 created in 479 ms
+Node /zk-latencies/session_10 created in 480 ms
+Node /zk-latencies/session_11 created in 480 ms
+Node /zk-latencies/session_12 created in 480 ms
+Node /zk-latencies/session_13 created in 480 ms
+Node /zk-latencies/session_14 created in 481 ms
+Node /zk-latencies/session_15 created in 480 ms
+Node /zk-latencies/session_16 created in 480 ms
+Node /zk-latencies/session_17 created in 480 ms
+Node /zk-latencies/session_18 created in 480 ms
+Node /zk-latencies/session_19 created in 480 ms
+Node /zk-latencies/session_20 created in 480 ms
+Node /zk-latencies/session_21 created in 484 ms
+Node /zk-latencies/session_22 created in 480 ms
+Node /zk-latencies/session_23 created in 479 ms
+Node /zk-latencies/session_24 created in 480 ms
+Node /zk-latencies/session_25 created in 480 ms
+Node /zk-latencies/session_26 created in 480 ms
+Node /zk-latencies/session_27 created in 480 ms
+Node /zk-latencies/session_28 created in 481 ms
+Node /zk-latencies/session_29 created in 480 ms
+Node /zk-latencies/session_30 created in 480 ms
+Node /zk-latencies/session_31 created in 480 ms
+Node /zk-latencies/session_32 created in 480 ms
+Node /zk-latencies/session_33 created in 480 ms
+Node /zk-latencies/session_34 created in 480 ms
+Node /zk-latencies/session_35 created in 480 ms
+Node /zk-latencies/session_36 created in 480 ms
+Node /zk-latencies/session_37 created in 480 ms
+Node /zk-latencies/session_38 created in 480 ms
+Node /zk-latencies/session_39 created in 482 ms
+Node /zk-latencies/session_40 created in 480 ms
+Node /zk-latencies/session_41 created in 480 ms
+Node /zk-latencies/session_42 created in 480 ms
+Node /zk-latencies/session_43 created in 480 ms
+Node /zk-latencies/session_44 created in 481 ms
+Node /zk-latencies/session_45 created in 479 ms
+Node /zk-latencies/session_46 created in 480 ms
+Node /zk-latencies/session_47 created in 479 ms
+Node /zk-latencies/session_48 created in 479 ms
+Node /zk-latencies/session_49 created in 480 ms
+Node /zk-latencies/session_50 created in 480 ms
+Node /zk-latencies/session_51 created in 480 ms
+Node /zk-latencies/session_52 created in 480 ms
+Node /zk-latencies/session_53 created in 480 ms
+Node /zk-latencies/session_54 created in 480 ms
+Node /zk-latencies/session_55 created in 480 ms
+Node /zk-latencies/session_56 created in 480 ms
+Node /zk-latencies/session_57 created in 480 ms
+Node /zk-latencies/session_58 created in 484 ms
+Node /zk-latencies/session_59 created in 480 ms
+Node /zk-latencies/session_60 created in 480 ms
+Node /zk-latencies/session_61 created in 480 ms
+Node /zk-latencies/session_62 created in 480 ms
+Node /zk-latencies/session_63 created in 480 ms
+Node /zk-latencies/session_64 created in 479 ms
+Node /zk-latencies/session_65 created in 480 ms
+Node /zk-latencies/session_66 created in 480 ms
+Node /zk-latencies/session_67 created in 479 ms
+Node /zk-latencies/session_68 created in 479 ms
+Node /zk-latencies/session_69 created in 480 ms
+Node /zk-latencies/session_70 created in 479 ms
+Node /zk-latencies/session_71 created in 480 ms
+Node /zk-latencies/session_72 created in 480 ms
+Node /zk-latencies/session_73 created in 480 ms
+Node /zk-latencies/session_74 created in 480 ms
+Node /zk-latencies/session_75 created in 480 ms
+Node /zk-latencies/session_76 created in 482 ms
+Node /zk-latencies/session_77 created in 480 ms
+Node /zk-latencies/session_78 created in 480 ms
+Node /zk-latencies/session_79 created in 480 ms
+Node /zk-latencies/session_80 created in 480 ms
+Node /zk-latencies/session_81 created in 480 ms
+Node /zk-latencies/session_82 created in 480 ms
+Node /zk-latencies/session_83 created in 480 ms
+Node /zk-latencies/session_84 created in 480 ms
+Node /zk-latencies/session_85 created in 481 ms
+Node /zk-latencies/session_86 created in 481 ms
+Node /zk-latencies/session_87 created in 480 ms
+Node /zk-latencies/session_88 created in 481 ms
+Node /zk-latencies/session_89 created in 480 ms
+Node /zk-latencies/session_90 created in 479 ms
+Node /zk-latencies/session_91 created in 481 ms
+Node /zk-latencies/session_92 created in 480 ms
+Node /zk-latencies/session_93 created in 480 ms
+Node /zk-latencies/session_94 created in 480 ms
+Node /zk-latencies/session_95 created in 481 ms
+Node /zk-latencies/session_96 created in 480 ms
+Node /zk-latencies/session_97 created in 480 ms
+Node /zk-latencies/session_98 created in 480 ms
+Node /zk-latencies/session_99 created in 480 ms
+created     100 ephemeral znodes  in  48069 ms (480.698011 ms/op 2.080308/sec)
+watched     100           znodes  in  18412 ms (184.127021 ms/op 5.431033/sec)
+Node /zk-latencies/session_0 deleted in 481 ms
+Node /zk-latencies/session_1 deleted in 480 ms
+Node /zk-latencies/session_2 deleted in 479 ms
+Node /zk-latencies/session_3 deleted in 480 ms
+Node /zk-latencies/session_4 deleted in 480 ms
+Node /zk-latencies/session_5 deleted in 480 ms
+Node /zk-latencies/session_6 deleted in 480 mshandle 2 got watch for /zk-latencies/session_0 in watcher 2, count 1
+handle 2 got watch for /zk-latencies/session_1 in watcher 2, count 2
+
+handle 2 got watch for /zk-latencies/session_2 in watcher 2, count 3Node /zk-latencies/session_7 deleted in 480 ms
+handle 2 got watch for /zk-latencies/session_3 in watcher 2, count 4
+handle 2 got watch for /zk-latencies/session_4 in watcher 2, count 5
+handle 2 got watch for /zk-latencies/session_5 in watcher 2, count 6
+
+Node /zk-latencies/session_8 deleted in 481 ms
+Node /zk-latencies/session_9 deleted in 480 ms
+Node /zk-latencies/session_10 deleted in 479 ms
+Node /zk-latencies/session_11 deleted in 480 ms
+handle 2 got watch for /zk-latencies/session_6 in watcher 2, count 7
+Node /zk-latencies/session_12 deleted in 480 ms
+Node /zk-latencies/session_13 deleted in 480 ms
+Node /zk-latencies/session_14 deleted in 480 ms
+ handle 2 got watch for /zk-latencies/session_7 in watcher 2, count 8
+handle 2 got watch for /zk-latencies/session_8 in watcher 2, count 9
+handle 2 got watch for /zk-latencies/session_9 in watcher 2, count 10
+handle 2 got watch for /zk-latencies/session_10 in watcher 2, count 11
+handle 2 got watch for /zk-latencies/session_11 in watcher 2, count 12
+handle 2 got watch for /zk-latencies/session_12 in watcher 2, count 13Node /zk-latencies/session_15 deleted in 480 ms
+Node /zk-latencies/session_16 deleted in 480 ms
+Node /zk-latencies/session_17 deleted in 480 ms
+
+Node /zk-latencies/session_18 deleted in 480 ms
+Node /zk-latencies/session_19 deleted in 480 ms
+Node /zk-latencies/session_20 deleted in 480 ms
+Node /zk-latencies/session_21 deleted in 480 ms
+Node /zk-latencies/session_22 deleted in 480 ms
+Node /zk-latencies/session_23 deleted in 480 ms
+Node /zk-latencies/session_24 deleted in 480 ms
+Node /zk-latencies/session_25 deleted in 480 ms
+Node /zk-latencies/session_26 deleted in 480 ms
+Node /zk-latencies/session_27 deleted in 480 ms
+Node /zk-latencies/session_28 deleted in 480 ms
+Node /zk-latencies/session_29 deleted in 480 ms
+Node /zk-latencies/session_30 deleted in 480 ms
+Node /zk-latencies/session_31 deleted in 480 ms
+Node /zk-latencies/session_32 deleted in 480 ms
+Node /zk-latencies/session_33 deleted in 480 ms
+Node /zk-latencies/session_34 deleted in 479 ms
+Node /zk-latencies/session_35 deleted in 480 ms
+Node /zk-latencies/session_36 deleted in 482 ms
+Node /zk-latencies/session_37 deleted in 480 ms
+Node /zk-latencies/session_38 deleted in 480 ms
+Node /zk-latencies/session_39 deleted in 481 ms
+Node /zk-latencies/session_40 deleted in 480 ms
+Node /zk-latencies/session_41 deleted in 479 ms
+Node /zk-latencies/session_42 deleted in 479 ms
+Node /zk-latencies/session_43 deleted in 480 ms
+Node /zk-latencies/session_44 deleted in 480 ms
+Node /zk-latencies/session_45 deleted in 480 ms
+Node /zk-latencies/session_46 deleted in 482 ms
+Node /zk-latencies/session_47 deleted in 480 ms
+Node /zk-latencies/session_48 deleted in 480 ms
+Node /zk-latencies/session_49 deleted in 479 ms
+Node /zk-latencies/session_50 deleted in 480 ms
+Node /zk-latencies/session_51 deleted in 480 ms
+Node /zk-latencies/session_52 deleted in 480 ms
+Node /zk-latencies/session_53 deleted in 479 mshandle 2 got watch for /zk-latencies/session_13 in watcher 2, count 14
+handle 2 got watch for /zk-latencies/session_14 in watcher 2, count 15
+handle 2 got watch for /zk-latencies/session_15 in watcher 2, count 16
+handle 2 got watch for /zk-latencies/session_16 in watcher 2, count 17
+handle 2 got watch for /zk-latencies/session_17 in watcher 2, count 18
+handle 2 got watch for /zk-latencies/session_18 in watcher 2, count 19
+handle 2 got watch for /zk-latencies/session_19 in watcher 2, count 20
+Node /zk-latencies/session_54 deleted in 480 ms
+Node /zk-latencies/session_55 deleted in 480 ms
+Node /zk-latencies/session_56 deleted in 480 ms
+Node /zk-latencies/session_57 deleted in 480 ms
+Node /zk-latencies/session_58 deleted in 479 ms
+Node /zk-latencies/session_59 deleted in 480 ms
+Node /zk-latencies/session_60 deleted in 480 ms
+Node /zk-latencies/session_61 deleted in 480 ms
+Node /zk-latencies/session_62 deleted in 480 ms
+Node /zk-latencies/session_63 deleted in 480 ms
+Node /zk-latencies/session_64 deleted in 480 ms
+Node /zk-latencies/session_65 deleted in 480 ms
+Node /zk-latencies/session_66 deleted in 479 ms
+Node /zk-latencies/session_67 deleted in 480 ms
+
+ handle 2 got watch for /zk-latencies/session_20 in watcher 2, count 21
+Node /zk-latencies/session_68 deleted in 480 ms
+Node /zk-latencies/session_69 deleted in 480 ms
+Node /zk-latencies/session_70 deleted in 480 ms
+Node /zk-latencies/session_71 deleted in 479 ms
+Node /zk-latencies/session_72 deleted in 480 ms
+Node /zk-latencies/session_73 deleted in 479 ms
+Node /zk-latencies/session_74 deleted in 481 ms
+ handle 2 got watch for /zk-latencies/session_21 in watcher 2, count 22
+handle 2 got watch for /zk-latencies/session_22 in watcher 2, count 23
+handle 2 got watch for /zk-latencies/session_23 in watcher 2, count 24
+handle 2 got watch for /zk-latencies/session_24 in watcher 2, count 25Node /zk-latencies/session_75 deleted in 480 ms
+Node /zk-latencies/session_76 deleted in 480 ms
+Node /zk-latencies/session_77 deleted in 480 ms
+Node /zk-latencies/session_78 deleted in 479 ms
+Node /zk-latencies/session_79 deleted in 480 ms
+Node /zk-latencies/session_80 deleted in 480 ms
+Node /zk-latencies/session_81 deleted in 481 ms
+Node /zk-latencies/session_82 deleted in 479 ms
+Node /zk-latencies/session_83 deleted in 480 ms
+Node /zk-latencies/session_84 deleted in 482 ms
+Node /zk-latencies/session_85 deleted in 480 ms
+Node /zk-latencies/session_86 deleted in 480 ms
+Node /zk-latencies/session_87 deleted in 480 ms
+Node /zk-latencies/session_88 deleted in 480 ms
+Node /zk-latencies/session_89 deleted in 480 ms
+Node /zk-latencies/session_90 deleted in 480 ms
+Node /zk-latencies/session_91 deleted in 479 ms
+Node /zk-latencies/session_92 deleted in 480 ms
+Node /zk-latencies/session_93 deleted in 480 ms
+Node /zk-latencies/session_94 deleted in 480 ms
+Node /zk-latencies/session_95 deleted in 479 ms
+Node /zk-latencies/session_96 deleted in 480 ms
+Node /zk-latencies/session_97 deleted in 481 ms
+Node /zk-latencies/session_98 deleted in 480 ms
+Node /zk-latencies/session_99 deleted in 479 ms
+deleted     100 ephemeral znodes  in  48052 ms (480.528619 ms/op 2.081042/sec)
+
+handle 2 got watch for /zk-latencies/session_25 in watcher 2, count 26
+handle 2 got watch for /zk-latencies/session_26 in watcher 2, count 27
+handle 2 got watch for /zk-latencies/session_27 in watcher 2, count 28
+handle 2 got watch for /zk-latencies/session_28 in watcher 2, count 29
+handle 2 got watch for /zk-latencies/session_29 in watcher 2, count 30
+handle 2 got watch for /zk-latencies/session_30 in watcher 2, count 31
+handle 2 got watch for /zk-latencies/session_31 in watcher 2, count 32
+handle 2 got watch for /zk-latencies/session_32 in watcher 2, count 33
+handle 2 got watch for /zk-latencies/session_33 in watcher 2, count 34
+handle 2 got watch for /zk-latencies/session_34 in watcher 2, count 35
+handle 2 got watch for /zk-latencies/session_35 in watcher 2, count 36
+handle 2 got watch for /zk-latencies/session_36 in watcher 2, count 37
+handle 2 got watch for /zk-latencies/session_37 in watcher 2, count 38
+handle 2 got watch for /zk-latencies/session_38 in watcher 2, count 39
+handle 2 got watch for /zk-latencies/session_39 in watcher 2, count 40
+handle 2 got watch for /zk-latencies/session_40 in watcher 2, count 41
+handle 2 got watch for /zk-latencies/session_41 in watcher 2, count 42
+handle 2 got watch for /zk-latencies/session_42 in watcher 2, count 43
+handle 2 got watch for /zk-latencies/session_43 in watcher 2, count 44
+handle 2 got watch for /zk-latencies/session_44 in watcher 2, count 45
+handle 2 got watch for /zk-latencies/session_45 in watcher 2, count 46
+handle 2 got watch for /zk-latencies/session_46 in watcher 2, count 47
+handle 2 got watch for /zk-latencies/session_47 in watcher 2, count 48
+handle 2 got watch for /zk-latencies/session_48 in watcher 2, count 49
+handle 2 got watch for /zk-latencies/session_49 in watcher 2, count 50
+handle 2 got watch for /zk-latencies/session_50 in watcher 2, count 51
+handle 2 got watch for /zk-latencies/session_51 in watcher 2, count 52
+handle 2 got watch for /zk-latencies/session_52 in watcher 2, count 53
+handle 2 got watch for /zk-latencies/session_53 in watcher 2, count 54
+handle 2 got watch for /zk-latencies/session_54 in watcher 2, count 55
+handle 2 got watch for /zk-latencies/session_55 in watcher 2, count 56
+handle 2 got watch for /zk-latencies/session_56 in watcher 2, count 57
+handle 2 got watch for /zk-latencies/session_57 in watcher 2, count 58
+handle 2 got watch for /zk-latencies/session_58 in watcher 2, count 59
+handle 2 got watch for /zk-latencies/session_59 in watcher 2, count 60
+handle 2 got watch for /zk-latencies/session_60 in watcher 2, count 61
+handle 2 got watch for /zk-latencies/session_61 in watcher 2, count 62
+handle 2 got watch for /zk-latencies/session_62 in watcher 2, count 63
+handle 2 got watch for /zk-latencies/session_63 in watcher 2, count 64
+handle 2 got watch for /zk-latencies/session_64 in watcher 2, count 65
+handle 2 got watch for /zk-latencies/session_65 in watcher 2, count 66
+handle 2 got watch for /zk-latencies/session_66 in watcher 2, count 67
+handle 2 got watch for /zk-latencies/session_67 in watcher 2, count 68
+handle 2 got watch for /zk-latencies/session_68 in watcher 2, count 69
+handle 2 got watch for /zk-latencies/session_69 in watcher 2, count 70
+handle 2 got watch for /zk-latencies/session_70 in watcher 2, count 71
+handle 2 got watch for /zk-latencies/session_71 in watcher 2, count 72
+handle 2 got watch for /zk-latencies/session_72 in watcher 2, count 73
+handle 2 got watch for /zk-latencies/session_73 in watcher 2, count 74
+handle 2 got watch for /zk-latencies/session_74 in watcher 2, count 75
+handle 2 got watch for /zk-latencies/session_75 in watcher 2, count 76
+handle 2 got watch for /zk-latencies/session_76 in watcher 2, count 77
+handle 2 got watch for /zk-latencies/session_77 in watcher 2, count 78
+handle 2 got watch for /zk-latencies/session_78 in watcher 2, count 79
+handle 2 got watch for /zk-latencies/session_79 in watcher 2, count 80
+handle 2 got watch for /zk-latencies/session_80 in watcher 2, count 81
+handle 2 got watch for /zk-latencies/session_81 in watcher 2, count 82
+handle 2 got watch for /zk-latencies/session_82 in watcher 2, count 83
+handle 2 got watch for /zk-latencies/session_83 in watcher 2, count 84
+handle 2 got watch for /zk-latencies/session_84 in watcher 2, count 85
+handle 2 got watch for /zk-latencies/session_85 in watcher 2, count 86
+handle 2 got watch for /zk-latencies/session_86 in watcher 2, count 87
+handle 2 got watch for /zk-latencies/session_87 in watcher 2, count 88
+handle 2 got watch for /zk-latencies/session_88 in watcher 2, count 89
+handle 2 got watch for /zk-latencies/session_89 in watcher 2, count 90
+handle 2 got watch for /zk-latencies/session_90 in watcher 2, count 91
+handle 2 got watch for /zk-latencies/session_91 in watcher 2, count 92
+handle 2 got watch for /zk-latencies/session_92 in watcher 2, count 93
+handle 2 got watch for /zk-latencies/session_93 in watcher 2, count 94
+handle 2 got watch for /zk-latencies/session_94 in watcher 2, count 95
+handle 2 got watch for /zk-latencies/session_95 in watcher 2, count 96
+handle 2 got watch for /zk-latencies/session_96 in watcher 2, count 97
+handle 2 got watch for /zk-latencies/session_97 in watcher 2, count 98
+handle 2 got watch for /zk-latencies/session_98 in watcher 2, count 99
+handle 2 got watch for /zk-latencies/session_99 in watcher 2, count 100
+notif       100           watches in   1001 ms (10.011389 ms/op 99.886237/sec)
+Testing latencies on server 34.151.149.197:2181 using syncronous calls
+Node /zk-latencies/session_0 created in 365 ms
+Node /zk-latencies/session_1 created in 362 ms
+Node /zk-latencies/session_2 created in 362 ms
+Node /zk-latencies/session_3 created in 362 ms
+Node /zk-latencies/session_4 created in 361 ms
+Node /zk-latencies/session_5 created in 362 ms
+Node /zk-latencies/session_6 created in 361 ms
+Node /zk-latencies/session_7 created in 362 ms
+Node /zk-latencies/session_8 created in 362 ms
+Node /zk-latencies/session_9 created in 362 ms
+Node /zk-latencies/session_10 created in 362 ms
+Node /zk-latencies/session_11 created in 362 ms
+Node /zk-latencies/session_12 created in 365 ms
+Node /zk-latencies/session_13 created in 361 ms
+Node /zk-latencies/session_14 created in 362 ms
+Node /zk-latencies/session_15 created in 362 ms
+Node /zk-latencies/session_16 created in 362 ms
+Node /zk-latencies/session_17 created in 362 ms
+Node /zk-latencies/session_18 created in 361 ms
+Node /zk-latencies/session_19 created in 362 ms
+Node /zk-latencies/session_20 created in 362 ms
+Node /zk-latencies/session_21 created in 362 ms
+Node /zk-latencies/session_22 created in 362 ms
+Node /zk-latencies/session_23 created in 362 ms
+Node /zk-latencies/session_24 created in 362 ms
+Node /zk-latencies/session_25 created in 362 ms
+Node /zk-latencies/session_26 created in 361 ms
+Node /zk-latencies/session_27 created in 362 ms
+Node /zk-latencies/session_28 created in 363 ms
+Node /zk-latencies/session_29 created in 362 ms
+Node /zk-latencies/session_30 created in 361 ms
+Node /zk-latencies/session_31 created in 364 ms
+Node /zk-latencies/session_32 created in 362 ms
+Node /zk-latencies/session_33 created in 362 ms
+Node /zk-latencies/session_34 created in 362 ms
+Node /zk-latencies/session_35 created in 361 ms
+Node /zk-latencies/session_36 created in 362 ms
+Node /zk-latencies/session_37 created in 362 ms
+Node /zk-latencies/session_38 created in 362 ms
+Node /zk-latencies/session_39 created in 362 ms
+Node /zk-latencies/session_40 created in 362 ms
+Node /zk-latencies/session_41 created in 363 ms
+Node /zk-latencies/session_42 created in 363 ms
+Node /zk-latencies/session_43 created in 362 ms
+Node /zk-latencies/session_44 created in 362 ms
+Node /zk-latencies/session_45 created in 362 ms
+Node /zk-latencies/session_46 created in 362 ms
+Node /zk-latencies/session_47 created in 362 ms
+Node /zk-latencies/session_48 created in 362 ms
+Node /zk-latencies/session_49 created in 364 ms
+Node /zk-latencies/session_50 created in 362 ms
+Node /zk-latencies/session_51 created in 361 ms
+Node /zk-latencies/session_52 created in 361 ms
+Node /zk-latencies/session_53 created in 362 ms
+Node /zk-latencies/session_54 created in 362 ms
+Node /zk-latencies/session_55 created in 362 ms
+Node /zk-latencies/session_56 created in 362 ms
+Node /zk-latencies/session_57 created in 362 ms
+Node /zk-latencies/session_58 created in 362 ms
+Node /zk-latencies/session_59 created in 362 ms
+Node /zk-latencies/session_60 created in 362 ms
+Node /zk-latencies/session_61 created in 362 ms
+Node /zk-latencies/session_62 created in 362 ms
+Node /zk-latencies/session_63 created in 363 ms
+Node /zk-latencies/session_64 created in 362 ms
+Node /zk-latencies/session_65 created in 363 ms
+Node /zk-latencies/session_66 created in 362 ms
+Node /zk-latencies/session_67 created in 363 ms
+Node /zk-latencies/session_68 created in 365 ms
+Node /zk-latencies/session_69 created in 362 ms
+Node /zk-latencies/session_70 created in 363 ms
+Node /zk-latencies/session_71 created in 362 ms
+Node /zk-latencies/session_72 created in 362 ms
+Node /zk-latencies/session_73 created in 362 ms
+Node /zk-latencies/session_74 created in 362 ms
+Node /zk-latencies/session_75 created in 361 ms
+Node /zk-latencies/session_76 created in 362 ms
+Node /zk-latencies/session_77 created in 363 ms
+Node /zk-latencies/session_78 created in 362 ms
+Node /zk-latencies/session_79 created in 362 ms
+Node /zk-latencies/session_80 created in 362 ms
+Node /zk-latencies/session_81 created in 361 ms
+Node /zk-latencies/session_82 created in 361 ms
+Node /zk-latencies/session_83 created in 362 ms
+Node /zk-latencies/session_84 created in 362 ms
+Node /zk-latencies/session_85 created in 363 ms
+Node /zk-latencies/session_86 created in 364 ms
+Node /zk-latencies/session_87 created in 362 ms
+Node /zk-latencies/session_88 created in 362 ms
+Node /zk-latencies/session_89 created in 363 ms
+Node /zk-latencies/session_90 created in 362 ms
+Node /zk-latencies/session_91 created in 361 ms
+Node /zk-latencies/session_92 created in 362 ms
+Node /zk-latencies/session_93 created in 361 ms
+Node /zk-latencies/session_94 created in 362 ms
+Node /zk-latencies/session_95 created in 361 ms
+Node /zk-latencies/session_96 created in 362 ms
+Node /zk-latencies/session_97 created in 361 ms
+Node /zk-latencies/session_98 created in 362 ms
+Node /zk-latencies/session_99 created in 362 ms
+created     100 permanent znodes  in  36258 ms (362.583060 ms/op 2.757989/sec)
+set         100           znodes  in  36246 ms (362.465479 ms/op 2.758883/sec)
+get         100           znodes  in  19862 ms (198.629851 ms/op 5.034490/sec)
+Node /zk-latencies/session_0 deleted in 362 ms
+Node /zk-latencies/session_1 deleted in 361 ms
+Node /zk-latencies/session_2 deleted in 361 ms
+Node /zk-latencies/session_3 deleted in 362 ms
+Node /zk-latencies/session_4 deleted in 361 ms
+Node /zk-latencies/session_5 deleted in 362 ms
+Node /zk-latencies/session_6 deleted in 372 ms
+Node /zk-latencies/session_7 deleted in 362 ms
+Node /zk-latencies/session_8 deleted in 361 ms
+Node /zk-latencies/session_9 deleted in 362 ms
+Node /zk-latencies/session_10 deleted in 361 ms
+Node /zk-latencies/session_11 deleted in 361 ms
+Node /zk-latencies/session_12 deleted in 362 ms
+Node /zk-latencies/session_13 deleted in 362 ms
+Node /zk-latencies/session_14 deleted in 362 ms
+Node /zk-latencies/session_15 deleted in 362 ms
+Node /zk-latencies/session_16 deleted in 362 ms
+Node /zk-latencies/session_17 deleted in 362 ms
+Node /zk-latencies/session_18 deleted in 361 ms
+Node /zk-latencies/session_19 deleted in 361 ms
+Node /zk-latencies/session_20 deleted in 362 ms
+Node /zk-latencies/session_21 deleted in 361 ms
+Node /zk-latencies/session_22 deleted in 362 ms
+Node /zk-latencies/session_23 deleted in 362 ms
+Node /zk-latencies/session_24 deleted in 362 ms
+Node /zk-latencies/session_25 deleted in 362 ms
+Node /zk-latencies/session_26 deleted in 361 ms
+Node /zk-latencies/session_27 deleted in 361 ms
+Node /zk-latencies/session_28 deleted in 365 ms
+Node /zk-latencies/session_29 deleted in 362 ms
+Node /zk-latencies/session_30 deleted in 362 ms
+Node /zk-latencies/session_31 deleted in 362 ms
+Node /zk-latencies/session_32 deleted in 362 ms
+Node /zk-latencies/session_33 deleted in 361 ms
+Node /zk-latencies/session_34 deleted in 361 ms
+Node /zk-latencies/session_35 deleted in 362 ms
+Node /zk-latencies/session_36 deleted in 362 ms
+Node /zk-latencies/session_37 deleted in 361 ms
+Node /zk-latencies/session_38 deleted in 361 ms
+Node /zk-latencies/session_39 deleted in 362 ms
+Node /zk-latencies/session_40 deleted in 361 ms
+Node /zk-latencies/session_41 deleted in 362 ms
+Node /zk-latencies/session_42 deleted in 361 ms
+Node /zk-latencies/session_43 deleted in 361 ms
+Node /zk-latencies/session_44 deleted in 361 ms
+Node /zk-latencies/session_45 deleted in 361 ms
+Node /zk-latencies/session_46 deleted in 362 ms
+Node /zk-latencies/session_47 deleted in 362 ms
+Node /zk-latencies/session_48 deleted in 362 ms
+Node /zk-latencies/session_49 deleted in 362 ms
+Node /zk-latencies/session_50 deleted in 361 ms
+Node /zk-latencies/session_51 deleted in 362 ms
+Node /zk-latencies/session_52 deleted in 361 ms
+Node /zk-latencies/session_53 deleted in 361 ms
+Node /zk-latencies/session_54 deleted in 362 ms
+Node /zk-latencies/session_55 deleted in 362 ms
+Node /zk-latencies/session_56 deleted in 362 ms
+Node /zk-latencies/session_57 deleted in 361 ms
+Node /zk-latencies/session_58 deleted in 362 ms
+Node /zk-latencies/session_59 deleted in 362 ms
+Node /zk-latencies/session_60 deleted in 362 ms
+Node /zk-latencies/session_61 deleted in 362 ms
+Node /zk-latencies/session_62 deleted in 362 ms
+Node /zk-latencies/session_63 deleted in 362 ms
+Node /zk-latencies/session_64 deleted in 361 ms
+Node /zk-latencies/session_65 deleted in 361 ms
+Node /zk-latencies/session_66 deleted in 362 ms
+Node /zk-latencies/session_67 deleted in 361 ms
+Node /zk-latencies/session_68 deleted in 361 ms
+Node /zk-latencies/session_69 deleted in 362 ms
+Node /zk-latencies/session_70 deleted in 362 ms
+Node /zk-latencies/session_71 deleted in 362 ms
+Node /zk-latencies/session_72 deleted in 361 ms
+Node /zk-latencies/session_73 deleted in 361 ms
+Node /zk-latencies/session_74 deleted in 363 ms
+Node /zk-latencies/session_75 deleted in 362 ms
+Node /zk-latencies/session_76 deleted in 364 ms
+Node /zk-latencies/session_77 deleted in 362 ms
+Node /zk-latencies/session_78 deleted in 361 ms
+Node /zk-latencies/session_79 deleted in 361 ms
+Node /zk-latencies/session_80 deleted in 362 ms
+Node /zk-latencies/session_81 deleted in 362 ms
+Node /zk-latencies/session_82 deleted in 362 ms
+Node /zk-latencies/session_83 deleted in 361 ms
+Node /zk-latencies/session_84 deleted in 361 ms
+Node /zk-latencies/session_85 deleted in 362 ms
+Node /zk-latencies/session_86 deleted in 362 ms
+Node /zk-latencies/session_87 deleted in 362 ms
+Node /zk-latencies/session_88 deleted in 363 ms
+Node /zk-latencies/session_89 deleted in 362 ms
+Node /zk-latencies/session_90 deleted in 361 ms
+Node /zk-latencies/session_91 deleted in 362 ms
+Node /zk-latencies/session_92 deleted in 361 ms
+Node /zk-latencies/session_93 deleted in 362 ms
+Node /zk-latencies/session_94 deleted in 362 ms
+Node /zk-latencies/session_95 deleted in 362 ms
+Node /zk-latencies/session_96 deleted in 362 ms
+Node /zk-latencies/session_97 deleted in 361 ms
+Node /zk-latencies/session_98 deleted in 361 ms
+Node /zk-latencies/session_99 deleted in 361 ms
+deleted     100 permanent znodes  in  36232 ms (362.321110 ms/op 2.759983/sec)
+Node /zk-latencies/session_0 created in 362 ms
+Node /zk-latencies/session_1 created in 362 ms
+Node /zk-latencies/session_2 created in 361 ms
+Node /zk-latencies/session_3 created in 362 ms
+Node /zk-latencies/session_4 created in 362 ms
+Node /zk-latencies/session_5 created in 362 ms
+Node /zk-latencies/session_6 created in 361 ms
+Node /zk-latencies/session_7 created in 362 ms
+Node /zk-latencies/session_8 created in 362 ms
+Node /zk-latencies/session_9 created in 365 ms
+Node /zk-latencies/session_10 created in 362 ms
+Node /zk-latencies/session_11 created in 362 ms
+Node /zk-latencies/session_12 created in 361 ms
+Node /zk-latencies/session_13 created in 361 ms
+Node /zk-latencies/session_14 created in 362 ms
+Node /zk-latencies/session_15 created in 363 ms
+Node /zk-latencies/session_16 created in 362 ms
+Node /zk-latencies/session_17 created in 361 ms
+Node /zk-latencies/session_18 created in 361 ms
+Node /zk-latencies/session_19 created in 362 ms
+Node /zk-latencies/session_20 created in 362 ms
+Node /zk-latencies/session_21 created in 361 ms
+Node /zk-latencies/session_22 created in 361 ms
+Node /zk-latencies/session_23 created in 361 ms
+Node /zk-latencies/session_24 created in 361 ms
+Node /zk-latencies/session_25 created in 362 ms
+Node /zk-latencies/session_26 created in 362 ms
+Node /zk-latencies/session_27 created in 362 ms
+Node /zk-latencies/session_28 created in 365 ms
+Node /zk-latencies/session_29 created in 363 ms
+Node /zk-latencies/session_30 created in 363 ms
+Node /zk-latencies/session_31 created in 363 ms
+Node /zk-latencies/session_32 created in 364 ms
+Node /zk-latencies/session_33 created in 364 ms
+Node /zk-latencies/session_34 created in 363 ms
+Node /zk-latencies/session_35 created in 363 ms
+Node /zk-latencies/session_36 created in 362 ms
+Node /zk-latencies/session_37 created in 363 ms
+Node /zk-latencies/session_38 created in 364 ms
+Node /zk-latencies/session_39 created in 363 ms
+Node /zk-latencies/session_40 created in 363 ms
+Node /zk-latencies/session_41 created in 363 ms
+Node /zk-latencies/session_42 created in 363 ms
+Node /zk-latencies/session_43 created in 363 ms
+Node /zk-latencies/session_44 created in 362 ms
+Node /zk-latencies/session_45 created in 363 ms
+Node /zk-latencies/session_46 created in 366 ms
+Node /zk-latencies/session_47 created in 363 ms
+Node /zk-latencies/session_48 created in 363 ms
+Node /zk-latencies/session_49 created in 363 ms
+Node /zk-latencies/session_50 created in 364 ms
+Node /zk-latencies/session_51 created in 365 ms
+Node /zk-latencies/session_52 created in 363 ms
+Node /zk-latencies/session_53 created in 363 ms
+Node /zk-latencies/session_54 created in 363 ms
+Node /zk-latencies/session_55 created in 363 ms
+Node /zk-latencies/session_56 created in 363 ms
+Node /zk-latencies/session_57 created in 363 ms
+Node /zk-latencies/session_58 created in 363 ms
+Node /zk-latencies/session_59 created in 363 ms
+Node /zk-latencies/session_60 created in 363 ms
+Node /zk-latencies/session_61 created in 363 ms
+Node /zk-latencies/session_62 created in 363 ms
+Node /zk-latencies/session_63 created in 363 ms
+Node /zk-latencies/session_64 created in 363 ms
+Node /zk-latencies/session_65 created in 366 ms
+Node /zk-latencies/session_66 created in 363 ms
+Node /zk-latencies/session_67 created in 362 ms
+Node /zk-latencies/session_68 created in 364 ms
+Node /zk-latencies/session_69 created in 363 ms
+Node /zk-latencies/session_70 created in 362 ms
+Node /zk-latencies/session_71 created in 363 ms
+Node /zk-latencies/session_72 created in 363 ms
+Node /zk-latencies/session_73 created in 363 ms
+Node /zk-latencies/session_74 created in 364 ms
+Node /zk-latencies/session_75 created in 363 ms
+Node /zk-latencies/session_76 created in 363 ms
+Node /zk-latencies/session_77 created in 363 ms
+Node /zk-latencies/session_78 created in 363 ms
+Node /zk-latencies/session_79 created in 364 ms
+Node /zk-latencies/session_80 created in 363 ms
+Node /zk-latencies/session_81 created in 363 ms
+Node /zk-latencies/session_82 created in 364 ms
+Node /zk-latencies/session_83 created in 366 ms
+Node /zk-latencies/session_84 created in 363 ms
+Node /zk-latencies/session_85 created in 363 ms
+Node /zk-latencies/session_86 created in 364 ms
+Node /zk-latencies/session_87 created in 363 ms
+Node /zk-latencies/session_88 created in 362 ms
+Node /zk-latencies/session_89 created in 362 ms
+Node /zk-latencies/session_90 created in 363 ms
+Node /zk-latencies/session_91 created in 362 ms
+Node /zk-latencies/session_92 created in 362 ms
+Node /zk-latencies/session_93 created in 364 ms
+Node /zk-latencies/session_94 created in 363 ms
+Node /zk-latencies/session_95 created in 363 ms
+Node /zk-latencies/session_96 created in 363 ms
+Node /zk-latencies/session_97 created in 363 ms
+Node /zk-latencies/session_98 created in 363 ms
+Node /zk-latencies/session_99 created in 363 ms
+created     100 ephemeral znodes  in  36336 ms (363.367648 ms/op 2.752034/sec)
+watched     100           znodes  in  19870 ms (198.706570 ms/op 5.032546/sec)
+Node /zk-latencies/session_0 deleted in 368 ms
+Node /zk-latencies/session_1 deleted in 362 ms
+Node /zk-latencies/session_2 deleted in 363 ms
+Node /zk-latencies/session_3 deleted in 363 ms
+Node /zk-latencies/session_4 deleted in 364 ms
+Node /zk-latencies/session_5 deleted in 366 ms
+Node /zk-latencies/session_6 deleted in 363 ms
+Node /zk-latencies/session_7 deleted in 363 ms
+Node /zk-latencies/session_8 deleted in 363 mshandle 3 got watch for /zk-latencies/session_0 in watcher 3, count 1
+handle 3 got watch for /zk-latencies/session_1 in watcher 3, count 2
+handle 3 got watch for /zk-latencies/session_2 in watcher 3, count 3
+handle 3 got watch for /zk-latencies/session_3 in watcher 3, count 4
+Node /zk-latencies/session_9 deleted in 362 ms
+
+Node /zk-latencies/session_10 deleted in 363 ms
+Node /zk-latencies/session_11 deleted in 363 ms
+Node /zk-latencies/session_12 deleted in 363 ms
+Node /zk-latencies/session_13 deleted in 363 ms
+Node /zk-latencies/session_14 deleted in 363 ms
+Node /zk-latencies/session_15 deleted in 363 ms
+Node /zk-latencies/session_16 deleted in 362 ms
+Node /zk-latencies/session_17 deleted in 362 ms
+Node /zk-latencies/session_18 deleted in 362 ms
+Node /zk-latencies/session_19 deleted in 363 ms
+Node /zk-latencies/session_20 deleted in 362 ms
+Node /zk-latencies/session_21 deleted in 363 ms
+Node /zk-latencies/session_22 deleted in 364 ms
+Node /zk-latencies/session_23 deleted in 363 ms
+Node /zk-latencies/session_24 deleted in 363 ms
+Node /zk-latencies/session_25 deleted in 363 ms
+Node /zk-latencies/session_26 deleted in 364 ms
+Node /zk-latencies/session_27 deleted in 362 ms
+Node /zk-latencies/session_28 deleted in 363 ms
+Node /zk-latencies/session_29 deleted in 363 ms
+Node /zk-latencies/session_30 deleted in 363 ms
+Node /zk-latencies/session_31 deleted in 363 ms
+Node /zk-latencies/session_32 deleted in 363 ms
+Node /zk-latencies/session_33 deleted in 363 ms
+Node /zk-latencies/session_34 deleted in 363 ms
+Node /zk-latencies/session_35 deleted in 363 ms
+Node /zk-latencies/session_36 deleted in 364 ms
+Node /zk-latencies/session_37 deleted in 363 ms
+Node /zk-latencies/session_38 deleted in 362 ms
+Node /zk-latencies/session_39 deleted in 364 ms
+Node /zk-latencies/session_40 deleted in 362 ms
+Node /zk-latencies/session_41 deleted in 363 mshandle 3 got watch for /zk-latencies/session_4 in watcher 3, count 5
+handle 3 got watch for /zk-latencies/session_5 in watcher 3, count 6
+handle 3 got watch for /zk-latencies/session_6 in watcher 3, count 7
+handle 3 got watch for /zk-latencies/session_7 in watcher 3, count 8
+handle 3 got watch for /zk-latencies/session_8 in watcher 3, count 9
+handle 3 got watch for /zk-latencies/session_9 in watcher 3, count 10
+Node /zk-latencies/session_42 deleted in 362 ms
+Node /zk-latencies/session_43 deleted in 362 ms
+Node /zk-latencies/session_44 deleted in 365 ms
+Node /zk-latencies/session_45 deleted in 364 ms
+Node /zk-latencies/session_46 deleted in 363 ms
+Node /zk-latencies/session_47 deleted in 364 ms
+Node /zk-latencies/session_48 deleted in 363 ms
+Node /zk-latencies/session_49 deleted in 362 ms
+Node /zk-latencies/session_50 deleted in 363 ms
+Node /zk-latencies/session_51 deleted in 362 ms
+Node /zk-latencies/session_52 deleted in 363 ms
+Node /zk-latencies/session_53 deleted in 366 ms
+Node /zk-latencies/session_54 deleted in 363 ms
+Node /zk-latencies/session_55 deleted in 362 ms
+Node /zk-latencies/session_56 deleted in 362 ms
+Node /zk-latencies/session_57 deleted in 363 ms
+Node /zk-latencies/session_58 deleted in 363 ms
+Node /zk-latencies/session_59 deleted in 362 ms
+Node /zk-latencies/session_60 deleted in 362 ms
+Node /zk-latencies/session_61 deleted in 362 ms
+Node /zk-latencies/session_62 deleted in 363 ms
+Node /zk-latencies/session_63 deleted in 363 ms
+Node /zk-latencies/session_64 deleted in 363 ms
+Node /zk-latencies/session_65 deleted in 363 ms
+Node /zk-latencies/session_66 deleted in 365 ms
+
+Node /zk-latencies/session_67 deleted in 363 ms
+Node /zk-latencies/session_68 deleted in 363 ms
+Node /zk-latencies/session_69 deleted in 363 ms
+Node /zk-latencies/session_70 deleted in 362 ms
+Node /zk-latencies/session_71 deleted in 362 ms
+Node /zk-latencies/session_72 deleted in 362 ms
+ handle 3 got watch for /zk-latencies/session_10 in watcher 3, count 11
+handle 3 got watch for /zk-latencies/session_11 in watcher 3, count 12
+Node /zk-latencies/session_73 deleted in 362 ms
+Node /zk-latencies/session_74 deleted in 363 ms
+Node /zk-latencies/session_75 deleted in 363 ms
+Node /zk-latencies/session_76 deleted in 363 ms
+Node /zk-latencies/session_77 deleted in 363 mshandle 3 got watch for /zk-latencies/session_12 in watcher 3, count 13
+handle 3 got watch for /zk-latencies/session_13 in watcher 3, count 14
+handle 3 got watch for /zk-latencies/session_14 in watcher 3, count 15
+handle 3 got watch for /zk-latencies/session_15 in watcher 3, count 16
+
+Node /zk-latencies/session_78 deleted in 362 ms
+Node /zk-latencies/session_79 deleted in 363 ms
+Node /zk-latencies/session_80 deleted in 363 ms
+Node /zk-latencies/session_81 deleted in 363 ms
+ handle 3 got watch for /zk-latencies/session_16 in watcher 3, count 17
+handle 3 got watch for /zk-latencies/session_17 in watcher 3, count 18
+handle 3 got watch for /zk-latencies/session_18 in watcher 3, count 19
+handle 3 got watch for /zk-latencies/session_19 in watcher 3, count 20
+handle 3 got watch for /zk-latencies/session_20 in watcher 3, count 21
+handle 3 got watch for /zk-latencies/session_21 in watcher 3, count 22
+handle 3 got watch for /zk-latencies/session_22 in watcher 3, count 23Node /zk-latencies/session_82 deleted in 363 ms
+
+Node /zk-latencies/session_83 deleted in 363 ms
+Node /zk-latencies/session_84 deleted in 363 ms
+Node /zk-latencies/session_85 deleted in 363 ms
+Node /zk-latencies/session_86 deleted in 364 ms
+Node /zk-latencies/session_87 deleted in 363 ms
+Node /zk-latencies/session_88 deleted in 363 ms
+Node /zk-latencies/session_89 deleted in 364 ms
+Node /zk-latencies/session_90 deleted in 363 ms
+Node /zk-latencies/session_91 deleted in 363 mshandle 3 got watch for /zk-latencies/session_23 in watcher 3, count 24
+handle 3 got watch for /zk-latencies/session_24 in watcher 3, count 25
+handle 3 got watch for /zk-latencies/session_25 in watcher 3, count 26
+handle 3 got watch for /zk-latencies/session_26 in watcher 3, count 27
+handle 3 got watch for /zk-latencies/session_27 in watcher 3, count 28
+
+ Node /zk-latencies/session_92 deleted in 363 ms
+Node /zk-latencies/session_93 deleted in 364 ms
+Node /zk-latencies/session_94 deleted in 363 ms
+Node /zk-latencies/session_95 deleted in 364 ms
+Node /zk-latencies/session_96 deleted in 363 ms
+Node /zk-latencies/session_97 deleted in 363 ms
+handle 3 got watch for /zk-latencies/session_28 in watcher 3, count 29
+handle 3 got watch for /zk-latencies/session_29 in watcher 3, count 30
+handle 3 got watch for /zk-latencies/session_30 in watcher 3, count 31
+Node /zk-latencies/session_98 deleted in 363 ms
+Node /zk-latencies/session_99 deleted in 363 ms
+deleted     100 ephemeral znodes  in  36360 ms (363.608391 ms/op 2.750212/sec)
+handle 3 got watch for /zk-latencies/session_31 in watcher 3, count 32
+handle 3 got watch for /zk-latencies/session_32 in watcher 3, count 33
+handle 3 got watch for /zk-latencies/session_33 in watcher 3, count 34
+handle 3 got watch for /zk-latencies/session_34 in watcher 3, count 35
+handle 3 got watch for /zk-latencies/session_35 in watcher 3, count 36
+handle 3 got watch for /zk-latencies/session_36 in watcher 3, count 37
+handle 3 got watch for /zk-latencies/session_37 in watcher 3, count 38
+handle 3 got watch for /zk-latencies/session_38 in watcher 3, count 39
+handle 3 got watch for /zk-latencies/session_39 in watcher 3, count 40
+handle 3 got watch for /zk-latencies/session_40 in watcher 3, count 41
+handle 3 got watch for /zk-latencies/session_41 in watcher 3, count 42
+handle 3 got watch for /zk-latencies/session_42 in watcher 3, count 43
+handle 3 got watch for /zk-latencies/session_43 in watcher 3, count 44
+handle 3 got watch for /zk-latencies/session_44 in watcher 3, count 45
+handle 3 got watch for /zk-latencies/session_45 in watcher 3, count 46
+handle 3 got watch for /zk-latencies/session_46 in watcher 3, count 47
+handle 3 got watch for /zk-latencies/session_47 in watcher 3, count 48
+handle 3 got watch for /zk-latencies/session_48 in watcher 3, count 49
+handle 3 got watch for /zk-latencies/session_49 in watcher 3, count 50
+handle 3 got watch for /zk-latencies/session_50 in watcher 3, count 51
+handle 3 got watch for /zk-latencies/session_51 in watcher 3, count 52
+handle 3 got watch for /zk-latencies/session_52 in watcher 3, count 53
+handle 3 got watch for /zk-latencies/session_53 in watcher 3, count 54
+handle 3 got watch for /zk-latencies/session_54 in watcher 3, count 55
+handle 3 got watch for /zk-latencies/session_55 in watcher 3, count 56
+handle 3 got watch for /zk-latencies/session_56 in watcher 3, count 57
+handle 3 got watch for /zk-latencies/session_57 in watcher 3, count 58
+handle 3 got watch for /zk-latencies/session_58 in watcher 3, count 59
+handle 3 got watch for /zk-latencies/session_59 in watcher 3, count 60
+handle 3 got watch for /zk-latencies/session_60 in watcher 3, count 61
+handle 3 got watch for /zk-latencies/session_61 in watcher 3, count 62
+handle 3 got watch for /zk-latencies/session_62 in watcher 3, count 63
+handle 3 got watch for /zk-latencies/session_63 in watcher 3, count 64
+handle 3 got watch for /zk-latencies/session_64 in watcher 3, count 65
+handle 3 got watch for /zk-latencies/session_65 in watcher 3, count 66
+handle 3 got watch for /zk-latencies/session_66 in watcher 3, count 67
+handle 3 got watch for /zk-latencies/session_67 in watcher 3, count 68
+handle 3 got watch for /zk-latencies/session_68 in watcher 3, count 69
+handle 3 got watch for /zk-latencies/session_69 in watcher 3, count 70
+handle 3 got watch for /zk-latencies/session_70 in watcher 3, count 71
+handle 3 got watch for /zk-latencies/session_71 in watcher 3, count 72
+handle 3 got watch for /zk-latencies/session_72 in watcher 3, count 73
+handle 3 got watch for /zk-latencies/session_73 in watcher 3, count 74
+handle 3 got watch for /zk-latencies/session_74 in watcher 3, count 75
+handle 3 got watch for /zk-latencies/session_75 in watcher 3, count 76
+handle 3 got watch for /zk-latencies/session_76 in watcher 3, count 77
+handle 3 got watch for /zk-latencies/session_77 in watcher 3, count 78
+handle 3 got watch for /zk-latencies/session_78 in watcher 3, count 79
+handle 3 got watch for /zk-latencies/session_79 in watcher 3, count 80
+handle 3 got watch for /zk-latencies/session_80 in watcher 3, count 81
+handle 3 got watch for /zk-latencies/session_81 in watcher 3, count 82
+handle 3 got watch for /zk-latencies/session_82 in watcher 3, count 83
+handle 3 got watch for /zk-latencies/session_83 in watcher 3, count 84
+handle 3 got watch for /zk-latencies/session_84 in watcher 3, count 85
+handle 3 got watch for /zk-latencies/session_85 in watcher 3, count 86
+handle 3 got watch for /zk-latencies/session_86 in watcher 3, count 87
+handle 3 got watch for /zk-latencies/session_87 in watcher 3, count 88
+handle 3 got watch for /zk-latencies/session_88 in watcher 3, count 89
+handle 3 got watch for /zk-latencies/session_89 in watcher 3, count 90
+handle 3 got watch for /zk-latencies/session_90 in watcher 3, count 91
+handle 3 got watch for /zk-latencies/session_91 in watcher 3, count 92
+handle 3 got watch for /zk-latencies/session_92 in watcher 3, count 93
+handle 3 got watch for /zk-latencies/session_93 in watcher 3, count 94
+handle 3 got watch for /zk-latencies/session_94 in watcher 3, count 95
+handle 3 got watch for /zk-latencies/session_95 in watcher 3, count 96
+handle 3 got watch for /zk-latencies/session_96 in watcher 3, count 97
+handle 3 got watch for /zk-latencies/session_97 in watcher 3, count 98
+handle 3 got watch for /zk-latencies/session_98 in watcher 3, count 99
+handle 3 got watch for /zk-latencies/session_99 in watcher 3, count 100
+notif       100           watches in   1001 ms (10.011530 ms/op 99.884834/sec)
+Node /zk-latencies deleted in 393 ms
+Latency test complete
