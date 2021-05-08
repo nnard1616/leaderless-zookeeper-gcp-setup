@@ -24,7 +24,7 @@ ENTRYPOINT cd /YCSB && mvn -pl site.ycsb:$YCSB_BINDING -am clean package -DskipT
 -s -P /YCSB/workloads/$WORKLOAD_LOAD \
 -p zookeeper.connectString=$CONNECT_STRING \
 -p recordcount=$RECORD_COUNT \
--p operationcount=$OPERATION_COUNT > /output/run-cluster.run.$WORKLOAD_LOAD.$RECORD_COUNT.$OPERATION_COUNT.txt; \
+-p operationcount=$OPERATION_COUNT > /output/run-cluster.load.$WORKLOAD_LOAD.$RECORD_COUNT.$OPERATION_COUNT.txt; \
 for WORKLOAD in $(echo $WORKLOAD_RUN | sed "s/,/ /g"); \
 do \
 /YCSB/bin/ycsb run zookeeper \
