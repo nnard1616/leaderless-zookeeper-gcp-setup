@@ -1,10 +1,10 @@
 FROM openjdk:11
 
-ENV RUN_TYPE=load\
-    CONNECT_STRING=localhost:2181\
+ENV CONNECT_STRING=localhost:2181\
     RECORD_COUNT=100\
     OPERATION_COUNT=100\
-    WORLOAD=workloadb\
+    WORKLOAD_LOAD=workloadb\
+    WORKLOAD_RUN=workloadb\
     SERVER_PORT=80\
     YCSB_BINDING=zookeeper-binding
 
@@ -20,10 +20,17 @@ RUN git clone https://github.com/arift/YCSB.git
 RUN mkdir /output
 VOLUME /output
 ENTRYPOINT cd /YCSB && mvn -pl site.ycsb:$YCSB_BINDING -am clean package -DskipTests; \
-export OUTPUT_FILE_NAME=run-cluster.$RUN_TYPE.$WORLOAD.$RECORD_COUNT.$OPERATION_COUNT.txt; \
-/YCSB/bin/ycsb $RUN_TYPE zookeeper \
--s -P /YCSB/workloads/$WORLOAD \
+/YCSB/bin/ycsb load zookeeper \
+-s -P /YCSB/workloads/$WORKLOAD_LOAD \
 -p zookeeper.connectString=$CONNECT_STRING \
 -p recordcount=$RECORD_COUNT \
--p operationcount=$OPERATION_COUNT > /output/$OUTPUT_FILE_NAME; \
+-p operationcount=$OPERATION_COUNT > /output/run-cluster.load.$WORKLOAD_LOAD.$RECORD_COUNT.$OPERATION_COUNT.txt; \
+for WORKLOAD in $(echo $WORKLOAD_RUN | sed "s/,/ /g"); \
+do \
+/YCSB/bin/ycsb run zookeeper \
+-s -P /YCSB/workloads/$WORKLOAD \
+-p zookeeper.connectString=$CONNECT_STRING \
+-p recordcount=$RECORD_COUNT \
+-p operationcount=$OPERATION_COUNT > /output/run-cluster.load.$WORKLOAD.$RECORD_COUNT.$OPERATION_COUNT.txt; \
+done;\
 python3 -m http.server --directory /output $SERVER_PORT;
