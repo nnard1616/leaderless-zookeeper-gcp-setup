@@ -31,6 +31,6 @@ do \
 -s -P /YCSB/workloads/$WORKLOAD \
 -p zookeeper.connectString=$CONNECT_STRING \
 -p recordcount=$RECORD_COUNT \
--p operationcount=$OPERATION_COUNT > /output/run-cluster.load.$WORKLOAD.$RECORD_COUNT.$OPERATION_COUNT.txt; \
+-p operationcount=$OPERATION_COUNT > /output/run-cluster.run.$WORKLOAD.$RECORD_COUNT.$OPERATION_COUNT.txt; \
 done;\
 python3 -m http.server --directory /output $SERVER_PORT;
