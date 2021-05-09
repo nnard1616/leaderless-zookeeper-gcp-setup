@@ -1,8 +1,7 @@
 ZOO_TICK_TIME=2000
 ZOO_INIT_LIMIT=60
 ZOO_SYNC_LIMIT=60
-ZOO_FAIL_LIMIT=1
 ZOO_CFG_EXTRA=electionPortBindRetry=0
 ZOO_4LW_COMMANDS_WHITELIST=conf,cons,crst,dirs,dump,envi,mntr,ruok,srst,srvr,stat,wchc,wchp,wchs
 ZOO_STANDALONE_ENABLED=false
-ZOO_SERVERS=server.1=zook001.us-west1-a.c.leaderless-zookeeper.internal:2888:3888;2181 server.2=zook002.europe-west4-a.c.leaderless-zookeeper.internal:2888:3888;2181 server.3=zook003.asia-east1-b.c.leaderless-zookeeper.internal:2888:3888;2181 server.4=zook004.australia-southeast1-a.c.leaderless-zookeeper.internal:2888:3888;2181 server.5=zook005.southamerica-east1-a.c.leaderless-zookeeper.internal:2888:3888;2181
+ZOO_SERVERS=server.1=zook001.us-west1-a.c.leaderless-zookeeper.internal:2888:3888;2181 server.2=zook002.europe-west4-a.c.leaderless-zookeeper.internal:2888:3888;2181 server.3=zook003.asia-east1-b.c.leaderless-zookeeper.internal:2888:3888;2181 server.4=zook004.australia-southeast1-a.c.leaderless-zookeeper.internal:2888:3888;2181 server.5=zook005.southamerica-east1-a.c.leaderless-zookeeper.internal:2888:3888;2181 server.6=zook006.northamerica-northeast1-a.c.leaderless-zookeeper.internal:2888:3888;2181 server.7=zook007.us-east1-b.c.leaderless-zookeeper.internal:2888:3888;2181
